@@ -29,7 +29,7 @@
 			"img_w": 114,
 			"img_h": 100,
 			"wp_img": 6864,
-			"lang": "angielski",
+			"lang": "brak",
 			"comm": "",
 			"show": true
 		},
@@ -51,7 +51,7 @@
 			"img_w": 56,
 			"img_h": 100,
 			"wp_img": 7419,
-			"lang": "angielski",
+			"lang": "łotweski",
 			"comm": "",
 			"show": true
 		},
@@ -73,7 +73,18 @@
 			"img_w": 100,
 			"img_h": 100,
 			"wp_img": 2466,
-			"lang": "angielski",
+			"lang": "kazaski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_onefoot": "Kazakhstan Cup",
+			"name_matchday": "Kazachstan Kubogy",
+			"img": "https://matchday.pl/wp-content/uploads/2023/06/Kazakh_Premier_League.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 2466,
+			"lang": "kazaski",
 			"comm": "",
 			"show": true
 		},
@@ -117,7 +128,7 @@
 			"img_w": 167,
 			"img_h": 100,
 			"wp_img": 8060,
-			"lang": "angielski",
+			"lang": "brak",
 			"comm": "",
 			"show": true
 		},
@@ -154,5 +165,9 @@
 			"comm": "Transmisje płatne",
 			"show": false
 		}
-	]
+	],
+	"translate": {
+		"Obolon' Kyiv": "Obłoń Kijów",
+		"Minai": "FK Minaj"
+	}
 }

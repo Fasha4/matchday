@@ -17,7 +17,6 @@ def getMatches(date):
 	url = "https://onefootball.com/en/matches?date=" + date + "&only_watchable=true"
 	driver.get(url)
 
-
 	driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
 	sleep(3)
 
@@ -64,9 +63,17 @@ def show(matches):
 			output += r'<img class="aligncenter wp-image-' + str(new_league["wp_img"]) + r'" src="' + new_league["img"] + r'" alt="" width="' + str(new_league["img_w"]) + r'" height="' + str(new_league["img_h"]) + r'" />' + '\n'
 			output += r'<h2 style="text-align: center;"><span style="font-size: 18pt;"><strong>' + new_league["name_matchday"].upper() + r'</strong></span></h2>' + '\n'
 			for match in league["matches"]:
-				output += match['time'] + r' - <strong>' + match['home'].upper() + r' - ' +  match['away'].upper() + r'</strong>' + '\n'
+				if match["home"] in config["translate"]:
+					home = config["translate"][match["home"]]
+				else:
+					home = match["home"]
+				if match["away"] in config["translate"]:
+					away = config["translate"][match["away"]]
+				else:
+					away = match["away"]
+				output += match["time"] + r' - <strong>' + home.upper() + r' - ' +  away.upper() + r'</strong>' + '\n'
 				output += r'<span style="font-size: 10pt;"><img class="emoji" role="img" draggable="false" src="https://s.w.org/images/core/emoji/14.0.0/svg/1f4fa.svg" alt="📺" /> '
-				output += r'<a href="' + match['link'] + r'" target="_blank" rel="noopener">OneFootball</a>' + '\n'
+				output += r'<a href="' + match['link'] + r'" target="_blank" rel="noopener">OneFootball</a> '
 				output += r'<img class="emoji" role="img" draggable="false" src="https://s.w.org/images/core/emoji/14.0.0/svg/1f399.svg" alt="🎙" width="16" height="16" /> ' + new_league["lang"] + r'</span>' + '\n'
 				output += '\n'
 			if new_league["comm"]:
