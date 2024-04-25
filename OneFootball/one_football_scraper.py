@@ -12,6 +12,8 @@ def getMatches(date):
 	options = webdriver.ChromeOptions()
 	options.add_argument('--headless')
 	options.add_argument('--window-size=1920,1080')
+	options.add_experimental_option('excludeSwitches', ['enable-logging'])
+	options.add_argument('log-level=3')
 	driver = webdriver.Chrome(service=ChromeService(), options=options)
 
 	url = "https://onefootball.com/en/matches?date=" + date + "&only_watchable=true"
@@ -55,6 +57,9 @@ def show(matches):
 	f = open('config.json', 'r', encoding='utf-8')
 	config = json.load(f)
 	f.close()
+
+	sort = [x["name_onefoot"] for x in config["leagues"]]
+	matches = sorted(matches, key=lambda x: sort.index(x["name"]))
 
 	for league in matches:
 		new_league = next((sub for sub in config["leagues"] if sub["name_onefoot"] == league["name"]), None)
