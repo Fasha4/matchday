@@ -26,7 +26,7 @@ def getMatches(custom_date):
 
 	original_window = driver.current_window_handle
 
-	cookies = wait.until(EC.element_to_be_clickable((By.XPATH, "//*[contains(text(), 'Accept only necessary')]")))
+	cookies = wait.until(EC.element_to_be_clickable((By.ID, "onetrust-reject-all-handler")))
 	cookies.click()
 
 	date_diff = datetime.date.fromisoformat(custom_date) - datetime.date.today()
