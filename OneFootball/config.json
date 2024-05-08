@@ -18,7 +18,7 @@
 			"img_w": 112,
 			"img_h": 100,
 			"wp_img": 6768,
-			"lang": "francuski",
+			"lang": "brak",
 			"comm": "",
 			"show": true
 		},
@@ -40,7 +40,7 @@
 			"img_w": 85,
 			"img_h": 85,
 			"wp_img": 5071,
-			"lang": "angielski",
+			"lang": "brak",
 			"comm": "",
 			"show": true
 		},
@@ -73,7 +73,7 @@
 			"img_w": 100,
 			"img_h": 100,
 			"wp_img": 2466,
-			"lang": "kazaski",
+			"lang": "kazachski",
 			"comm": "",
 			"show": true
 		},
@@ -84,7 +84,7 @@
 			"img_w": 100,
 			"img_h": 100,
 			"wp_img": 2466,
-			"lang": "kazaski",
+			"lang": "kazachski",
 			"comm": "",
 			"show": true
 		},
@@ -95,7 +95,7 @@
 			"img_w": 173,
 			"img_h": 85,
 			"wp_img": 8487,
-			"lang": "angielski",
+			"lang": "brak",
 			"comm": "",
 			"show": true
 		},
@@ -106,7 +106,7 @@
 			"img_w": 201,
 			"img_h": 85,
 			"wp_img": 8489,
-			"lang": "angielski",
+			"lang": "islandzki",
 			"comm": "",
 			"show": true
 		},
