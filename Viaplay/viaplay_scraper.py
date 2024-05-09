@@ -108,11 +108,11 @@ def correct_time(matches, custom_date):
 
 	date_diff = datetime.date.fromisoformat(custom_date) - datetime.date.today()
 	for i in range(date_diff.days):
+		wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '.calendar__navigation--tomorrow')))
 		driver.find_element(By.CSS_SELECTOR, ".calendar__navigation--tomorrow").click()
-	wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "._simpleText_ghuv4_5._webTypeSimpleText01_ghuv4_11")))
-	wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '._simpleText_ghuv4_5._webTypeSimpleText01_ghuv4_11')))
+	wait.until(EC.visibility_of_element_located((By.XPATH, "//*[contains(text(), 'pokaż spotkania')]")))
 
-	expand = driver.find_elements(By.CSS_SELECTOR, "._simpleText_ghuv4_5._webTypeSimpleText01_ghuv4_11")
+	expand = driver.find_elements(By.XPATH, "//*[contains(text(), 'pokaż spotkania')]")
 	for button in expand:
 		button.click()
 
