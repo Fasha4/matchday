@@ -38,7 +38,10 @@ def getMatches(date):
 		for match in matches:
 			home = match.find_elements(By.CSS_SELECTOR, '.SimpleMatchCardTeam_simpleMatchCardTeam__name__7Ud8D')[0].text
 			away = match.find_elements(By.CSS_SELECTOR, '.SimpleMatchCardTeam_simpleMatchCardTeam__name__7Ud8D')[1].text
-			time = match.find_element(By.CSS_SELECTOR, '.SimpleMatchCard_simpleMatchCard__infoMessage___NJqW').text
+			try:
+				time = match.find_element(By.CSS_SELECTOR, '.SimpleMatchCard_simpleMatchCard__infoMessage___NJqW').text
+			except:
+				time = 'brak'
 			link = match.get_attribute("href")
 			league["matches"].append({
 				'home': home,
