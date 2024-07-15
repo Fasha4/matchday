@@ -60,7 +60,8 @@ def getMatches(custom_date):
 		driver.get(link)
 
 		timedate = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".src-components-contentDetails-event-components-info-event-InfoEvent-module__event_startDate--fbOL5")))
-		timedate_str = datetime.datetime.strptime(timedate.text, '%dth %B %Y, %H:%M')
+		timedate_clean = timedate.text.replace("st", "").replace("nd", "").replace("rd", "").replace("th", "")
+		timedate_str = datetime.datetime.strptime(timedate_clean, '%d %B %Y, %H:%M')
 		time = timedate_str.strftime('%H:%M')
 		if time[-1] == '5':
 			temp_time = datetime.datetime.strptime(time, '%H:%M') + datetime.timedelta(minutes=15)
@@ -77,7 +78,10 @@ def getMatches(custom_date):
 			break
 
 		details = match.split(' | ')
-		home, away = details[0].split(' v ')
+		try:
+			home, away = details[0].split(' v ')
+		except:
+			home = details[0]
 		if details[-1] in ['Costa Rica']:
 			league = details[-2] + ' ' + details[-1]
 		elif details[-2] in ['Malawi']:

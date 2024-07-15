@@ -144,6 +144,17 @@
 			"show": true
 		},
 		{
+			"name_fifa": "OFC U-16 Men's Championship",
+			"name_matchday": "Puchar Narodów Oceanii U16",
+			"img": "https://matchday.pl/wp-content/uploads/2024/06/1200px-Oceania_Football_Confederation_logo.svg_-300x222.png",
+			"img_w": 135,
+			"img_h": 100,
+			"wp_img": 10426,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "GFF League",
 			"name_matchday": "Gambia GFF League",
 			"img": "https://matchday.pl/wp-content/uploads/2024/06/GFF-LOGO-Latest-copy.png",
