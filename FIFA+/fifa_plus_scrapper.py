@@ -82,10 +82,8 @@ def getMatches(custom_date):
 			home, away = details[0].split(' v ')
 		except:
 			home = details[0]
-		if details[-1] in ['Costa Rica']:
+		if details[-1] in ['Costa Rica', 'Saint Kitts and Nevis']:
 			league = details[-2] + ' ' + details[-1]
-		elif details[-2] in ['Malawi']:
-			league = details[-3] + ' ' + details[-2]
 		elif ' ' not in details[-1]:
 			league = details[-2]
 		else:

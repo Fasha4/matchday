@@ -62,8 +62,14 @@ def show(matches):
 	f.close()
 
 	sort = [x["name_onefoot"] for x in config["leagues"]]
-	matches = sorted(matches, key=lambda x: sort.index(x["name"]))
 
+	for league in matches:
+		if league['name'] not in sort:
+			print("Dodaj", league['name'], "do configa")
+	matches = list(filter(lambda i: i['name'] in sort, matches))
+
+
+	matches = sorted(matches, key=lambda x: sort.index(x["name"]))
 	for league in matches:
 		new_league = next((sub for sub in config["leagues"] if sub["name_onefoot"] == league["name"]), None)
 

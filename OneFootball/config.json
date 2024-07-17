@@ -157,13 +157,24 @@
 		{
 			"name_onefoot": "Regionalliga Südwest",
 			"name_matchday": "Regionalliga Südwest",
-			"img": "",
-			"img_w": 0,
-			"img_h": 0,
-			"wp_img": 0,
-			"lang": "",
+			"img": "https://matchday.pl/wp-content/uploads/2024/07/Regionalliga_Suedwest_Logo-212x300.png",
+			"img_w": 71,
+			"img_h": 100,
+			"wp_img": 10733,
+			"lang": "niemiecki",
 			"comm": "Transmisje płatne",
-			"show": false
+			"show": true
+		},
+		{
+			"name_onefoot": "Club Friendly Games",
+			"name_matchday": "Mecze Towarzyskie",
+			"img": "https://matchday.pl/wp-content/uploads/2024/01/FIFA-Logo-300x169.png",
+			"img_w": 155,
+			"img_h": 87,
+			"wp_img": 6341,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
 		}
 	],
 	"translate": {

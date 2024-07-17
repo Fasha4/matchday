@@ -106,18 +106,29 @@
 			"img_w": 75,
 			"img_h": 100,
 			"wp_img": 10095,
-			"lang": "angielski",
+			"lang": "francuski",
 			"comm": "",
 			"show": true
 		},
 		{
-			"name_fifa": "FDH Bank Cup Malawi",
+			"name_fifa": "FDH Bank Cup",
 			"name_matchday": "Puchar Malawi",
 			"img": "https://matchday.pl/wp-content/uploads/2024/06/fdhbankcup.jpeg",
 			"img_w": 100,
 			"img_h": 100,
 			"wp_img": 10459,
 			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "TNM Super League",
+			"name_matchday": "Malawi Super League",
+			"img": "https://fam.mw/wp-content/uploads/2023/06/TNM-Super-League-Logo-Final.png",
+			"img_w": 238,
+			"img_h": 80,
+			"wp_img": 10459,
+			"lang": "brak",
 			"comm": "",
 			"show": true
 		},
@@ -188,13 +199,24 @@
 			"show": true
 		},
 		{
+			"name_fifa": "Premier League Saint Kitts and Nevis",
+			"name_matchday": "Saint Kitts and Nevis Premier League",
+			"img": "https://matchday.pl/wp-content/uploads/2024/07/Saint_Kitts__Nevis_Football_Association.svg_-300x236.png",
+			"img_w": 127,
+			"img_h": 100,
+			"wp_img": 10732,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "National Super League",
 			"name_matchday": "Mauritius Super League",
 			"img": "https://matchday.pl/wp-content/uploads/2024/06/NSL@2x.png",
 			"img_w": 69,
 			"img_h": 100,
 			"wp_img": 10430,
-			"lang": "angielski",
+			"lang": "francuski",
 			"comm": "",
 			"show": true
 		},
@@ -216,6 +238,17 @@
 			"img_w": 100,
 			"img_h": 100,
 			"wp_img": 10094,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Copa Interclubes Femenina UNCAF 2024",
+			"name_matchday": "Puchar UNCAF Kobiet",
+			"img": "https://matchday.pl/wp-content/uploads/2024/07/Copa_Interclubes_UNCAF.png",
+			"img_w": 94,
+			"img_h": 100,
+			"wp_img": 10729,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
