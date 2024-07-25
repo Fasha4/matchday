@@ -96,7 +96,7 @@ def show(matches):
 			output += match["time"] + r' - <strong>' + match["name"].upper() + r'</strong>' + '\n'
 			output += r'<span style="font-size: 10pt;"><img class="emoji" role="img" draggable="false" src="https://s.w.org/images/core/emoji/14.0.0/svg/1f4fa.svg" alt="📺" /> '
 			output += r'<a href="' + match['link'] + r'" target="_blank" rel="noopener">MAX</a> '
-			output += r'<img class="emoji" role="img" draggable="false" src="https://s.w.org/images/core/emoji/14.0.0/svg/1f399.svg" alt="🎙" width="16" height="16" /> polski </span>' + '\n'
+			output += r'<img class="emoji" role="img" draggable="false" src="https://s.w.org/images/core/emoji/14.0.0/svg/1f399.svg" alt="🎙" width="16" height="16" /> brak </span>' + '\n'
 			output += '\n'
 		output += r'<hr />' + '\n'
 	pyperclip.copy(output)
