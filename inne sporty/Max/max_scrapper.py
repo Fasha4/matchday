@@ -38,35 +38,14 @@ def getMatches(custom_date):
 		driver.get(link)
 
 		events_container = driver.find_elements(By.CSS_SELECTOR, ".react-multi-carousel-track.content-tray-slider")
-		events = events_container[1].find_elements(By.TAG_NAME, "li")
-		for event in events:
-			details = event.find_element(By.TAG_NAME, "a").get_attribute("aria-label").split(' | ')
-			try:
-				det_offset, day, time, _ = details[-1].split(',')
-			except:
-				det_offset, time, _ = details[-1].split(',')
-				day = datetime.datetime.now().strftime('%m %d').replace("7", "Lip").replace("8", "Sie")
-			href = event.find_element(By.TAG_NAME, "a").get_attribute("href")
-			sport = details[0].replace("Bez reklam", "").strip()
-			name = (' '.join(details[1:-1]) + det_offset).replace("Polski komentarz", "").replace("Angielski komentarz", "").replace("Bez reklam", "").replace("Igrzyska Olimpijskie", "")
-
-			timedate = datetime.datetime.strptime("2024 " + day.strip().replace("Lip", "7").replace("Sie", "8") + time, '%Y %m %d %I:%M%p')
-			time = (timedate + datetime.timedelta(hours=2)).strftime('%H:%M')
-
-
-			if timedate.date() == datetime.datetime.fromisoformat(custom_date).date():
-				matches.append({
-					'name': name,
-					'time': time,
-					'sport': sport,
-					'link': href
-					})
-
-				if sport not in sports_names:
-					sports_names.append(sport)
-
-			elif timedate.date() > datetime.datetime.fromisoformat(custom_date).date():
-				break
+		if link in ["https://www.max.com/pl/pl/olympics/sports/" + x for x in ["football", "volleyball", "archery", "handball", "rugby-sevens", "artistic-gymnastics", "basketball"]]:
+			events_k = events_container[2].find_elements(By.TAG_NAME, "li")
+			matches, sports_names = makeMatches(events_k, matches, sports_names, custom_date)
+			events_m = events_container[3].find_elements(By.TAG_NAME, "li")
+			matches, sports_names = makeMatches(events_m, matches, sports_names, custom_date)
+		else:
+			events = events_container[1].find_elements(By.TAG_NAME, "li")
+			matches, sports_names = makeMatches(events, matches, sports_names, custom_date)
 
 	games = []
 
@@ -86,6 +65,36 @@ def getMatches(custom_date):
 		games.append(sport)
 
 	return games
+
+def makeMatches(events, matches, sports_names, custom_date):
+	for event in events:
+			details = event.find_element(By.TAG_NAME, "a").get_attribute("aria-label").split(' | ')
+			try:
+				det_offset, day, time, _ = details[-1].split(',')
+			except:
+				det_offset, time, _ = details[-1].split(',')
+				day = datetime.datetime.now().strftime('%m %d').replace("7", "Lip").replace("8", "Sie")
+			href = event.find_element(By.TAG_NAME, "a").get_attribute("href")
+			sport = details[0].replace("Bez reklam", "").strip()
+			name = (' '.join(details[1:-1]) + det_offset).replace("Polski komentarz", "").replace("Angielski komentarz", "").replace("Bez reklam", "").replace("Igrzyska Olimpijskie", "")
+			timedate = datetime.datetime.strptime("2024 " + day.strip().replace("Lip", "7").replace("Sie", "8") + time, '%Y %m %d %I:%M%p')
+			time = (timedate + datetime.timedelta(hours=2)).strftime('%H:%M')
+
+
+			if timedate.date() == datetime.datetime.fromisoformat(custom_date).date():
+				matches.append({
+					'name': name,
+					'time': time,
+					'sport': sport,
+					'link': href
+					})
+
+				if sport not in sports_names:
+					sports_names.append(sport)
+
+			elif timedate.date() > datetime.datetime.fromisoformat(custom_date).date():
+				break
+	return matches, sports_names
 
 def show(matches):
 	output = ''
