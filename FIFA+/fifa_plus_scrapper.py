@@ -60,7 +60,7 @@ def getMatches(custom_date):
 		driver.get(link)
 
 		timedate = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".src-components-contentDetails-event-components-info-event-InfoEvent-module__event_startDate--fbOL5")))
-		timedate_clean = timedate.text.replace("st", "").replace("nd", "").replace("rd", "").replace("th", "")
+		timedate_clean = timedate.text.replace("1st", "1").replace("2nd", "2").replace("3rd", "3").replace("th", "")
 		timedate_str = datetime.datetime.strptime(timedate_clean, '%d %B %Y, %H:%M')
 		time = timedate_str.strftime('%H:%M')
 		if time[-1] == '5':
