@@ -18,6 +18,7 @@ def getMatches(custom_date):
 	options.add_argument('--window-size=1920,1080')
 	options.add_experimental_option('excludeSwitches', ['enable-logging'])
 	options.add_argument('log-level=3')
+	options.add_argument('--disable-search-engine-choice-screen')
 	driver = webdriver.Chrome(service=ChromeService(), options=options)
 
 	url = "https://viaplay.pl/sport"
@@ -30,6 +31,9 @@ def getMatches(custom_date):
 	cookies.click()
 
 	date_diff = datetime.date.fromisoformat(custom_date) - datetime.date.today()
+	for i in range(5):
+		driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
+
 	for i in range(date_diff.days):
 		driver.find_element(By.CSS_SELECTOR, ".SportScheduleNavigation-module-next-FHC22").click()
 
@@ -98,6 +102,7 @@ def correct_time(matches, custom_date):
 	options.add_argument('--window-size=1920,1080')
 	options.add_experimental_option('excludeSwitches', ['enable-logging'])
 	options.add_argument('log-level=3')
+	options.add_argument('--disable-search-engine-choice-screen')
 	driver = webdriver.Chrome(service=ChromeService(), options=options)
 
 	driver.get("https://www.flashscore.pl/")
@@ -126,9 +131,12 @@ def correct_time(matches, custom_date):
 
 	for match in matches_fs:
 		try:
-			home = match.find_element(By.CSS_SELECTOR, '.event__participant.event__participant--home').text
-			away = match.find_element(By.CSS_SELECTOR, '.event__participant.event__participant--away').text
-			matchtime = match.find_element(By.CSS_SELECTOR, '.event__time').text
+			home = match.find_element(By.CSS_SELECTOR, '.event__homeParticipant').text
+			away = match.find_element(By.CSS_SELECTOR, '.event__awayParticipant').text
+			try:
+				matchtime = match.find_element(By.CSS_SELECTOR, '.event__time').text
+			except:
+				matchtime = "brak"
 			if home in config["flashscore"]:
 				home = config["flashscore"][home]
 			if away in config["flashscore"]:

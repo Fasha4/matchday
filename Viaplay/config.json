@@ -23,6 +23,28 @@
 			"show": true
 		},
 		{
+			"name_viaplay": "Carabao Cup",
+			"name_matchday": "EFL Cup",
+			"img": "https://matchday.pl/wp-content/uploads/2023/02/EFL_Carabao_Cup_Logo-210x300.png",
+			"img_w": 70,
+			"img_h": 100,
+			"wp_img": 829,
+			"lang": "",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_viaplay": "DFL-Supercup",
+			"name_matchday": "Superpuchar Niemie",
+			"img": "https://upload.wikimedia.org/wikipedia/en/thumb/6/61/DFL-Supercup_logo_%282017%29.svg/170px-DFL-Supercup_logo_%282017%29.svg.png",
+			"img_w": 75,
+			"img_h": 100,
+			"wp_img": 829,
+			"lang": "",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_viaplay": "UEFA Europa League",
 			"name_matchday": "Liga Europy",
 			"img": "https://matchday.pl/wp-content/uploads/2023/02/UEL-211x300.webp",
@@ -446,6 +468,7 @@
 		"Manchester Utd": "Man United",
 		"Manchester City": "Man City",
 		"Sheffield Utd": "Sheffield United",
+		"Sheffield Wed": "Sheffield Wednesday",
 		"Nottingham": "Nottingham Forest",
 		"Wolves": "Wolverhampton",
 		"Bayern Monachium": "Bayern München",

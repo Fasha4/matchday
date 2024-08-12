@@ -243,12 +243,56 @@
 			"show": true
 		},
 		{
+			"name_fifa": "FIFA Futsal World Cup Uzbekistan 2024™",
+			"name_matchday": "Mistrzostwa Świata w Futsalu",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/2024_FIFA_Futsal_World_Cup_logo-300x295.jpg",
+			"img_w": 102,
+			"img_h": 100,
+			"wp_img": 11394,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "FIFA U-20 Women's World Cup Colombia 2024™",
+			"name_matchday": "Mistrzostwa Świata Kobiet U20",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/2024_FIFA_U-20_Womens_World_Cup-214x300.png",
+			"img_w": 71,
+			"img_h": 100,
+			"wp_img": 11393,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "FIFA U-17 Women's World Cup Dominican Republic 2024™",
+			"name_matchday": "Mistrzostwa Świata Kobiet U17",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/2024_FIFA_U-17_Womens_World_Cup_logo.svg_-267x300.png",
+			"img_w": 89,
+			"img_h": 100,
+			"wp_img": 11395,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "Copa Interclubes Femenina UNCAF 2024",
 			"name_matchday": "Puchar UNCAF Kobiet",
 			"img": "https://matchday.pl/wp-content/uploads/2024/07/Copa_Interclubes_UNCAF.png",
 			"img_w": 94,
 			"img_h": 100,
 			"wp_img": 10729,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "COSAFA Qualifier 2024",
+			"name_matchday": "Liga Mistrzów CAF Kobiet",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/CAF_Womens_CL_logo-226x300.png",
+			"img_w": 75,
+			"img_h": 100,
+			"wp_img": 11392,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
@@ -271,6 +315,17 @@
 			"img_w": 93,
 			"img_h": 100,
 			"wp_img": 10433,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "OFC Futsal Women's Nations Cup",
+			"name_matchday": "Puchar Narodów OFC Kobiet w Futsalu",
+			"img": "https://matchday.pl/wp-content/uploads/2024/06/1200px-Oceania_Football_Confederation_logo.svg_-300x222.png",
+			"img_w": 135,
+			"img_h": 100,
+			"wp_img": 10426,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
