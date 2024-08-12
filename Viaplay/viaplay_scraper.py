@@ -52,6 +52,7 @@ def getMatches(custom_date):
 
 		time = match.find_element(By.CSS_SELECTOR, ".Badge-module-start-ngT1j").text
 		league = match.find_element(By.CSS_SELECTOR, ".SportMeta-module-logo-gtv-M").get_attribute("alt")
+		link = match.find_element(By.CSS_SELECTOR, ".Item-module-link-ZC6DH").get_attribute("href")
 		if match.find_element(By.CSS_SELECTOR, ".SportMeta-module-secondarytitle-s3QxO").text == "Piłka ręczna":
 			league += " piłka ręczna"
 		if league not in leagues:
@@ -72,6 +73,7 @@ def getMatches(custom_date):
 				'away': away,
 				'time': time,
 				'league': league,
+				'link': link,
 				'comment': comment
 				})
 
@@ -90,6 +92,7 @@ def getMatches(custom_date):
 					'home': match["home"],
 					'away': match["away"],
 					'time': match["time"],
+					'link': match["link"],
 					'comment': match["comment"]
 					})
 		games.append(league)
@@ -197,7 +200,7 @@ def show(matches):
 					output += match["time"] + r' - <strong>' + match["event"].upper() + r'</strong>' + '\n'
 
 				output += r'<span style="font-size: 10pt;"><img class="emoji" role="img" draggable="false" src="https://s.w.org/images/core/emoji/14.0.0/svg/1f4fa.svg" alt="📺" /> '
-				output += r'Viaplay '
+				output += r'<a href="' + match['link'] + r'" target="_blank" rel="noopener">Viaplay</a> '
 				if match["comment"] == "Transmisja bez komentarza":
 					match["comment"] = 'brak'
 				if ' ' not in match["comment"]:
