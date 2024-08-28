@@ -14,6 +14,7 @@ def getMatches(custom_date):
 	options.add_argument('--window-size=1920,1080')
 	options.add_experimental_option('excludeSwitches', ['enable-logging'])
 	options.add_argument('log-level=3')
+	options.add_argument('--disable-search-engine-choice-screen')
 	driver = webdriver.Chrome(service=ChromeService(), options=options)
 
 	url = "https://www.plus.fifa.com/en/showcase/1472c76e-0e28-44bf-8b28-b05229545879"
@@ -82,7 +83,7 @@ def getMatches(custom_date):
 			home, away = details[0].split(' v ')
 		except:
 			home = details[0]
-		if details[-1] in ['Costa Rica', 'Saint Kitts and Nevis']:
+		if details[-1] in ['Costa Rica', 'Saint Kitts and Nevis', 'Grenada']:
 			league = details[-2] + ' ' + details[-1]
 		elif ' ' not in details[-1]:
 			league = details[-2]

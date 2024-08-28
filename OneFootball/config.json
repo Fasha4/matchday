@@ -155,6 +155,17 @@
 			"show": true
 		},
 		{
+			"name_onefoot": "3. Liga",
+			"name_matchday": "3 Liga Niemiecka",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/3._Liga_logo_2019.svg_-292x300.png",
+			"img_w": 97,
+			"img_h": 100,
+			"wp_img": 11726,
+			"lang": "niemiecki",
+			"comm": "Transmisje płatne",
+			"show": true
+		},
+		{
 			"name_onefoot": "Regionalliga Südwest",
 			"name_matchday": "Regionalliga Südwest",
 			"img": "https://matchday.pl/wp-content/uploads/2024/07/Regionalliga_Suedwest_Logo-212x300.png",

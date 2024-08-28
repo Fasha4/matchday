@@ -100,6 +100,17 @@
 			"show": true
 		},
 		{
+			"name_fifa": "Primus League 2024/25",
+			"name_matchday": "Burundi Primus League",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/burundi_primus_league-300x300.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 11728,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "Coupe du Congo",
 			"name_matchday": "Puchar Kongo",
 			"img": "https://matchday.pl/wp-content/uploads/2024/06/Congo_Republic_FA-225x300.png",
@@ -107,6 +118,17 @@
 			"img_h": 100,
 			"wp_img": 10095,
 			"lang": "francuski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "TNM Super League",
+			"name_matchday": "Malawi Super League",
+			"img": "https://fam.mw/wp-content/uploads/2023/06/TNM-Super-League-Logo-Final.png",
+			"img_w": 238,
+			"img_h": 80,
+			"wp_img": 10459,
+			"lang": "brak",
 			"comm": "",
 			"show": true
 		},
@@ -122,13 +144,13 @@
 			"show": true
 		},
 		{
-			"name_fifa": "TNM Super League",
-			"name_matchday": "Malawi Super League",
-			"img": "https://fam.mw/wp-content/uploads/2023/06/TNM-Super-League-Logo-Final.png",
-			"img_w": 238,
-			"img_h": 80,
+			"name_fifa": "Airtel Top 8 2024",
+			"name_matchday": "Malawi Top 8 Cup",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/Top8-1-300x156.png",
+			"img_w": 193,
+			"img_h": 100,
 			"wp_img": 10459,
-			"lang": "brak",
+			"lang": "11733",
 			"comm": "",
 			"show": true
 		},
@@ -172,6 +194,17 @@
 			"img_w": 104,
 			"img_h": 100,
 			"wp_img": 10427,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Premier League Grenada",
+			"name_matchday": "Grenada Premier League",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/Grenada-Football-Association-2015-215x300.png",
+			"img_w": 100,
+			"img_h": 72,
+			"wp_img": 11731,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
@@ -227,6 +260,17 @@
 			"img_w": 100,
 			"img_h": 100,
 			"wp_img": 10432,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Bhausaheb Bandodkar Memorial Trophy (2nd Edition)",
+			"name_matchday": "Bandodkar Trophy",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/Bandodkar-Trophy-300x300.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 11727,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
@@ -298,6 +342,17 @@
 			"show": true
 		},
 		{
+			"name_fifa": "TOPO centras euronics moterų A lyga",
+			"name_matchday": "A Lyga Kobiet",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/Topo-centras-euronics-moteru-a-lyga-300x89.png",
+			"img_w": 300,
+			"img_h": 89,
+			"wp_img": 11730,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "Kate Sheppard Cup",
 			"name_matchday": "Puchar Nowej Zelandii Kobiet",
 			"img": "https://matchday.pl/wp-content/uploads/2024/06/puchar_nz_k-300x300.jpg",
@@ -315,6 +370,17 @@
 			"img_w": 93,
 			"img_h": 100,
 			"wp_img": 10433,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "OFC U-16 Women's Championship",
+			"name_matchday": "Puchar Narodów Oceanii U16 Kobiet",
+			"img": "https://matchday.pl/wp-content/uploads/2024/06/1200px-Oceania_Football_Confederation_logo.svg_-300x222.png",
+			"img_w": 135,
+			"img_h": 100,
+			"wp_img": 10426,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
