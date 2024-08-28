@@ -15,6 +15,7 @@ def getMatches(custom_date):
 	options.add_argument('--window-size=1920,1080')
 	options.add_experimental_option('excludeSwitches', ['enable-logging'])
 	options.add_argument('log-level=3')
+	options.add_argument('--disable-search-engine-choice-screen')
 	driver = webdriver.Chrome(service=ChromeService(), options=options)
 
 	url = "https://tv.apple.com/pl/channel/tvs.sbd.7000"
@@ -22,54 +23,223 @@ def getMatches(custom_date):
 
 	wait = WebDriverWait(driver, 10)
 
-	sleep(5)
+	sleep(3)
 	while True:
 		try:
 			nextBtn = driver.find_elements(By.CSS_SELECTOR, ".shelf-grid-nav__arrow.shelf-grid-nav__arrow--next")
-			nextBtn[1].click()
+			if nextBtn[2].is_enabled():
+				nextBtn[2].click()
+			else:
+				break
+		except:
+			break
+	sleep(1)
+	while True:
+		try:
+			nextBtn = driver.find_elements(By.CSS_SELECTOR, ".shelf-grid-nav__arrow.shelf-grid-nav__arrow--next")
+			if nextBtn[3].is_enabled():
+				nextBtn[3].click()
+			else:
+				break
+		except:
+			break
+	driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
+	sleep(1)
+	while True:
+		try:
+			nextBtn = driver.find_elements(By.CSS_SELECTOR, ".shelf-grid-nav__arrow.shelf-grid-nav__arrow--next")
+			if nextBtn[16].is_enabled():
+				nextBtn[16].click()
+			else:
+				break
 		except:
 			break
 
-	shelf = driver.find_elements(By.CSS_SELECTOR, ".shelf-grid__body")[1]
-	matches = shelf.find_elements(By.CSS_SELECTOR, ".shelf-grid__list-item")
-	for match in matches[5:]:
-		# print(match.text)
+	shelf = driver.find_elements(By.CSS_SELECTOR, ".shelf-grid__body")[2]
+	events = shelf.find_elements(By.CSS_SELECTOR, ".shelf-grid__list-item")
+
+	matches = []
+	leagues = []
+
+	for match in events[5:]:
 		try:
-			teams = match.find_element(By.CSS_SELECTOR, '.typ-subhead.text-truncate')
-			league = match.find_element(By.CSS_SELECTOR, '.typ-footnote.clr-secondary-text.text-truncate')
-			print(teams.text, league.text)
+			home, away = match.find_element(By.CSS_SELECTOR, '.typ-subhead.text-truncate').text.split(' vs. ')
+			league = match.find_element(By.CSS_SELECTOR, '.typ-footnote.clr-secondary-text.text-truncate').text
+			link = match.find_element(By.TAG_NAME, "a").get_attribute("href")
+			timedate = match.find_element(By.TAG_NAME, 'time').get_attribute("datetime")
+			timedate_str = datetime.datetime.strptime(timedate, '%Y-%m-%dT%H:%M:00.000Z') + datetime.timedelta(hours=2)
+			time = timedate_str.strftime('%H:%M')
+
+			day_offset = datetime.timedelta(hours=6)
+
+			if timedate_str < datetime.datetime.fromisoformat(custom_date) + day_offset:
+				continue
+			elif timedate_str >= datetime.datetime.fromisoformat(custom_date) + day_offset + datetime.timedelta(days=1):
+				break
 		except:
 			continue
-			# try:
 
-			# 	print(info.text)
-			# except:
-			# 	continue
+		if league not in leagues:
+			leagues.append(league)
 
-		# sleep(3)
-		# nextBtn = driver.find_elements(By.CSS_SELECTOR, ".shelf-grid-nav__arrow.shelf-grid-nav__arrow--next")
-		# nextBtn[1].click()
-		# except:
-		# 	break
+		matches.append({
+			'home': home,
+			'away': away,
+			'time': time,
+			'league': league,
+			'link': link,
+			'isFree': False
+			})
 
-	# for match in matches:
-	# 	teams = match.find_element(By.CSS_SELECTOR, ".typ-subhead.text-truncate")
-	# 	print(teams.text)
-	# 	try:
-	# 		time = match.find_element(By.TAG_NAME, "time").get_attribute(datetime)
-	# 		print(time.text)
-	# 	except:
-	# 		continue
+	freeEvents = driver.find_elements(By.CSS_SELECTOR, ".shelf-grid__body")[3].find_elements(By.CSS_SELECTOR, ".shelf-grid__list-item")
+	for freeMatch in freeEvents:
+		try:
+			timedate = freeMatch.find_element(By.TAG_NAME, 'time').get_attribute("datetime")
+		except:
+			continue
+		home, away = freeMatch.find_element(By.CSS_SELECTOR, '.typ-subhead.text-truncate').text.split(' vs. ')
+		league = freeMatch.find_element(By.CSS_SELECTOR, '.typ-footnote.clr-secondary-text.text-truncate').text
+		link = freeMatch.find_element(By.TAG_NAME, "a").get_attribute("href")
+		timedate_str = datetime.datetime.strptime(timedate, '%Y-%m-%dT%H:%M:00.000Z') + datetime.timedelta(hours=2)
+		time = timedate_str.strftime('%H:%M')
 
+		day_offset = datetime.timedelta(hours=6)
 
-	# freeMatches = elements[2].find_elements(By.CSS_SELECTOR, ".typ-subhead.text-truncate")
-	# for freeMatch in freeMatches:
-	# 	print(freeMatch.text)
+		if timedate_str < datetime.datetime.fromisoformat(custom_date) + day_offset:
+			continue
+		elif timedate_str >= datetime.datetime.fromisoformat(custom_date) + day_offset + datetime.timedelta(days=1):
+			break
+
+		freeGame = {
+		'home': home,
+		'away': away,
+		'time': time,
+		'league': league,
+		'link': link,
+		'isFree': False
+		}
+
+		if freeGame in matches:
+			matches[matches.index(freeGame)]['isFree'] = True
+
+	nextProEvents = driver.find_elements(By.CSS_SELECTOR, ".shelf-grid__body")[16].find_elements(By.CSS_SELECTOR, ".shelf-grid__list-item")
+	for match in nextProEvents:
+		home, away = match.find_element(By.CSS_SELECTOR, '.typ-subhead.text-truncate').text.split(' vs. ')
+		league = match.find_element(By.CSS_SELECTOR, '.typ-footnote.clr-secondary-text.text-truncate').text
+		link = match.find_element(By.TAG_NAME, "a").get_attribute("href")
+		timedate = match.find_element(By.TAG_NAME, 'time').get_attribute("datetime")
+		timedate_str = datetime.datetime.strptime(timedate, '%Y-%m-%dT%H:%M:00.000Z') + datetime.timedelta(hours=2)
+		time = timedate_str.strftime('%H:%M')
+
+		day_offset = datetime.timedelta(hours=6)
+
+		if timedate_str < datetime.datetime.fromisoformat(custom_date) + day_offset:
+			continue
+		elif timedate_str >= datetime.datetime.fromisoformat(custom_date) + day_offset + datetime.timedelta(days=1):
+			break
+
+		if league not in leagues:
+			leagues.append(league)
+
+		matches.append({
+			'home': "NEXT PRO " + home,
+			'away': "NEXT PRO " + away,
+			'time': time,
+			'league': league,
+			'link': link,
+			'isFree': False
+			})
+
+	games = []
+
+	for event in leagues:
+		league = {
+			'name': event,
+			'matches': []
+			}
+
+		for match in matches:
+			if match["league"] == event:
+				league["matches"].append({
+					'home': match["home"],
+					'away': match["away"],
+					'time': match["time"],
+					'link': match["link"],
+					'isFree': match["isFree"]
+					})
+		games.append(league)
+
+	return games
+
+def show(matches, date):
+
+	output = ''
+	f = open('config.json', 'r', encoding='utf-8')
+	config = json.load(f)
+	f.close()
+
+	sort = [x["name_apple"] for x in config["leagues"]]
+
+	for league in matches:
+		if league['name'] not in sort:
+			print("Dodaj", league['name'], "do configa")
+	matches = list(filter(lambda i: i['name'] in sort, matches))
+
+	matches = sorted(matches, key=lambda x: sort.index(x["name"]))
+	for league in matches:
+		new_league = next((sub for sub in config["leagues"] if sub["name_apple"] == league["name"]), None)
+
+		if new_league["show"]:
+			output += r'<img class="aligncenter wp-image-' + str(new_league["wp_img"]) + r'" src="' + new_league["img"] + r'" alt="" width="' + str(new_league["img_w"]) + r'" height="' + str(new_league["img_h"]) + r'" />' + '\n'
+			output += r'<h2 style="text-align: center;"><span style="font-size: 18pt;"><strong>' + new_league["name_matchday"].upper() + r'</strong></span></h2>' + '\n'
+			addComm = False
+			freeNote = False
+			for match in league["matches"]:
+				if match["home"] in config["translate"]:
+					home = config["translate"][match["home"]]
+				else:
+					home = match["home"]
+				if match["away"] in config["translate"]:
+					away = config["translate"][match["away"]]
+				else:
+					away = match["away"]
+				output += match["time"] + r' - <strong>' + home.upper() + r' - ' +  away.upper() + r'</strong>' + '\n'
+				output += r'<span style="font-size: 10pt;"><img class="emoji" role="img" draggable="false" src="https://s.w.org/images/core/emoji/14.0.0/svg/1f4fa.svg" alt="📺" /> '
+				output += r'<a href="' + match['link'] + r'" target="_blank" rel="noopener">AppleTV</a>'
+				if match['isFree']:
+					output += r'*'
+					freeNote = True
+				output += r' <img class="emoji" role="img" draggable="false" src="https://s.w.org/images/core/emoji/14.0.0/svg/1f399.svg" alt="🎙" width="16" height="16" /> ' + new_league["lang"] + r'</span>' + '\n'
+				output += '\n'
+				if not addComm:
+					addComm, dayInfo = isNextDay(match["time"], date)
+			if addComm:
+				output += r'<span style="font-size: 10pt;"><em>W nocy z ' + dayInfo + r'</em></span>' + '\n'
+			if freeNote:
+				output += r'<span style="font-size: 10pt;"><em>*Transmisja darmowa</em></span>' + '\n'
+			if new_league["comm"]:
+				output += r'<span style="font-size: 10pt;"><em>' + new_league["comm"] + r'</em></span>' + '\n'
+				output += '\n'
+			output += r'<hr />' + '\n'
+	pyperclip.copy(output)
+
+def isNextDay(time, date):
+	current = datetime.datetime.strptime(time, '%H:%M')
+	todayDays = ["poniedziałku", "wtorku", "środy", "czwartku", "piątku", "soboty", "niedzieli"]
+	tomorrowDays = ["poniedziałek", "wtorek", "środę", "czwartek", "piątek", "sobotę", "niedzielę"]
+	dayInfo = ''
+	if current.time() >= datetime.time(hour=0) and current.time() < datetime.time(hour=6):
+		date = datetime.datetime.fromisoformat(date)
+		today = date.weekday()
+		tomorrow = (date + datetime.timedelta(days=1)).weekday()
+		dayInfo = todayDays[today] + " na " + tomorrowDays[tomorrow]
+		return True, dayInfo
+	else:
+		return False, dayInfo
 
 if __name__ == '__main__':
-	#date = input("Podaj datę (YYYY-MM-DD):")
-	date = '2024-07-14'
+	date = input("Podaj datę (YYYY-MM-DD):")
 	matches = getMatches(date)
-	# show(matches, date)
-	# print("Rozpiska została skopiowana do schowka")
-	# input()
+	show(matches, date)
+	print("Rozpiska została skopiowana do schowka")
+	input()
