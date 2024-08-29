@@ -45,6 +45,28 @@
 			"show": true
 		},
 		{
+			"name_fifa": "TOPsport Pirma lyga",
+			"name_matchday": "Pirma lyga",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/pirma-lyga-logo-1-300x174.png",
+			"img_w": 172,
+			"img_h": 100,
+			"wp_img": 11769,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Serie C NOW",
+			"name_matchday": "Serie C",
+			"img": "https://matchday.pl/wp-content/uploads/2024/02/Serie-C.png",
+			"img_w": 77,
+			"img_h": 100,
+			"wp_img": 7101,
+			"lang": "brak",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "Cape Verdean Football Championship",
 			"name_matchday": "Cape Verdean Football Championship",
 			"img": "https://matchday.pl/wp-content/uploads/2024/06/Cape_Verde_FA_2020-211x300.png",
@@ -265,6 +287,17 @@
 			"show": true
 		},
 		{
+			"name_fifa": "Memorial Paolo Rossi 2024",
+			"name_matchday": "Memoriał Paolo Rossiego",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/Paolo-Rossi-Memorial-blu-233x300.png",
+			"img_w": 78,
+			"img_h": 100,
+			"wp_img": 11785,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "Bhausaheb Bandodkar Memorial Trophy (2nd Edition)",
 			"name_matchday": "Bandodkar Trophy",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/Bandodkar-Trophy-300x300.png",
@@ -439,6 +472,25 @@
 		"New Caledonia": "Nowa Kaledonia",
 		"Papua New Guinea": "Papua Nowa Gwinea",
 		"Fiji": "Fidżi",
-		"Solomon Islands": "Wyspy Salomona"
+		"Solomon Islands": "Wyspy Salomona",
+		"Mexico": "Meksyk",
+		"France": "Francja",
+		"Canada": "Kanada",
+		"Colombia": "Kolumbia",
+		"Brazil": "Brazylia",
+		"Germany": "Niemcy",
+		"Venezuela": "Wenezuela",
+		"Spain": "Hiszpania",
+		"Korea Republic": "Korea Południowa",
+		"Paraguay": "Paragwaj",
+		"Korea DPR": "Korea Północna",
+		"Argentina": "Argentyna",
+		"Costa Rica": "Kostaryka",
+		"Netherlands": "Holandia",
+		"Japan": "Japonia",
+		"Bolivia": "Boliwia",
+		"Cook Islands": "Wyspy Cooka",
+		"American Samoa": "Samoa Amerykańskie",
+		""
 	}
 }

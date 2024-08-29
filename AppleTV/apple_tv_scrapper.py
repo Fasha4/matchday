@@ -27,8 +27,8 @@ def getMatches(custom_date):
 	while True:
 		try:
 			nextBtn = driver.find_elements(By.CSS_SELECTOR, ".shelf-grid-nav__arrow.shelf-grid-nav__arrow--next")
-			if nextBtn[2].is_enabled():
-				nextBtn[2].click()
+			if nextBtn[3].is_enabled():
+				nextBtn[3].click()
 			else:
 				break
 		except:
@@ -37,8 +37,8 @@ def getMatches(custom_date):
 	while True:
 		try:
 			nextBtn = driver.find_elements(By.CSS_SELECTOR, ".shelf-grid-nav__arrow.shelf-grid-nav__arrow--next")
-			if nextBtn[3].is_enabled():
-				nextBtn[3].click()
+			if nextBtn[4].is_enabled():
+				nextBtn[4].click()
 			else:
 				break
 		except:
@@ -48,14 +48,14 @@ def getMatches(custom_date):
 	while True:
 		try:
 			nextBtn = driver.find_elements(By.CSS_SELECTOR, ".shelf-grid-nav__arrow.shelf-grid-nav__arrow--next")
-			if nextBtn[16].is_enabled():
-				nextBtn[16].click()
+			if nextBtn[15].is_enabled():
+				nextBtn[15].click()
 			else:
 				break
 		except:
 			break
 
-	shelf = driver.find_elements(By.CSS_SELECTOR, ".shelf-grid__body")[2]
+	shelf = driver.find_elements(By.CSS_SELECTOR, ".shelf-grid__body")[3]
 	events = shelf.find_elements(By.CSS_SELECTOR, ".shelf-grid__list-item")
 
 	matches = []
@@ -91,7 +91,7 @@ def getMatches(custom_date):
 			'isFree': False
 			})
 
-	freeEvents = driver.find_elements(By.CSS_SELECTOR, ".shelf-grid__body")[3].find_elements(By.CSS_SELECTOR, ".shelf-grid__list-item")
+	freeEvents = driver.find_elements(By.CSS_SELECTOR, ".shelf-grid__body")[4].find_elements(By.CSS_SELECTOR, ".shelf-grid__list-item")
 	for freeMatch in freeEvents:
 		try:
 			timedate = freeMatch.find_element(By.TAG_NAME, 'time').get_attribute("datetime")
@@ -122,7 +122,7 @@ def getMatches(custom_date):
 		if freeGame in matches:
 			matches[matches.index(freeGame)]['isFree'] = True
 
-	nextProEvents = driver.find_elements(By.CSS_SELECTOR, ".shelf-grid__body")[16].find_elements(By.CSS_SELECTOR, ".shelf-grid__list-item")
+	nextProEvents = driver.find_elements(By.CSS_SELECTOR, ".shelf-grid__body")[15].find_elements(By.CSS_SELECTOR, ".shelf-grid__list-item")
 	for match in nextProEvents:
 		home, away = match.find_element(By.CSS_SELECTOR, '.typ-subhead.text-truncate').text.split(' vs. ')
 		league = match.find_element(By.CSS_SELECTOR, '.typ-footnote.clr-secondary-text.text-truncate').text
