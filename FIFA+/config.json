@@ -12,7 +12,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "International Friendly",
+			"name_fifa": "Men International Friendly",
 			"name_matchday": "Mecze Towarzyskie",
 			"img": "https://matchday.pl/wp-content/uploads/2024/01/FIFA-Logo-1024x576.png",
 			"img_w": 151,
@@ -63,6 +63,39 @@
 			"img_h": 100,
 			"wp_img": 7101,
 			"lang": "brak",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "First Division League",
+			"name_matchday": "UAE First Division League",
+			"img": "https://matchday.pl/wp-content/uploads/2024/02/UAE_First_Division_League-300x275.png",
+			"img_w": 109,
+			"img_h": 100,
+			"wp_img": 6581,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Tamkeen League",
+			"name_matchday": "Oman Tamkeen League",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/oman.svg_-300x300.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 12026,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Lebanese Super Cup 2024",
+			"name_matchday": "Superpuchar Libanu",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/Lebanese_Football_Association_LFA_logo.svg_-300x300.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 12025,
+			"lang": "angielski",
 			"comm": "",
 			"show": true
 		},
@@ -490,6 +523,17 @@
 		"Japan": "Japonia",
 		"Bolivia": "Boliwia",
 		"Cook Islands": "Wyspy Cooka",
-		"American Samoa": "Samoa Amerykańskie"
+		"American Samoa": "Samoa Amerykańskie",
+		"Croatia": "Chorwacja",
+		"Cuba": "Kuba",
+		"Kazakhstan": "Kazachstan",
+		"Ukraine": "Ukraina",
+		"Portugal": "Potugalia",
+		"IR Iran": "Iran",
+		"Tajikistan": "Tadżykistan",
+		"Guatemala": "Gwatemala",
+		"Ecuador": "Ekwador",
+		"Poland": "Polska",
+		"England": "Anglia"
 	}
 }
