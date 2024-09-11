@@ -23,11 +23,23 @@ def getMatches(custom_date):
 
 	wait = WebDriverWait(driver, 10)
 
-	matchesLine = 3
-	freeLine = 4
-	MLSNEXTPROLine = 16
+	wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Schedule']")))
+	driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
+	driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.PAGE_UP)
+	wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Live']")))
 
-	sleep(3)
+
+	shelfs = driver.find_elements(By.CSS_SELECTOR, ".shelf-grid")
+	count = 0
+	for shelf in shelfs:
+		if "Schedule" in shelf.text:
+			matchesLine = count
+		elif "Free Matches" in shelf.text:
+			freeLine = count
+		elif "Live" in shelf.text:
+			MLSNEXTPROLine = count
+		count += 1
+
 	while True:
 		try:
 			nextBtn = driver.find_elements(By.CSS_SELECTOR, ".shelf-grid-nav__arrow.shelf-grid-nav__arrow--next")
@@ -37,7 +49,7 @@ def getMatches(custom_date):
 				break
 		except:
 			break
-	sleep(1)
+
 	while True:
 		try:
 			nextBtn = driver.find_elements(By.CSS_SELECTOR, ".shelf-grid-nav__arrow.shelf-grid-nav__arrow--next")
@@ -47,8 +59,7 @@ def getMatches(custom_date):
 				break
 		except:
 			break
-	driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
-	sleep(1)
+
 	while True:
 		try:
 			nextBtn = driver.find_elements(By.CSS_SELECTOR, ".shelf-grid-nav__arrow.shelf-grid-nav__arrow--next")
@@ -59,8 +70,7 @@ def getMatches(custom_date):
 		except:
 			break
 
-	shelf = driver.find_elements(By.CSS_SELECTOR, ".shelf-grid__body")[matchesLine]
-	events = shelf.find_elements(By.CSS_SELECTOR, ".shelf-grid__list-item")
+	events = shelfs[matchesLine].find_elements(By.CSS_SELECTOR, ".shelf-grid__list-item")
 
 	matches = []
 	leagues = []
@@ -95,7 +105,7 @@ def getMatches(custom_date):
 			'isFree': False
 			})
 
-	freeEvents = driver.find_elements(By.CSS_SELECTOR, ".shelf-grid__body")[freeLine].find_elements(By.CSS_SELECTOR, ".shelf-grid__list-item")
+	freeEvents = shelfs[freeLine].find_elements(By.CSS_SELECTOR, ".shelf-grid__list-item")
 	for freeMatch in freeEvents:
 		try:
 			timedate = freeMatch.find_element(By.TAG_NAME, 'time').get_attribute("datetime")
@@ -126,7 +136,7 @@ def getMatches(custom_date):
 		if freeGame in matches:
 			matches[matches.index(freeGame)]['isFree'] = True
 
-	nextProEvents = driver.find_elements(By.CSS_SELECTOR, ".shelf-grid__body")[MLSNEXTPROLine].find_elements(By.CSS_SELECTOR, ".shelf-grid__list-item")
+	nextProEvents = shelfs[MLSNEXTPROLine].find_elements(By.CSS_SELECTOR, ".shelf-grid__list-item")
 	for match in nextProEvents:
 		home, away = match.find_element(By.CSS_SELECTOR, '.typ-subhead.text-truncate').text.split(' vs. ')
 		league = match.find_element(By.CSS_SELECTOR, '.typ-footnote.clr-secondary-text.text-truncate').text
