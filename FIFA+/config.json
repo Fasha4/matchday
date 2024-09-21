@@ -34,6 +34,50 @@
 			"show": true
 		},
 		{
+			"name_fifa": "CAF Champions League 2024/25",
+			"name_matchday": "Liga Mistrzów CAF",
+			"img": "https://matchday.pl/wp-content/uploads/2023/02/CAFCL.png",
+			"img_w": 77,
+			"img_h": 100,
+			"wp_img": 924,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "CAF Confederation Cup 2024/25",
+			"name_matchday": "Puchar Konfederacji CAF",
+			"img": "https://matchday.pl/wp-content/uploads/2023/03/CAF-Confederation-Cup-228x300.png",
+			"img_w": 76,
+			"img_h": 100,
+			"wp_img": 1122,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "FIFA Intercontinental Cup 2024™",
+			"name_matchday": "FIFA Intercontinental Cup",
+			"img": "https://matchday.pl/wp-content/uploads/2024/01/FIFA-Logo-1024x576.png",
+			"img_w": 151,
+			"img_h": 85,
+			"wp_img": 6341,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Men's National League Championship 2024",
+			"name_matchday": "New Zealand National League",
+			"img": "https://matchday.pl/wp-content/uploads/2024/06/New_Zealand_National_League-244x300.png",
+			"img_w": 81,
+			"img_h": 100,
+			"wp_img": 10434,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "Men's National League Regional Phase",
 			"name_matchday": "New Zealand National League",
 			"img": "https://matchday.pl/wp-content/uploads/2024/06/New_Zealand_National_League-244x300.png",
@@ -67,6 +111,17 @@
 			"show": true
 		},
 		{
+			"name_fifa": "Liga FUTVE 2",
+			"name_matchday": "Venezuela Liga FUTVE 2",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/venezuela.png",
+			"img_w": 77,
+			"img_h": 100,
+			"wp_img": 12313,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "First Division League",
 			"name_matchday": "UAE First Division League",
 			"img": "https://matchday.pl/wp-content/uploads/2024/02/UAE_First_Division_League-300x275.png",
@@ -89,12 +144,34 @@
 			"show": true
 		},
 		{
+			"name_fifa": "Lebanon First Division 2024/2025",
+			"name_matchday": "Lebanon First Division",
+			"img": "https://sortitoutsi.b-cdn.net/uploads/comp/5629952.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 12025,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "Lebanese Super Cup 2024",
 			"name_matchday": "Superpuchar Libanu",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/Lebanese_Football_Association_LFA_logo.svg_-300x300.png",
 			"img_w": 100,
 			"img_h": 100,
 			"wp_img": 12025,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Ligue 2 2024/2025",
+			"name_matchday": "Algeria Ligue 2",
+			"img": "https://matchday.pl/wp-content/uploads/2024/02/Algerian_Ligue_Pro._2.png",
+			"img_w": 69,
+			"img_h": 100,
+			"wp_img": 7100,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
@@ -298,6 +375,17 @@
 			"show": true
 		},
 		{
+			"name_fifa": "Eswatini 2024/25",
+			"name_matchday": "Eswatini MTN Premier League",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/Premier_League_of_Eswatini-235x300.png",
+			"img_w": 78,
+			"img_h": 100,
+			"wp_img": 12312,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "National Super League",
 			"name_matchday": "Mauritius Super League",
 			"img": "https://matchday.pl/wp-content/uploads/2024/06/NSL@2x.png",
@@ -309,12 +397,45 @@
 			"show": true
 		},
 		{
+			"name_fifa": "Ligue des Champions Division 2 2024",
+			"name_matchday": "Madagascar Ligue des Champions Division 2",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/madagaskar-284x300.png",
+			"img_w": 95,
+			"img_h": 100,
+			"wp_img": 12311,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Telekom S-League",
+			"name_matchday": "Solomon Islands Telekom S-League",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/Telekom_S-League_Solomon_Islands-300x300.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 12298,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "Chatham Cup",
 			"name_matchday": "Puchar Nowej Zelandii",
 			"img": "https://matchday.pl/wp-content/uploads/2024/06/Chatham_Cup_logo-300x300.png",
 			"img_w": 100,
 			"img_h": 100,
 			"wp_img": 10432,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "FIFA Legends v Mexico Legends",
+			"name_matchday": "FIFA Legends v Mexico Legends",
+			"img": "https://matchday.pl/wp-content/uploads/2024/01/FIFA-Logo-1024x576.png",
+			"img_w": 151,
+			"img_h": 85,
+			"wp_img": 6341,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
@@ -357,6 +478,50 @@
 			"name_matchday": "Mistrzostwa Świata w Futsalu",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/2024_FIFA_Futsal_World_Cup_logo-300x295.jpg",
 			"img_w": 102,
+			"img_h": 100,
+			"wp_img": 11394,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Opening Ceremony and Pitch 1",
+			"name_matchday": "Mistrzostwa Świata Bezdomnych - Boisko 1",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/HWC-Logo-Box-300x143.jpg",
+			"img_w": 209,
+			"img_h": 100,
+			"wp_img": 11394,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Pitch 1",
+			"name_matchday": "Mistrzostwa Świata Bezdomnych - Boisko 1",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/HWC-Logo-Box-300x143.jpg",
+			"img_w": 209,
+			"img_h": 100,
+			"wp_img": 11394,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Pitch 2",
+			"name_matchday": "Mistrzostwa Świata Bezdomnych - Boisko 2",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/HWC-Logo-Box-300x143.jpg",
+			"img_w": 209,
+			"img_h": 100,
+			"wp_img": 11394,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Pitch 3",
+			"name_matchday": "Mistrzostwa Świata Bezdomnych - Boisko 3",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/HWC-Logo-Box-300x143.jpg",
+			"img_w": 209,
 			"img_h": 100,
 			"wp_img": 11394,
 			"lang": "angielski",
@@ -414,6 +579,28 @@
 			"img_w": 300,
 			"img_h": 89,
 			"wp_img": 11730,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "WE League Kracie Cup",
+			"name_matchday": "Puchar Ligi Japonii Kobiet",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/we-league-cup.png",
+			"img_w": 179,
+			"img_h": 100,
+			"wp_img": 12322,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Women's National League Championship 2024",
+			"name_matchday": "New Zealand Women's National League Championship",
+			"img": "https://matchday.pl/wp-content/uploads/2024/06/New_Zealand_National_League-244x300.png",
+			"img_w": 81,
+			"img_h": 100,
+			"wp_img": 10434,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
