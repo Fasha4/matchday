@@ -39,6 +39,7 @@ def getMatches(custom_date):
 
 	section = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".SportScheduleBlockWrapper-module-schedule-a4mAw")))
 	elements = section.find_elements(By.CSS_SELECTOR, ".Item-module-sportsListItem-yrsow")
+	ActionChains(driver).scroll_by_amount(0, -10000).perform()
 
 	matches = []
 	leagues = []
@@ -57,7 +58,6 @@ def getMatches(custom_date):
 			league += " piłka ręczna"
 		if league not in leagues:
 			leagues.append(league)
-
 		ActionChains(driver).move_to_element_with_offset(match, 140, -70).perform()
 		wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".Tooltip-module-title-St0-w")))
 		try:

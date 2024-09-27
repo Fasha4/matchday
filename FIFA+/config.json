@@ -34,6 +34,17 @@
 			"show": true
 		},
 		{
+			"name_fifa": "COSAFA Qualifier",
+			"name_matchday": "Kwalifikacje PNA U20 strefa COSAFA",
+			"img": "https://matchday.pl/wp-content/uploads/2024/06/COSAFA.png",
+			"img_w": 104,
+			"img_h": 100,
+			"wp_img": 10312,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "CAF Champions League 2024/25",
 			"name_matchday": "Liga Mistrzów CAF",
 			"img": "https://matchday.pl/wp-content/uploads/2023/02/CAFCL.png",
@@ -62,6 +73,17 @@
 			"img_w": 151,
 			"img_h": 85,
 			"wp_img": 6341,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Australia Cup",
+			"name_matchday": "Puchar Australii",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/AUS_Cup_Logo-236x300.png",
+			"img_w": 79,
+			"img_h": 100,
+			"wp_img": 12510,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
@@ -199,6 +221,17 @@
 			"show": true
 		},
 		{
+			"name_fifa": "Mauritania 2024/25",
+			"name_matchday": "Mauritania Super D-1",
+			"img": "https://matchday.pl/wp-content/uploads/2024/02/Super-D-1.png",
+			"img_w": 71,
+			"img_h": 100,
+			"wp_img": 7146,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "Championnat de Première Division D1",
 			"name_matchday": "Togo D1 Lonato",
 			"img": "https://matchday.pl/wp-content/uploads/2024/06/togo-300x300.jpg",
@@ -210,12 +243,23 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Super Ligue Pro",
+			"name_fifa": "Super Ligue Pro 2024/25",
 			"name_matchday": "Benin Super Ligue Pro",
 			"img": "https://global-football-benin.com/wp-content/uploads/2024/04/Benin-Football-Federation-Beninoise-de-Football-Voici-la-date-de-la-prochaine-assemblee-generale-elective-1280x720-1.webp",
 			"img_w": 178,
 			"img_h": 100,
 			"wp_img": 10094,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Côte d'Ivoire Ligue 2",
+			"name_matchday": "Côte d'Ivoire Ligue 2",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/wks.png",
+			"img_w": 123,
+			"img_h": 100,
+			"wp_img": 12508,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
@@ -282,7 +326,18 @@
 			"img_w": 193,
 			"img_h": 100,
 			"wp_img": 10459,
-			"lang": "11733",
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Lao League 1 2024/25",
+			"name_matchday": "Lao League 1",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/Lao_League-300x300.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 12509,
+			"lang": "angielski",
 			"comm": "",
 			"show": true
 		},
@@ -375,12 +430,45 @@
 			"show": true
 		},
 		{
+			"name_fifa": "Division Honor 2024-25",
+			"name_matchday": "Aruba Division Honor",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/Arubaanse_Voetbal_Bond-300x109.jpg",
+			"img_w": 276,
+			"img_h": 100,
+			"wp_img": 12505,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Bermuda Premier Division 2024",
+			"name_matchday": "Bermuda Premier Division",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/bermuda-300x300.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 12507,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "Eswatini 2024/25",
 			"name_matchday": "Eswatini MTN Premier League",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/Premier_League_of_Eswatini-235x300.png",
 			"img_w": 78,
 			"img_h": 100,
 			"wp_img": 12312,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Premier League 2024/25",
+			"name_matchday": "Lesotho Premier League",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/lesotho.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 12506,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
@@ -612,6 +700,17 @@
 			"img_w": 100,
 			"img_h": 100,
 			"wp_img": 10431,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Women's Championship D1 2024-25",
+			"name_matchday": "Morocco Women's Championship D1",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/LNFF_Maroc-283x300.png",
+			"img_w": 94,
+			"img_h": 100,
+			"wp_img": 12512,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
