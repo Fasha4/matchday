@@ -23,9 +23,10 @@ def getMatches(custom_date):
 
 	wait = WebDriverWait(driver, 10)
 
-	wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Schedule']")))
+	wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Live Matches']")))
 	driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
 	driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.PAGE_UP)
+	wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Schedule']")))
 	wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Live']")))
 
 
