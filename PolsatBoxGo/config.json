@@ -1,0 +1,37 @@
+{
+	"leagues": [
+		{
+			"name_polsat": "Liga Narodów UEFA",
+			"name_matchday": "Liga Narodów",
+			"img": "https://matchday.pl/wp-content/uploads/2023/06/UEFA_Nations_League-204x300.png",
+			"img_w": 68,
+			"img_h": 100,
+			"wp_img": 2360,
+			"lang": "",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_polsat": "Liga Europy UEFA",
+			"name_matchday": "Liga Europy",
+			"img": "https://matchday.pl/wp-content/uploads/2024/10/Logo_UEFA_Europa_League_-_2024.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 12589,
+			"lang": "",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_polsat": "Liga Konferencji UEFA",
+			"name_matchday": "Liga Konferencji",
+			"img": "https://matchday.pl/wp-content/uploads/2023/02/UECL-196x300.png",
+			"img_w": 65,
+			"img_h": 100,
+			"wp_img": 830,
+			"lang": "",
+			"comm": "",
+			"show": true
+		}
+	]
+}
