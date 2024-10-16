@@ -23,11 +23,20 @@ def getMatches(custom_date):
 
 	wait = WebDriverWait(driver, 10)
 
-	wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Live Matches']")))
-	driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
-	driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.PAGE_UP)
-	wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Schedule']")))
-	wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Live']")))
+	try:
+		wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Schedule']")))
+		driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
+		driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.PAGE_UP)
+		try:
+			wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Live']")))
+		except:
+			wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Live: MLS NEXT Pro Playoffs']")))
+	except:
+		wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Live Matches']")))
+		driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
+		driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.PAGE_UP)
+		wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Schedule']")))
+		wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Live']")))
 
 
 	shelfs = driver.find_elements(By.CSS_SELECTOR, ".shelf-grid")
