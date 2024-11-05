@@ -25,22 +25,24 @@ def getMatches(custom_date):
 
 	try:
 		wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Schedule']")))
-		driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
-		driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.PAGE_UP)
-		try:
-			wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Live']")))
-		except:
-			wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Live: MLS NEXT Pro Playoffs']")))
 	except:
 		wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Live Matches']")))
+	finally:
 		driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
 		driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.PAGE_UP)
-		wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Schedule']")))
+
+	try:
 		wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Live']")))
+	except:
+		try:
+			wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Live: MLS NEXT Pro Playoffs']")))
+		except:
+			pass
 
 
 	shelfs = driver.find_elements(By.CSS_SELECTOR, ".shelf-grid")
 	count = 0
+	matchesLine, freeLine, MLSNEXTPROLine = 0, 0, 0
 	for shelf in shelfs:
 		if "Schedule" in shelf.text:
 			matchesLine = count
@@ -115,64 +117,66 @@ def getMatches(custom_date):
 			'isFree': False
 			})
 
-	freeEvents = shelfs[freeLine].find_elements(By.CSS_SELECTOR, ".shelf-grid__list-item")
-	for freeMatch in freeEvents:
-		try:
-			timedate = freeMatch.find_element(By.TAG_NAME, 'time').get_attribute("datetime")
-		except:
-			continue
-		home, away = freeMatch.find_element(By.CSS_SELECTOR, '.typ-subhead.text-truncate').text.split(' vs. ')
-		league = freeMatch.find_element(By.CSS_SELECTOR, '.typ-footnote.clr-secondary-text.text-truncate').text
-		link = freeMatch.find_element(By.TAG_NAME, "a").get_attribute("href")
-		timedate_str = datetime.datetime.strptime(timedate, '%Y-%m-%dT%H:%M:00.000Z') + datetime.timedelta(hours=2)
-		time = timedate_str.strftime('%H:%M')
+	if freeLine:
+		freeEvents = shelfs[freeLine].find_elements(By.CSS_SELECTOR, ".shelf-grid__list-item")
+		for freeMatch in freeEvents:
+			try:
+				timedate = freeMatch.find_element(By.TAG_NAME, 'time').get_attribute("datetime")
+			except:
+				continue
+			home, away = freeMatch.find_element(By.CSS_SELECTOR, '.typ-subhead.text-truncate').text.split(' vs. ')
+			league = freeMatch.find_element(By.CSS_SELECTOR, '.typ-footnote.clr-secondary-text.text-truncate').text
+			link = freeMatch.find_element(By.TAG_NAME, "a").get_attribute("href")
+			timedate_str = datetime.datetime.strptime(timedate, '%Y-%m-%dT%H:%M:00.000Z') + datetime.timedelta(hours=2)
+			time = timedate_str.strftime('%H:%M')
 
-		day_offset = datetime.timedelta(hours=6)
+			day_offset = datetime.timedelta(hours=6)
 
-		if timedate_str < datetime.datetime.fromisoformat(custom_date) + day_offset:
-			continue
-		elif timedate_str >= datetime.datetime.fromisoformat(custom_date) + day_offset + datetime.timedelta(days=1):
-			break
+			if timedate_str < datetime.datetime.fromisoformat(custom_date) + day_offset:
+				continue
+			elif timedate_str >= datetime.datetime.fromisoformat(custom_date) + day_offset + datetime.timedelta(days=1):
+				break
 
-		freeGame = {
-		'home': home,
-		'away': away,
-		'time': time,
-		'league': league,
-		'link': link,
-		'isFree': False
-		}
-
-		if freeGame in matches:
-			matches[matches.index(freeGame)]['isFree'] = True
-
-	nextProEvents = shelfs[MLSNEXTPROLine].find_elements(By.CSS_SELECTOR, ".shelf-grid__list-item")
-	for match in nextProEvents:
-		home, away = match.find_element(By.CSS_SELECTOR, '.typ-subhead.text-truncate').text.split(' vs. ')
-		league = match.find_element(By.CSS_SELECTOR, '.typ-footnote.clr-secondary-text.text-truncate').text
-		link = match.find_element(By.TAG_NAME, "a").get_attribute("href")
-		timedate = match.find_element(By.TAG_NAME, 'time').get_attribute("datetime")
-		timedate_str = datetime.datetime.strptime(timedate, '%Y-%m-%dT%H:%M:00.000Z') + datetime.timedelta(hours=2)
-		time = timedate_str.strftime('%H:%M')
-
-		day_offset = datetime.timedelta(hours=6)
-
-		if timedate_str < datetime.datetime.fromisoformat(custom_date) + day_offset:
-			continue
-		elif timedate_str >= datetime.datetime.fromisoformat(custom_date) + day_offset + datetime.timedelta(days=1):
-			break
-
-		if league not in leagues:
-			leagues.append(league)
-
-		matches.append({
-			'home': "NEXT PRO " + home,
-			'away': "NEXT PRO " + away,
+			freeGame = {
+			'home': home,
+			'away': away,
 			'time': time,
 			'league': league,
 			'link': link,
 			'isFree': False
-			})
+			}
+
+			if freeGame in matches:
+				matches[matches.index(freeGame)]['isFree'] = True
+
+	if MLSNEXTPROLine:
+		nextProEvents = shelfs[MLSNEXTPROLine].find_elements(By.CSS_SELECTOR, ".shelf-grid__list-item")
+		for match in nextProEvents:
+			home, away = match.find_element(By.CSS_SELECTOR, '.typ-subhead.text-truncate').text.split(' vs. ')
+			league = match.find_element(By.CSS_SELECTOR, '.typ-footnote.clr-secondary-text.text-truncate').text
+			link = match.find_element(By.TAG_NAME, "a").get_attribute("href")
+			timedate = match.find_element(By.TAG_NAME, 'time').get_attribute("datetime")
+			timedate_str = datetime.datetime.strptime(timedate, '%Y-%m-%dT%H:%M:00.000Z') + datetime.timedelta(hours=2)
+			time = timedate_str.strftime('%H:%M')
+
+			day_offset = datetime.timedelta(hours=6)
+
+			if timedate_str < datetime.datetime.fromisoformat(custom_date) + day_offset:
+				continue
+			elif timedate_str >= datetime.datetime.fromisoformat(custom_date) + day_offset + datetime.timedelta(days=1):
+				break
+
+			if league not in leagues:
+				leagues.append(league)
+
+			matches.append({
+				'home': "NEXT PRO " + home,
+				'away': "NEXT PRO " + away,
+				'time': time,
+				'league': league,
+				'link': link,
+				'isFree': False
+				})
 
 	games = []
 
