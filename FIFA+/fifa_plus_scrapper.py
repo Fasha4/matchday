@@ -67,11 +67,14 @@ def getMatches(custom_date):
 		except:
 			timedate_str = datetime.datetime.strptime(timedate_clean, '%d %B %Y')
 		time = timedate_str.strftime('%H:%M')
-		if time[-1] == '5':
+		if time[-1] == '15' or time[-1] == '45':
 			temp_time = datetime.datetime.strptime(time, '%H:%M') + datetime.timedelta(minutes=15)
 			time = temp_time.strftime('%H:%M')
-		elif time[-1] == '0':
+		elif time[-1] == '20' or time[-1] == '50':
 			temp_time = datetime.datetime.strptime(time, '%H:%M') + datetime.timedelta(minutes=10)
+			time = temp_time.strftime('%H:%M')
+		elif time[-1] == '55':
+			temp_time = datetime.datetime.strptime(time, '%H:%M') + datetime.timedelta(minutes=5)
 			time = temp_time.strftime('%H:%M')
 
 		day_offset = datetime.timedelta(hours=6)

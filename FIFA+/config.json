@@ -111,6 +111,17 @@
 			"show": true
 		},
 		{
+			"name_fifa": "Super League Kerala",
+			"name_matchday": "Super League Kerala",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/Kerala_Super_League.svg_.png",
+			"img_w": 169,
+			"img_h": 100,
+			"wp_img": 13163,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "TOPsport Pirma lyga",
 			"name_matchday": "Pirma lyga",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/pirma-lyga-logo-1-300x174.png",
@@ -232,12 +243,45 @@
 			"show": true
 		},
 		{
+			"name_fifa": "Burkina Faso",
+			"name_matchday": "Burkina Faso Ligue 1",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/Nouveau-logo-du-championnat-burkinabe-de-football-de-premiere-division-211x300.jpg",
+			"img_w": 70,
+			"img_h": 100,
+			"wp_img": 13164,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "Championnat de Première Division D1",
 			"name_matchday": "Togo D1 Lonato",
 			"img": "https://matchday.pl/wp-content/uploads/2024/06/togo-300x300.jpg",
 			"img_w": 100,
 			"img_h": 100,
 			"wp_img": 10094,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Orange National League 2024/25",
+			"name_matchday": "Liberia Orange National League",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/Liberia_FA-257x300.png",
+			"img_w": 86,
+			"img_h": 100,
+			"wp_img": 13165,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Comoros Division 1 - Ngazidja",
+			"name_matchday": "Comoros Division 1",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/FF_Comoros_logo.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 13166,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
@@ -447,6 +491,17 @@
 			"img_w": 100,
 			"img_h": 100,
 			"wp_img": 12507,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "BVIFA National League 2024",
+			"name_matchday": "British Virgin Islands National League",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/British_Virgin_Islands_Football_Association.svg_-233x300.png",
+			"img_w": 78,
+			"img_h": 100,
+			"wp_img": 13167,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
@@ -730,6 +785,17 @@
 			"name_fifa": "OFC U-16 Women's Championship",
 			"name_matchday": "Puchar Narodów Oceanii U16 Kobiet",
 			"img": "https://matchday.pl/wp-content/uploads/2024/06/1200px-Oceania_Football_Confederation_logo.svg_-300x222.png",
+			"img_w": 135,
+			"img_h": 100,
+			"wp_img": 10426,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "UNCAF FIFA Forward U-16 Girls Championship",
+			"name_matchday": "UNCAF FIFA Forward U-16 Girls Championship",
+			"img": "https://matchday.pl/wp-content/uploads/2024/07/Copa_Interclubes_UNCAF.png",
 			"img_w": 135,
 			"img_h": 100,
 			"wp_img": 10426,
