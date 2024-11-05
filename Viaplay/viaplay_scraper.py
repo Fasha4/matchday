@@ -35,10 +35,12 @@ def getMatches(custom_date):
 		driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
 
 	for i in range(date_diff.days):
-		driver.find_element(By.CSS_SELECTOR, ".SportScheduleNavigation-module-next-FHC22").click()
+		driver.find_element(By.CSS_SELECTOR, ".SportScheduleNavigation_next__ul0Wp").click()
 
-	section = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".SportScheduleBlockWrapper-module-schedule-a4mAw")))
-	elements = section.find_elements(By.CSS_SELECTOR, ".Item-module-sportsListItem-yrsow")
+	#schedule wrapper
+	section = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".SportScheduleBlockWrapper_schedule__LtLbg")))
+	#matches
+	elements = section.find_elements(By.CSS_SELECTOR, ".Item_sportsListItem__9PQ44")
 	ActionChains(driver).scroll_by_amount(0, -10000).perform()
 
 	matches = []
@@ -47,21 +49,21 @@ def getMatches(custom_date):
 	for match in elements:
 		home, away, other, time, league, comment = 6*['']
 		try:
-			home, away = match.find_element(By.CSS_SELECTOR, ".SportMeta-module-title-CAMff").text.split(' - ')
+			home, away = match.find_element(By.CSS_SELECTOR, ".SportMeta_title__kj1xI").text.split(' - ')
 		except:
-			other = match.find_element(By.CSS_SELECTOR, ".SportMeta-module-title-CAMff").text
+			other = match.find_element(By.CSS_SELECTOR, ".SportMeta_title__kj1xI").text
 
-		time = match.find_element(By.CSS_SELECTOR, ".Badge-module-start-ngT1j").text
-		league = match.find_element(By.CSS_SELECTOR, ".SportMeta-module-logo-gtv-M").get_attribute("alt")
-		link = match.find_element(By.CSS_SELECTOR, ".Item-module-link-ZC6DH").get_attribute("href")
-		if match.find_element(By.CSS_SELECTOR, ".SportMeta-module-secondarytitle-s3QxO").text == "Piłka ręczna":
+		time = match.find_element(By.CSS_SELECTOR, ".Badge_start__dU5U3").text
+		league = match.find_element(By.CSS_SELECTOR, ".SportMeta_logo___uXpn").get_attribute("alt")
+		link = match.find_element(By.CSS_SELECTOR, ".Item_link__zRSeq").get_attribute("href")
+		if match.find_element(By.CSS_SELECTOR, ".SportMeta_secondarytitle__HHMXz").text == "Piłka ręczna":
 			league += " piłka ręczna"
 		if league not in leagues:
 			leagues.append(league)
 		ActionChains(driver).move_to_element_with_offset(match, 140, -70).perform()
-		wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".Tooltip-module-title-St0-w")))
+		wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".Tooltip_container__sAdMQ")))
 		try:
-			comment = driver.find_element(By.CSS_SELECTOR, ".MetaWithIcon-module-text-GhqPn").text
+			comment = driver.find_element(By.CSS_SELECTOR, ".MetaWithIcon_text__J7PTM").text
 			comment = ", ".join(comment.split(' & '))
 		except:
 			comment = ""
