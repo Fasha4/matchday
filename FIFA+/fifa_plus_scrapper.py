@@ -60,20 +60,23 @@ def getMatches(custom_date):
 
 		driver.get(link)
 
-		timedate = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".src-components-contentDetails-event-components-info-event-InfoEvent-module__event_startDate--fbOL5")))
+		try:
+			timedate = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".src-components-contentDetails-event-components-info-event-InfoEvent-module__event_startDate--FqMy0")))
+		except:
+			continue
 		timedate_clean = timedate.text.replace("1st", "1").replace("2nd", "2").replace("3rd", "3").replace("th", "")
 		try:
 			timedate_str = datetime.datetime.strptime(timedate_clean, '%d %B %Y, %H:%M')
 		except:
 			timedate_str = datetime.datetime.strptime(timedate_clean, '%d %B %Y')
 		time = timedate_str.strftime('%H:%M')
-		if time[-1] == '15' or time[-1] == '45':
+		if time[-2:] == '15' or time[-2:] == '45':
 			temp_time = datetime.datetime.strptime(time, '%H:%M') + datetime.timedelta(minutes=15)
 			time = temp_time.strftime('%H:%M')
-		elif time[-1] == '20' or time[-1] == '50':
+		elif time[-2:] == '20' or time[-2:] == '50':
 			temp_time = datetime.datetime.strptime(time, '%H:%M') + datetime.timedelta(minutes=10)
 			time = temp_time.strftime('%H:%M')
-		elif time[-1] == '55':
+		elif time[-2:] == '55':
 			temp_time = datetime.datetime.strptime(time, '%H:%M') + datetime.timedelta(minutes=5)
 			time = temp_time.strftime('%H:%M')
 
@@ -89,7 +92,7 @@ def getMatches(custom_date):
 			home, away = details[0].split(' v ')
 		except:
 			home = details[0]
-		if details[-1] in ['Costa Rica', 'Saint Kitts and Nevis', 'Grenada']:
+		if details[-1] in ['Costa Rica', 'Saint Kitts and Nevis', 'Grenada', 'Turks and Caicos']:
 			league = details[-2] + ' ' + details[-1]
 		elif ' ' not in details[-1]:
 			league = details[-2]

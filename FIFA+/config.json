@@ -199,12 +199,12 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Ligue 2 2024/25",
-			"name_matchday": "Algeria Ligue 2",
-			"img": "https://matchday.pl/wp-content/uploads/2024/02/Algerian_Ligue_Pro._2.png",
-			"img_w": 69,
+			"name_fifa": "Ethiopian Higher League 2024/2025",
+			"name_matchday": "Ethiopian Higher League",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/ethiopian-higher-league-logo-png_seeklogo-556093-284x300.png",
+			"img_w": 95,
 			"img_h": 100,
-			"wp_img": 7100,
+			"wp_img": 13210,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
@@ -293,6 +293,17 @@
 			"img_w": 178,
 			"img_h": 100,
 			"wp_img": 10094,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Ligue 2 2024/25",
+			"name_matchday": "Algeria Ligue 2",
+			"img": "https://matchday.pl/wp-content/uploads/2024/02/Algerian_Ligue_Pro._2.png",
+			"img_w": 69,
+			"img_h": 100,
+			"wp_img": 7100,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
@@ -458,6 +469,17 @@
 			"img_w": 87,
 			"img_h": 100,
 			"wp_img": 10429,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Provo Premier League 2024/25 Turks and Caicos",
+			"name_matchday": "Turks and Caicos Provo Premier League",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/WIV_Provo_Premier_League.svg_.png",
+			"img_w": 90,
+			"img_h": 100,
+			"wp_img": 13211,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
