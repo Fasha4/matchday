@@ -21,16 +21,19 @@ def getMatches(custom_date):
 	url = "https://polsatboxgo.pl/live"
 	driver.get(url)
 
-	sleep(3)
+	wait = WebDriverWait(driver, 10)
 
-	days = driver.find_elements(By.CSS_SELECTOR, ".t2thp5-0.jTvTJC")
+	cookies = wait.until(EC.element_to_be_clickable((By.ID, "onetrust-reject-all-handler")))
+	cookies.click()
+
+	days = driver.find_elements(By.CSS_SELECTOR, ".sc-t2thp5-0.bnoQYD")
 	for day in days:
-		events = day.find_elements(By.CSS_SELECTOR, ".sc-1vdpbg2-1")
+		events = day.find_elements(By.CSS_SELECTOR, ".sc-1vdpbg2-0.hUqdCF")
 		try:
-			date = day.find_element(By.CSS_SELECTOR, ".sc-1nb07ih-1.hACNuX")
+			date = day.find_element(By.CSS_SELECTOR, ".sc-1nb07ih-1.llbBHD")
 			date = datetime.datetime.strptime(date.text + str(datetime.date.today().year), '%d.%m%Y').date()
 		except:
-			date = day.find_element(By.CSS_SELECTOR, ".orrg5d-0.jfCfQW")
+			date = day.find_element(By.CSS_SELECTOR, ".sc-orrg5d-0.kBMkMn")
 			if date.text == "Dzisiaj":
 				date = datetime.date.today()
 			elif date.text == "Jutro":
@@ -45,10 +48,10 @@ def getMatches(custom_date):
 		leagues = []
 
 		for match in events:
-			time, league = match.find_elements(By.CSS_SELECTOR, '.orrg5d-1.AjaSg')[0].text.split(' • ')
+			time, league = match.find_element(By.CSS_SELECTOR, '.sc-orrg5d-0.dtmHkV').text.split(' • ')
 			time = (datetime.datetime.strptime(time, '%H:%M') + datetime.timedelta(minutes=10)).strftime('%H:%M')
 			try:
-				home, away = match.find_elements(By.CSS_SELECTOR, ".orrg5d-1.AjaSg")[1].text.split(' - ')
+				home, away = match.find_element(By.CSS_SELECTOR, ".sc-orrg5d-0.iEbmMX").text.split(' - ')
 			except:
 				continue
 
@@ -62,22 +65,22 @@ def getMatches(custom_date):
 				'league': league
 				})
 
-		games = []
+	games = []
 
-		for event in leagues:
-			league = {
-				'name': event,
-				'matches': []
-				}
+	for event in leagues:
+		league = {
+			'name': event,
+			'matches': []
+			}
 
-			for match in matches:
-				if match["league"] == event:
-					league["matches"].append({
-						'home': match["home"],
-						'away': match["away"],
-						'time': match["time"]
-						})
-			games.append(league)
+		for match in matches:
+			if match["league"] == event:
+				league["matches"].append({
+					'home': match["home"],
+					'away': match["away"],
+					'time': match["time"]
+					})
+		games.append(league)
 
 	return games
 
