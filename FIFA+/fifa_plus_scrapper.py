@@ -61,7 +61,7 @@ def getMatches(custom_date):
 		driver.get(link)
 
 		try:
-			timedate = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".src-components-contentDetails-event-components-info-event-InfoEvent-module__event_startDate--FqMy0")))
+			timedate = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".sc-gEvEer.gGqxiv.typography.info__event__startDate")))
 		except:
 			continue
 		timedate_clean = timedate.text.replace("1st", "1").replace("2nd", "2").replace("3rd", "3").replace("th", "")
@@ -94,7 +94,7 @@ def getMatches(custom_date):
 			home = details[0]
 		if details[-1] in ['Costa Rica', 'Saint Kitts and Nevis', 'Grenada', 'Turks and Caicos']:
 			league = details[-2] + ' ' + details[-1]
-		elif ' ' not in details[-1]:
+		elif ' ' not in details[-1] or details[-1] in ['Live Stream']:
 			league = details[-2]
 		else:
 			league = details[-1]
