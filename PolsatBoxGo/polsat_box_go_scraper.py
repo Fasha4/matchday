@@ -30,10 +30,11 @@ def getMatches(custom_date):
 	for day in days:
 		events = day.find_elements(By.CSS_SELECTOR, ".sc-1vdpbg2-0.hUqdCF")
 		try:
-			date = day.find_element(By.CSS_SELECTOR, ".sc-1nb07ih-1.llbBHD")
+			date = day.find_element(By.CSS_SELECTOR, ".sc-1nb07ih-1.fKFnFV")
 			date = datetime.datetime.strptime(date.text + str(datetime.date.today().year), '%d.%m%Y').date()
 		except:
-			date = day.find_element(By.CSS_SELECTOR, ".sc-orrg5d-0.kBMkMn")
+			date = day.find_element(By.CSS_SELECTOR, ".sc-orrg5d-0.LUuFy")
+
 			if date.text == "Dzisiaj":
 				date = datetime.date.today()
 			elif date.text == "Jutro":
@@ -48,10 +49,10 @@ def getMatches(custom_date):
 		leagues = []
 
 		for match in events:
-			time, league = match.find_element(By.CSS_SELECTOR, '.sc-orrg5d-0.dtmHkV').text.split(' • ')
+			time, league = match.find_element(By.CSS_SELECTOR, '.sc-orrg5d-0.ezqpDO').text.split(' • ')
 			time = (datetime.datetime.strptime(time, '%H:%M') + datetime.timedelta(minutes=10)).strftime('%H:%M')
 			try:
-				home, away = match.find_element(By.CSS_SELECTOR, ".sc-orrg5d-0.iEbmMX").text.split(' - ')
+				home, away = match.find_element(By.CSS_SELECTOR, ".sc-orrg5d-0.kcWJAW").text.split(' - ')
 			except:
 				continue
 
