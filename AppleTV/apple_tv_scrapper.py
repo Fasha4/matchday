@@ -5,9 +5,12 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 import datetime
+import pytz
 import json
 import pyperclip
 from time import sleep
+
+tzWarsaw = pytz.timezone('Europe/Warsaw')
 
 def getMatches(custom_date):
 	options = webdriver.ChromeOptions()
@@ -23,19 +26,25 @@ def getMatches(custom_date):
 
 	wait = WebDriverWait(driver, 10)
 
+	#MLS
 	try:
-		wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Schedule']")))
+		wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Live']")))
+		MLS = 'Live'
 	except:
-		wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Live Matches']")))
+		wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Schedule']")))
+		MLS = 'Schedule'
 	finally:
 		driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
 		driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.PAGE_UP)
 
+	#MLS NEXT Pro
 	try:
-		wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Live']")))
+		wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Live: MLS NEXT Pro']")))
+		nextPro = 'Live: MLS NEXT Pro'
 	except:
 		try:
 			wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Live: MLS NEXT Pro Playoffs']")))
+			nextPro = 'Live: MLS NEXT Pro Playoffs'
 		except:
 			pass
 
@@ -44,11 +53,11 @@ def getMatches(custom_date):
 	count = 0
 	matchesLine, freeLine, MLSNEXTPROLine = 0, 0, 0
 	for shelf in shelfs:
-		if "Schedule" in shelf.text:
+		if MLS == shelf.text.split()[0]:
 			matchesLine = count
 		elif "Free Matches" in shelf.text:
 			freeLine = count
-		elif "Live" in shelf.text:
+		elif nextPro in shelf.text:
 			MLSNEXTPROLine = count
 		count += 1
 
@@ -87,20 +96,20 @@ def getMatches(custom_date):
 	matches = []
 	leagues = []
 
-	for match in events[5:]:
+	for match in events:
 		try:
 			home, away = match.find_element(By.CSS_SELECTOR, '.typ-subhead.text-truncate').text.split(' vs. ')
 			league = match.find_element(By.CSS_SELECTOR, '.typ-footnote.clr-secondary-text.text-truncate').text
 			link = match.find_element(By.TAG_NAME, "a").get_attribute("href")
 			timedate = match.find_element(By.TAG_NAME, 'time').get_attribute("datetime")
-			timedate_str = datetime.datetime.strptime(timedate, '%Y-%m-%dT%H:%M:00.000Z') + datetime.timedelta(hours=2)
+			timedate_str = pytz.utc.localize(datetime.datetime.strptime(timedate, '%Y-%m-%dT%H:%M:00.000Z')).astimezone(tzWarsaw)
 			time = timedate_str.strftime('%H:%M')
 
 			day_offset = datetime.timedelta(hours=6)
 
-			if timedate_str < datetime.datetime.fromisoformat(custom_date) + day_offset:
+			if timedate_str < tzWarsaw.localize(datetime.datetime.fromisoformat(custom_date)) + day_offset:
 				continue
-			elif timedate_str >= datetime.datetime.fromisoformat(custom_date) + day_offset + datetime.timedelta(days=1):
+			elif timedate_str >= tzWarsaw.localize(datetime.datetime.fromisoformat(custom_date)) + day_offset + datetime.timedelta(days=1):
 				break
 		except:
 			continue
@@ -127,14 +136,14 @@ def getMatches(custom_date):
 			home, away = freeMatch.find_element(By.CSS_SELECTOR, '.typ-subhead.text-truncate').text.split(' vs. ')
 			league = freeMatch.find_element(By.CSS_SELECTOR, '.typ-footnote.clr-secondary-text.text-truncate').text
 			link = freeMatch.find_element(By.TAG_NAME, "a").get_attribute("href")
-			timedate_str = datetime.datetime.strptime(timedate, '%Y-%m-%dT%H:%M:00.000Z') + datetime.timedelta(hours=2)
+			timedate_str = pytz.utc.localize(datetime.datetime.strptime(timedate, '%Y-%m-%dT%H:%M:00.000Z')).astimezone(tzWarsaw)
 			time = timedate_str.strftime('%H:%M')
 
 			day_offset = datetime.timedelta(hours=6)
 
-			if timedate_str < datetime.datetime.fromisoformat(custom_date) + day_offset:
+			if timedate_str < tzWarsaw.localize(datetime.datetime.fromisoformat(custom_date)) + day_offset:
 				continue
-			elif timedate_str >= datetime.datetime.fromisoformat(custom_date) + day_offset + datetime.timedelta(days=1):
+			elif timedate_str >= tzWarsaw.localize(datetime.datetime.fromisoformat(custom_date)) + day_offset + datetime.timedelta(days=1):
 				break
 
 			freeGame = {
@@ -156,14 +165,14 @@ def getMatches(custom_date):
 			league = match.find_element(By.CSS_SELECTOR, '.typ-footnote.clr-secondary-text.text-truncate').text
 			link = match.find_element(By.TAG_NAME, "a").get_attribute("href")
 			timedate = match.find_element(By.TAG_NAME, 'time').get_attribute("datetime")
-			timedate_str = datetime.datetime.strptime(timedate, '%Y-%m-%dT%H:%M:00.000Z') + datetime.timedelta(hours=2)
+			timedate_str = pytz.utc.localize(datetime.datetime.strptime(timedate, '%Y-%m-%dT%H:%M:00.000Z')).astimezone(tzWarsaw)
 			time = timedate_str.strftime('%H:%M')
 
 			day_offset = datetime.timedelta(hours=6)
 
-			if timedate_str < datetime.datetime.fromisoformat(custom_date) + day_offset:
+			if timedate_str < tzWarsaw.localize(datetime.datetime.fromisoformat(custom_date)) + day_offset:
 				continue
-			elif timedate_str >= datetime.datetime.fromisoformat(custom_date) + day_offset + datetime.timedelta(days=1):
+			elif timedate_str >= tzWarsaw.localize(datetime.datetime.fromisoformat(custom_date)) + day_offset + datetime.timedelta(days=1):
 				break
 
 			if league not in leagues:
