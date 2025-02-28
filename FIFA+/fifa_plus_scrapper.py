@@ -88,6 +88,7 @@ def getMatches(custom_date):
 			break
 
 		details = match.split(' | ')
+		# print(details)
 		try:
 			home, away = details[0].split(' v ')
 		except:

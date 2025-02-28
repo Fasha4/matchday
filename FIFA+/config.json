@@ -78,6 +78,28 @@
 			"show": true
 		},
 		{
+			"name_fifa": "Campionato Sammarinense 2024/25",
+			"name_matchday": "Campionato Sammarinense",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/CampionatoSammarinese2021-233x300.png",
+			"img_w": 100,
+			"img_h": 129,
+			"wp_img": 14957,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Coppa Titano 2024/25",
+			"name_matchday": "Coppa Titano",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/Coppatitanologopng.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 14958,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "Australia Cup",
 			"name_matchday": "Puchar Australii",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/AUS_Cup_Logo-236x300.png",
@@ -265,9 +287,31 @@
 			"show": true
 		},
 		{
+			"name_fifa": "Liga de Fútbol de Guinea Equatorial 2024-25",
+			"name_matchday": "Liga de Fútbol de Guinea Equatorial",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/eq_guinea-300x300.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 14955,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Leone Rock Premier League",
+			"name_matchday": "Leone Rock Premier League",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/Liberia_FA-257x300.png",
+			"img_w": 99,
+			"img_h": 100,
+			"wp_img": 14954,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "Orange National League 2024/25",
 			"name_matchday": "Liberia Orange National League",
-			"img": "https://matchday.pl/wp-content/uploads/2025/07/Liberia_FA-257x300.png",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/logo-leaone-rock-1.png",
 			"img_w": 86,
 			"img_h": 100,
 			"wp_img": 13165,
@@ -282,6 +326,17 @@
 			"img_w": 100,
 			"img_h": 100,
 			"wp_img": 13166,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Absa Premier League 2024/25",
+			"name_matchday": "Seychelles Absa Premier League",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/absa_premiership_1.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 14956,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
@@ -309,7 +364,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Côte d'Ivoire Ligue 2",
+			"name_fifa": "Côte d'Ivoire Ligue 2 2024/25",
 			"name_matchday": "Côte d'Ivoire Ligue 2",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/wks.png",
 			"img_w": 123,
@@ -474,7 +529,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Provo Premier League 2024/25 Turks and Caicos",
+			"name_fifa": "Provo Premier League 2024-25",
 			"name_matchday": "Turks and Caicos Provo Premier League",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/WIV_Provo_Premier_League.svg_.png",
 			"img_w": 90,
@@ -485,7 +540,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Premier League Saint Kitts and Nevis",
+			"name_fifa": "SKNFA Premier League 2025",
 			"name_matchday": "Saint Kitts and Nevis Premier League",
 			"img": "https://matchday.pl/wp-content/uploads/2024/07/Saint_Kitts__Nevis_Football_Association.svg_-300x236.png",
 			"img_w": 127,
@@ -507,7 +562,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Bermuda Premier Division 2024",
+			"name_fifa": "Bermuda Premier Division 2024/25",
 			"name_matchday": "Bermuda Premier Division",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/bermuda-300x300.png",
 			"img_w": 100,
@@ -518,7 +573,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "BVIFA National League 2024",
+			"name_fifa": "BVIFA National League 2024/25",
 			"name_matchday": "British Virgin Islands National League",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/British_Virgin_Islands_Football_Association.svg_-233x300.png",
 			"img_w": 78,
@@ -529,7 +584,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Eswatini 2024/25",
+			"name_fifa": "MTN Premier League 2024/25",
 			"name_matchday": "Eswatini MTN Premier League",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/Premier_League_of_Eswatini-235x300.png",
 			"img_w": 78,
@@ -782,7 +837,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "D1 Women's Championship 2024-25",
+			"name_fifa": "Women's Championship D1 2024-25",
 			"name_matchday": "Morocco Women's Championship D1",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/LNFF_Maroc-283x300.png",
 			"img_w": 94,
