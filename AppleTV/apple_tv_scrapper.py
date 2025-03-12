@@ -28,8 +28,8 @@ def getMatches(custom_date):
 
 	#MLS
 	try:
-		wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Live Matches']")))
-		MLS = 'Live Matches'
+		wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Live']")))
+		MLS = 'Live'
 	except:
 		wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Schedule']")))
 		MLS = 'Schedule'
@@ -91,16 +91,16 @@ def getMatches(custom_date):
 		except:
 			break
 
-	# events = shelfs[matchesLine].find_elements(By.CSS_SELECTOR, ".shelf-grid__list-item")
-	events = driver.find_element(By.CSS_SELECTOR, ".infinite-grid__body").find_elements(By.TAG_NAME, "div")
+	events = shelfs[matchesLine].find_elements(By.CSS_SELECTOR, ".shelf-grid__list-item")
+	# events = driver.find_element(By.CSS_SELECTOR, ".infinite-grid__body").find_elements(By.TAG_NAME, "div")
 	matches = []
 	leagues = []
 
-	count = 0
+	# count = 0
 	for match in events:
-		count += 1
-		if count%2==0:
-			continue
+		# count += 1
+		# if count%2==0:
+		# 	continue
 		try:
 			home, away = match.find_element(By.CSS_SELECTOR, '.typ-subhead.text-truncate').text.split(' vs. ')
 			league = match.find_element(By.CSS_SELECTOR, '.typ-footnote.clr-secondary-text.text-truncate').text

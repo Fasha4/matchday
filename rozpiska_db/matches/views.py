@@ -2,11 +2,19 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 from .models import Team, Name
+from .forms import SportForm
 
 def matches(request):
-	teams = Name.objects.all().values()
-	template = loader.get_template('add_matches.html')
+
+	if request.method == "POST":
+		form = SportForm()
+		if form.is_valid():
+			print("ok")
+
+	else:
+		form = SportForm()
+
 	context = {
-	'teams': teams,
+	'form': form
 	}
-	return HttpResponse(template.render(context, request))
+	return render(request, 'add_matches.html', context)
