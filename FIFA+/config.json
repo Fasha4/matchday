@@ -111,7 +111,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Men's National League Championship 2024",
+			"name_fifa": "Men's National League 2025",
 			"name_matchday": "New Zealand National League",
 			"img": "https://matchday.pl/wp-content/uploads/2024/06/New_Zealand_National_League-244x300.png",
 			"img_w": 81,
@@ -144,7 +144,18 @@
 			"show": true
 		},
 		{
-			"name_fifa": "TOPsport Pirma lyga",
+			"name_fifa": "Azerbaijan I Liqa 2024/25",
+			"name_matchday": "Azerbaijan I Liqa",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/Azərbaycan_Birinci_Liqasi_Loqo_2023-300x144.png",
+			"img_w": 150,
+			"img_h": 87,
+			"wp_img": 11769,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Pirma Lyga 2025",
 			"name_matchday": "Pirma lyga",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/pirma-lyga-logo-1-300x174.png",
 			"img_w": 172,
@@ -162,6 +173,28 @@
 			"img_h": 100,
 			"wp_img": 7101,
 			"lang": "brak",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Championnat National D1 2024/25",
+			"name_matchday": "Algeria Championnat National D1",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/Ligue_1_Mobilis-218x300.png",
+			"img_w": 73,
+			"img_h": 100,
+			"wp_img": 7100,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Ligue 2 2024/25",
+			"name_matchday": "Algeria Ligue 2",
+			"img": "https://matchday.pl/wp-content/uploads/2024/02/Algerian_Ligue_Pro._2.png",
+			"img_w": 69,
+			"img_h": 100,
+			"wp_img": 7100,
+			"lang": "angielski",
 			"comm": "",
 			"show": true
 		},
@@ -254,6 +287,17 @@
 			"show": true
 		},
 		{
+			"name_fifa": "Ligue 1 Pro Orange 2024/25",
+			"name_matchday": "Malian Ligue 1 Pro",
+			"img": "https://matchday.pl/wp-content/uploads/2024/02/Orange_Ligue_1.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 7146,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "Super D-1 2024/25",
 			"name_matchday": "Mauritania Super D-1",
 			"img": "https://matchday.pl/wp-content/uploads/2024/02/Super-D-1.png",
@@ -300,7 +344,7 @@
 		{
 			"name_fifa": "Leone Rock Premier League",
 			"name_matchday": "Leone Rock Premier League",
-			"img": "https://matchday.pl/wp-content/uploads/2025/07/Liberia_FA-257x300.png",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/logo-leaone-rock-1.png",
 			"img_w": 99,
 			"img_h": 100,
 			"wp_img": 14954,
@@ -311,7 +355,7 @@
 		{
 			"name_fifa": "Orange National League 2024/25",
 			"name_matchday": "Liberia Orange National League",
-			"img": "https://matchday.pl/wp-content/uploads/2025/07/logo-leaone-rock-1.png",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/Liberia_FA-257x300.png",
 			"img_w": 86,
 			"img_h": 100,
 			"wp_img": 13165,
@@ -348,17 +392,6 @@
 			"img_w": 178,
 			"img_h": 100,
 			"wp_img": 10094,
-			"lang": "angielski",
-			"comm": "",
-			"show": true
-		},
-		{
-			"name_fifa": "Ligue 2 2024/25",
-			"name_matchday": "Algeria Ligue 2",
-			"img": "https://matchday.pl/wp-content/uploads/2024/02/Algerian_Ligue_Pro._2.png",
-			"img_w": 69,
-			"img_h": 100,
-			"wp_img": 7100,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
@@ -491,6 +524,17 @@
 			"img_w": 104,
 			"img_h": 100,
 			"wp_img": 10427,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "BFA Premier League 2025",
+			"name_matchday": "Barbados Premier League 2025",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/barbados.png",
+			"img_w": 100,
+			"img_h": 79,
+			"wp_img": 11731,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
@@ -854,6 +898,17 @@
 			"img_w": 93,
 			"img_h": 100,
 			"wp_img": 10433,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "OFC U-19 Women's Championship",
+			"name_matchday": "Puchar Narodów Oceanii U19 Kobiet",
+			"img": "https://matchday.pl/wp-content/uploads/2024/06/1200px-Oceania_Football_Confederation_logo.svg_-300x222.png",
+			"img_w": 135,
+			"img_h": 100,
+			"wp_img": 10426,
 			"lang": "angielski",
 			"comm": "",
 			"show": true

@@ -61,7 +61,7 @@ def getMatches(custom_date):
 		driver.get(link)
 
 		try:
-			timedate = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".sc-aXZVg.lmkGNG.typography.info__event__startDate")))
+			timedate = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".sc-aXZVg.fefwtN.typography.info__event__startDate")))
 		except:
 			continue
 		timedate_clean = timedate.text.replace("1st", "1").replace("2nd", "2").replace("3rd", "3").replace("th", "")
