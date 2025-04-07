@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 import datetime
 from time import sleep
-import pickle
+import json
 import os
 
 def getMatches(custom_date):
@@ -88,10 +88,10 @@ def getMatches(custom_date):
 if __name__ == '__main__':
 
 	date = input("Podaj datę (YYYY-MM-DD):")
-	filename = 'scraped/'+ date + '_PolsatBoxGo'
+	filename = 'scraped/'+ date + '_PolsatBoxGo.json'
 	os.makedirs(os.path.dirname(filename), exist_ok=True)
-	with open(filename, 'wb') as f:
+	with open(filename, 'w', encoding='utf-8') as f:
 		matches = getMatches(date)
-		pickle.dump(matches, f)
+		json.dump(matches, f, ensure_ascii=False, indent=4)
 	print("Wyeksportuj wygenerowany plik do bazy danych")
 	input()

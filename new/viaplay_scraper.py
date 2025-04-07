@@ -10,9 +10,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from time import sleep
 import datetime
 import json
-import pyperclip
 import os
-import pickle
 
 def getMatches(custom_date):
 	options = webdriver.ChromeOptions()
@@ -166,16 +164,16 @@ def correct_time(matches, custom_date):
 
 if __name__ == '__main__':
 	date = input("Podaj datę (YYYY-MM-DD):")
-	filename = 'scraped/'+ date + '_Viaplay'
+	filename = 'scraped/'+ date + '_Viaplay.json'
 	os.makedirs(os.path.dirname(filename), exist_ok=True)
-	with open(filename, 'wb') as f:
+	with open(filename, 'w', encoding='utf-8') as f:
 		matches = getMatches(date)
 		try:
 			matches = correct_time(matches, date)
 		except:
 			print("Nie udało się zsynchronizować meczów")
 
-		pickle.dump(matches, f)
+		json.dump(matches, f, ensure_ascii=False, indent=4)
 
 	print("Wyeksportuj wygenerowany plik do bazy danych")
 	input()
