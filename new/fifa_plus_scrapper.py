@@ -7,6 +7,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 import datetime
 import json
 import os
+import re
 
 def getMatches(custom_date):
 	options = webdriver.ChromeOptions()
@@ -91,12 +92,15 @@ def getMatches(custom_date):
 			home, away = details[0].split(' v ')
 		except:
 			home = details[0]
-		if details[-1] in ['Costa Rica', 'Saint Kitts and Nevis', 'Grenada', 'Turks and Caicos']:
+		if details[-1] in ['Costa Rica', 'Saint Kitts and Nevis', 'Grenada', 'Turks and Caicos', 'Burkina Faso']:
 			league = details[-2] + ' ' + details[-1]
 		elif ' ' not in details[-1] or details[-1] in ['Live Stream']:
 			league = details[-2]
 		else:
 			league = details[-1]
+
+		league = re.sub(r'\s((20[0-9][0-9]/20[0-9][0-9])|(20[0-9][0-9]/[0-9][0-9])|(20[0-9][0-9])|(2[5-9])|([3-9][0-9]))', "", league)
+
 		if league not in leagues:
 			leagues.append(league)
 
