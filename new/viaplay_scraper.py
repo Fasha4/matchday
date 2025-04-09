@@ -45,6 +45,8 @@ def getMatches(custom_date):
 
 	matches = []
 	leagues = []
+	hours = []
+	prevHour = 0
 
 	for match in elements:
 		home, away, other, time, league, comment = 6*['']
@@ -54,6 +56,18 @@ def getMatches(custom_date):
 			other = match.find_element(By.CSS_SELECTOR, ".SportMeta_title__kj1xI").text
 
 		time = match.find_element(By.CSS_SELECTOR, ".Badge_start__dU5U3").text
+		#prevent tommorows events from adding
+		hour = int(time.split('.')[0])
+		if hour not in hours:
+			hours.append(hour)
+			for i in range(0, hour):
+				if i not in hours:
+					hours.append(i)
+		else:
+			if hour != prevHour:
+				break
+		prevHour = hour
+
 		league = match.find_element(By.CSS_SELECTOR, ".SportMeta_logo___uXpn").get_attribute("alt")
 		link = match.find_element(By.CSS_SELECTOR, ".Item_link__zRSeq").get_attribute("href")
 		if match.find_element(By.CSS_SELECTOR, ".SportMeta_secondarytitle__HHMXz").text == "Piłka ręczna":
