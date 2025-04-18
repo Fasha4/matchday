@@ -7,6 +7,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 import datetime
 import json
 import pyperclip
+import re
 
 def getMatches(custom_date):
 	options = webdriver.ChromeOptions()
@@ -17,12 +18,10 @@ def getMatches(custom_date):
 	options.add_argument('--disable-search-engine-choice-screen')
 	driver = webdriver.Chrome(service=ChromeService(), options=options)
 
-	url = "https://www.plus.fifa.com/en/showcase/1472c76e-0e28-44bf-8b28-b05229545879"
+	url = "https://www.plus.fifa.com/en/live-schedule/time?gl=pl&date=" + custom_date
 	driver.get(url)
 
 	wait = WebDriverWait(driver, 10)
-
-	original_window = driver.current_window_handle
 
 	cookies = wait.until(EC.element_to_be_clickable((By.ID, "onetrust-reject-all-handler")))
 	cookies.click()
@@ -35,41 +34,29 @@ def getMatches(custom_date):
 
 	driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
 
+	container = driver.find_element(By.ID, 'content-scroll-anchor')
+
 	#show all matches
 	while True:
 		driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
-		new_elements = driver.find_elements(By.CSS_SELECTOR, ".content-items-showcase")
+		new_elements = container.find_elements(By.CSS_SELECTOR, ".sc-dkmUuB.ebVuZo")
 
 		if len(new_elements) == len(elements):
 			break
 		else:
 			elements = new_elements
-			[driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END) for i in range(10)]
+			[driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END) for i in range(20)]
 
 	matches = []
 	leagues = []
-	events = [x.text for x in elements]
-	links = [x.find_element(By.TAG_NAME, "a").get_attribute("href") for x in elements]
-	counter = 0
 
-	for match in events:
-		home, away, time, league, link = 5*['']
+	for match in elements:
 
-		link = links[counter]
-		counter += 1
+		home, away = match.find_elements(By.CSS_SELECTOR, ".sc-aXZVg.kKZgdp.typography")[0].text.split(' v ')
+		league = match.find_elements(By.CSS_SELECTOR, ".sc-aXZVg.kKZgdp.typography")[1].text.split(' | ')[0]
+		time = match.find_element(By.CSS_SELECTOR, ".sc-aXZVg.gYmcVH.typography").text
+		link = match.find_element(By.XPATH, "./..").get_attribute("href")
 
-		driver.get(link)
-
-		try:
-			timedate = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".sc-aXZVg.fefwtN.typography.info__event__startDate")))
-		except:
-			continue
-		timedate_clean = timedate.text.replace("1st", "1").replace("2nd", "2").replace("3rd", "3").replace("th", "")
-		try:
-			timedate_str = datetime.datetime.strptime(timedate_clean, '%d %B %Y, %H:%M')
-		except:
-			timedate_str = datetime.datetime.strptime(timedate_clean, '%d %B %Y')
-		time = timedate_str.strftime('%H:%M')
 		if time[-2:] == '15' or time[-2:] == '45':
 			temp_time = datetime.datetime.strptime(time, '%H:%M') + datetime.timedelta(minutes=15)
 			time = temp_time.strftime('%H:%M')
@@ -80,25 +67,12 @@ def getMatches(custom_date):
 			temp_time = datetime.datetime.strptime(time, '%H:%M') + datetime.timedelta(minutes=5)
 			time = temp_time.strftime('%H:%M')
 
-		day_offset = datetime.timedelta(hours=6)
-
-		if timedate_str < datetime.datetime.fromisoformat(custom_date) + day_offset:
+		if int(time.split(':')[0]) < 6:
 			continue
-		elif timedate_str >= datetime.datetime.fromisoformat(custom_date) + day_offset + datetime.timedelta(days=1):
-			break
 
-		details = match.split(' | ')
-		# print(details)
-		try:
-			home, away = details[0].split(' v ')
-		except:
-			home = details[0]
-		if details[-1] in ['Costa Rica', 'Saint Kitts and Nevis', 'Grenada', 'Turks and Caicos']:
-			league = details[-2] + ' ' + details[-1]
-		elif ' ' not in details[-1] or details[-1] in ['Live Stream']:
-			league = details[-2]
-		else:
-			league = details[-1]
+		league = re.sub(r'\s((20[0-9][0-9]/20[0-9][0-9])|(20[0-9][0-9][/-][0-9][0-9])|(20[0-9][0-9])|(2[5-9])|([3-9][0-9]))', "", league)
+		league = league.strip(' - ')
+
 		if league not in leagues:
 			leagues.append(league)
 
@@ -109,6 +83,49 @@ def getMatches(custom_date):
 			'league': league,
 			'link': link
 			})
+
+	tomorrow = datetime.datetime.fromisoformat(custom_date) + datetime.timedelta(days=1)
+
+	url = "https://www.plus.fifa.com/en/live-schedule/time?gl=pl&date=" + str(tomorrow)
+	driver.get(url)
+
+	[driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END) for i in range(20)]
+	elements = driver.find_elements(By.CSS_SELECTOR, ".sc-dkmUuB.ebVuZo")
+
+	for match in elements:
+
+		home, away = match.find_elements(By.CSS_SELECTOR, ".sc-aXZVg.kKZgdp.typography")[0].text.split(' v ')
+		league = match.find_elements(By.CSS_SELECTOR, ".sc-aXZVg.kKZgdp.typography")[1].text.split(' | ')[0]
+		time = match.find_element(By.CSS_SELECTOR, ".sc-aXZVg.gYmcVH.typography").text
+		link = match.find_element(By.XPATH, "./..").get_attribute("href")
+
+		if time[-2:] == '15' or time[-2:] == '45':
+			temp_time = datetime.datetime.strptime(time, '%H:%M') + datetime.timedelta(minutes=15)
+			time = temp_time.strftime('%H:%M')
+		elif time[-2:] == '20' or time[-2:] == '50':
+			temp_time = datetime.datetime.strptime(time, '%H:%M') + datetime.timedelta(minutes=10)
+			time = temp_time.strftime('%H:%M')
+		elif time[-2:] == '55':
+			temp_time = datetime.datetime.strptime(time, '%H:%M') + datetime.timedelta(minutes=5)
+			time = temp_time.strftime('%H:%M')
+
+		if int(time.split(':')[0]) >= 6:
+			continue
+
+		league = re.sub(r'\s((20[0-9][0-9]/20[0-9][0-9])|(20[0-9][0-9][/-][0-9][0-9])|(20[0-9][0-9])|(2[5-9])|([3-9][0-9]))', "", league)
+		league = league.strip(' - ')
+
+		if league not in leagues:
+			leagues.append(league)
+
+		matches.append({
+			'home': home,
+			'away': away,
+			'time': time,
+			'league': league,
+			'link': link
+			})
+
 
 	games = []
 
