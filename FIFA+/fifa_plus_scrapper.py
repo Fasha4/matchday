@@ -109,7 +109,7 @@ def getMatches(custom_date):
 			temp_time = datetime.datetime.strptime(time, '%H:%M') + datetime.timedelta(minutes=5)
 			time = temp_time.strftime('%H:%M')
 
-		if int(time.split(':')[0]) >= 6:
+		if int(time.split(':')[0]) >= 6 or int(time.split(':')[0]) == 0:
 			continue
 
 		league = re.sub(r'\s((20[0-9][0-9]/20[0-9][0-9])|(20[0-9][0-9][/-][0-9][0-9])|(20[0-9][0-9])|(2[5-9])|([3-9][0-9]))', "", league)

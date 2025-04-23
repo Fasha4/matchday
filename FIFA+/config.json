@@ -78,13 +78,46 @@
 			"show": true
 		},
 		{
+			"name_fifa": "Kupa e Shqipërisë",
+			"name_matchday": "Puchar Albanii",
+			"img": "https://matchday.pl/wp-content/uploads/2025/03/Kupa_e_Shqiperise.svg_.png",
+			"img_w": 86,
+			"img_h": 100,
+			"wp_img": 13165,
+			"lang": "albański",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Kategoria Superiore",
+			"name_matchday": "Kategoria Superiore",
+			"img": "https://matchday.pl/wp-content/uploads/2025/04/Abissnet_Superiore.svg_-300x284.png",
+			"img_w": 100,
+			"img_h": 95,
+			"wp_img": 15780,
+			"lang": "albański",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Kategoria e Parë",
+			"name_matchday": "Kategoria e Parë",
+			"img": "https://matchday.pl/wp-content/uploads/2025/04/Kategoria_e_Pare.svg_-300x260.png",
+			"img_w": 100,
+			"img_h": 86,
+			"wp_img": 15764,
+			"lang": "albański",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "Campionato Sammarinese",
 			"name_matchday": "Campionato Sammarinese",
-			"img": "https://matchday.pl/wp-content/uploads/2025/07/CampionatoSammarinese2021-233x300.png",
-			"img_w": 100,
-			"img_h": 129,
-			"wp_img": 14957,
-			"lang": "angielski",
+			"img": "https://matchday.pl/wp-content/uploads/2025/04/Campionato-Sammarinese_pagina-sito.png",
+			"img_w": 81,
+			"img_h": 100,
+			"wp_img": 15782,
+			"lang": "włoski",
 			"comm": "",
 			"show": true
 		},
@@ -95,7 +128,62 @@
 			"img_w": 100,
 			"img_h": 100,
 			"wp_img": 14958,
-			"lang": "angielski",
+			"lang": "włoski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Azerbaijan I Liqa",
+			"name_matchday": "Azerbaijan I Liqa",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/Azərbaycan_Birinci_Liqasi_Loqo_2023-300x144.png",
+			"img_w": 150,
+			"img_h": 87,
+			"wp_img": 11769,
+			"lang": "azerbejdżański",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Azerbaijan II Liqa",
+			"name_matchday": "Azerbaijan II Liqa",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/Azərbaycan_Birinci_Liqasi_Loqo_2023-300x144.png",
+			"img_w": 150,
+			"img_h": 87,
+			"wp_img": 11769,
+			"lang": "azerbejdżański",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Pirma Lyga",
+			"name_matchday": "Pirma lyga",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/pirma-lyga-logo-1-300x174.png",
+			"img_w": 172,
+			"img_h": 100,
+			"wp_img": 11769,
+			"lang": "litewski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Serie C NOW",
+			"name_matchday": "Serie C",
+			"img": "https://matchday.pl/wp-content/uploads/2024/02/Serie-C.png",
+			"img_w": 70,
+			"img_h": 100,
+			"wp_img": 7101,
+			"lang": "włoski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Championnat National",
+			"name_matchday": "Championnat National",
+			"img": "https://matchday.pl/wp-content/uploads/2025/03/Championnat_National-300x284.png",
+			"img_w": 77,
+			"img_h": 100,
+			"wp_img": 15471,
+			"lang": "francuski",
 			"comm": "",
 			"show": true
 		},
@@ -133,57 +221,13 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Super League Kerala",
-			"name_matchday": "Super League Kerala",
-			"img": "https://matchday.pl/wp-content/uploads/2025/07/Kerala_Super_League.svg_.png",
-			"img_w": 169,
-			"img_h": 100,
-			"wp_img": 13163,
-			"lang": "angielski",
-			"comm": "",
-			"show": true
-		},
-		{
-			"name_fifa": "Azerbaijan I Liqa",
-			"name_matchday": "Azerbaijan I Liqa",
-			"img": "https://matchday.pl/wp-content/uploads/2025/07/Azərbaycan_Birinci_Liqasi_Loqo_2023-300x144.png",
-			"img_w": 150,
-			"img_h": 87,
-			"wp_img": 11769,
-			"lang": "angielski",
-			"comm": "",
-			"show": true
-		},
-		{
-			"name_fifa": "Pirma Lyga",
-			"name_matchday": "Pirma lyga",
-			"img": "https://matchday.pl/wp-content/uploads/2025/07/pirma-lyga-logo-1-300x174.png",
-			"img_w": 172,
-			"img_h": 100,
-			"wp_img": 11769,
-			"lang": "angielski",
-			"comm": "",
-			"show": true
-		},
-		{
-			"name_fifa": "Serie C NOW",
-			"name_matchday": "Serie C",
-			"img": "https://matchday.pl/wp-content/uploads/2024/02/Serie-C.png",
-			"img_w": 77,
-			"img_h": 100,
-			"wp_img": 7101,
-			"lang": "brak",
-			"comm": "",
-			"show": true
-		},
-		{
-			"name_fifa": "Ligue 2",
-			"name_matchday": "Algeria Ligue 2",
-			"img": "https://matchday.pl/wp-content/uploads/2024/02/Algerian_Ligue_Pro._2.png",
-			"img_w": 69,
-			"img_h": 100,
-			"wp_img": 7100,
-			"lang": "angielski",
+			"name_fifa": "Liga Primera Nicaragua",
+			"name_matchday": "Liga Primera Nicaragua",
+			"img": "https://matchday.pl/wp-content/uploads/2024/03/obraz_2024-03-01_234411866-300x116.png",
+			"img_w": 206,
+			"img_h": 80,
+			"wp_img": 7343,
+			"lang": "hiszpański",
 			"comm": "",
 			"show": true
 		},
@@ -194,7 +238,7 @@
 			"img_w": 77,
 			"img_h": 100,
 			"wp_img": 12313,
-			"lang": "angielski",
+			"lang": "hiszpański",
 			"comm": "",
 			"show": true
 		},
@@ -205,7 +249,7 @@
 			"img_w": 109,
 			"img_h": 100,
 			"wp_img": 6581,
-			"lang": "angielski",
+			"lang": "arabski",
 			"comm": "",
 			"show": true
 		},
@@ -227,7 +271,7 @@
 			"img_w": 100,
 			"img_h": 100,
 			"wp_img": 12025,
-			"lang": "angielski",
+			"lang": "arabski",
 			"comm": "",
 			"show": true
 		},
@@ -243,13 +287,46 @@
 			"show": true
 		},
 		{
+			"name_fifa": "Macau Liga de Elite",
+			"name_matchday": "Macau Liga de Elite",
+			"img": "https://matchday.pl/wp-content/uploads/2025/04/Macau_FA-300x300.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 12025,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Super League Kerala",
+			"name_matchday": "Super League Kerala",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/Kerala_Super_League.svg_.png",
+			"img_w": 169,
+			"img_h": 100,
+			"wp_img": 13163,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Ligue 2",
+			"name_matchday": "Algeria Ligue 2",
+			"img": "https://matchday.pl/wp-content/uploads/2024/02/Algerian_Ligue_Pro._2.png",
+			"img_w": 69,
+			"img_h": 100,
+			"wp_img": 7100,
+			"lang": "arabski",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "Ethiopian Higher League",
 			"name_matchday": "Ethiopian Higher League",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/ethiopian-higher-league-logo-png_seeklogo-556093-284x300.png",
 			"img_w": 95,
 			"img_h": 100,
 			"wp_img": 13210,
-			"lang": "angielski",
+			"lang": "amharski",
 			"comm": "",
 			"show": true
 		},
@@ -260,18 +337,7 @@
 			"img_w": 70,
 			"img_h": 100,
 			"wp_img": 10435,
-			"lang": "angielski",
-			"comm": "",
-			"show": true
-		},
-		{
-			"name_fifa": "GFF Elite League",
-			"name_matchday": "Guyana Elite League",
-			"img": "https://matchday.pl/wp-content/uploads/2024/06/guyana-300x300.png",
-			"img_w": 100,
-			"img_h": 100,
-			"wp_img": 10092,
-			"lang": "angielski",
+			"lang": "portugalski",
 			"comm": "",
 			"show": true
 		},
@@ -293,7 +359,7 @@
 			"img_w": 71,
 			"img_h": 100,
 			"wp_img": 7146,
-			"lang": "angielski",
+			"lang": "arabski",
 			"comm": "",
 			"show": true
 		},
@@ -305,6 +371,17 @@
 			"img_h": 100,
 			"wp_img": 13164,
 			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "National Foot 1",
+			"name_matchday": "Gabon National Foot 1",
+			"img": "https://matchday.pl/wp-content/uploads/2025/04/gabon-300x140.png",
+			"img_w": 214,
+			"img_h": 100,
+			"wp_img": 15778,
+			"lang": "francuski",
 			"comm": "",
 			"show": true
 		},
@@ -353,23 +430,12 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Comoros Division 1 - Ngazidja",
-			"name_matchday": "Comoros Division 1",
-			"img": "https://matchday.pl/wp-content/uploads/2025/07/FF_Comoros_logo.png",
-			"img_w": 100,
+			"name_fifa": "Orange Cup",
+			"name_matchday": "Puchar Liberii",
+			"img": "https://matchday.pl/wp-content/uploads/2025/04/liberia_cup.png",
+			"img_w": 92,
 			"img_h": 100,
-			"wp_img": 13166,
-			"lang": "angielski",
-			"comm": "",
-			"show": true
-		},
-		{
-			"name_fifa": "Absa Premier League",
-			"name_matchday": "Seychelles Absa Premier League",
-			"img": "https://matchday.pl/wp-content/uploads/2025/07/absa_premiership_1.png",
-			"img_w": 100,
-			"img_h": 100,
-			"wp_img": 14956,
+			"wp_img": 15781,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
@@ -386,13 +452,24 @@
 			"show": true
 		},
 		{
+			"name_fifa": "GFF League",
+			"name_matchday": "Gambia GFF League",
+			"img": "https://matchday.pl/wp-content/uploads/2024/06/GFF-LOGO-Latest-copy.png",
+			"img_w": 104,
+			"img_h": 100,
+			"wp_img": 10427,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "Ligue de Bangui",
 			"name_matchday": "Ligue de Bangui",
 			"img": "https://sortitoutsi.b-cdn.net/uploads/comp/13211671.png",
 			"img_w": 100,
 			"img_h": 100,
 			"wp_img": 10094,
-			"lang": "angielski",
+			"lang": "francuski",
 			"comm": "",
 			"show": true
 		},
@@ -414,7 +491,7 @@
 			"img_w": 100,
 			"img_h": 100,
 			"wp_img": 10094,
-			"lang": "angielski",
+			"lang": "francuski",
 			"comm": "",
 			"show": true
 		},
@@ -425,7 +502,7 @@
 			"img_w": 100,
 			"img_h": 100,
 			"wp_img": 11728,
-			"lang": "angielski",
+			"lang": "francuski",
 			"comm": "",
 			"show": true
 		},
@@ -447,7 +524,7 @@
 			"img_w": 238,
 			"img_h": 80,
 			"wp_img": 10459,
-			"lang": "brak",
+			"lang": "czewa",
 			"comm": "",
 			"show": true
 		},
@@ -458,7 +535,7 @@
 			"img_w": 100,
 			"img_h": 100,
 			"wp_img": 10459,
-			"lang": "angielski",
+			"lang": "czewa",
 			"comm": "",
 			"show": true
 		},
@@ -469,6 +546,83 @@
 			"img_w": 193,
 			"img_h": 100,
 			"wp_img": 10459,
+			"lang": "czewa",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Vodacom Premier League",
+			"name_matchday": "Lesotho Premier League",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/lesotho.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 12506,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "MTN Premier League",
+			"name_matchday": "Eswatini MTN Premier League",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/Premier_League_of_Eswatini-235x300.png",
+			"img_w": 78,
+			"img_h": 100,
+			"wp_img": 12312,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "National Super League",
+			"name_matchday": "Mauritius Super League",
+			"img": "https://matchday.pl/wp-content/uploads/2024/06/NSL@2x.png",
+			"img_w": 69,
+			"img_h": 100,
+			"wp_img": 10430,
+			"lang": "francuski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Ligue des Champions Division 2",
+			"name_matchday": "Madagascar Ligue des Champions Division 2",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/madagaskar-284x300.png",
+			"img_w": 95,
+			"img_h": 100,
+			"wp_img": 12311,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Comoros Division 1 - Ngazidja",
+			"name_matchday": "Comoros Division 1",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/FF_Comoros_logo.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 13166,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Championnat National de Football Division 1",
+			"name_matchday": "Djibouti Football Division 1",
+			"img": "https://matchday.pl/wp-content/uploads/2025/04/djibouti_d1-262x300.png",
+			"img_w": 87,
+			"img_h": 100,
+			"wp_img": 15765,
+			"lang": "somalijski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Absa Premier League",
+			"name_matchday": "Seychelles Absa Premier League",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/absa_premiership_1.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 14956,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
@@ -518,13 +672,24 @@
 			"show": true
 		},
 		{
-			"name_fifa": "GFF League",
-			"name_matchday": "Gambia GFF League",
-			"img": "https://matchday.pl/wp-content/uploads/2024/06/GFF-LOGO-Latest-copy.png",
-			"img_w": 104,
+			"name_fifa": "GFF Elite League",
+			"name_matchday": "Guyana Elite League",
+			"img": "https://matchday.pl/wp-content/uploads/2024/06/guyana-300x300.png",
+			"img_w": 100,
 			"img_h": 100,
-			"wp_img": 10427,
+			"wp_img": 10092,
 			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "SML Season II",
+			"name_matchday": "Suriname Major League",
+			"img": "https://matchday.pl/wp-content/uploads/2025/04/suriname.png",
+			"img_w": 65,
+			"img_h": 100,
+			"wp_img": 15777,
+			"lang": "holenderski",
 			"comm": "",
 			"show": true
 		},
@@ -546,6 +711,17 @@
 			"img_w": 100,
 			"img_h": 72,
 			"wp_img": 11731,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "SVGFF Premier League",
+			"name_matchday": "Saint Vincent and the Grenadines Premier League",
+			"img": "https://matchday.pl/wp-content/uploads/2025/04/saint_vincent_and_grenadines.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 15766,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
@@ -606,6 +782,17 @@
 			"show": true
 		},
 		{
+			"name_fifa": "Cayman Islands Men's Premier League",
+			"name_matchday": "Cayman Islands Premier League",
+			"img": "https://matchday.pl/wp-content/uploads/2025/04/Fed_iles_caimans.svg_-270x300.png",
+			"img_w": 90,
+			"img_h": 100,
+			"wp_img": 15784,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "Bermuda Premier Division",
 			"name_matchday": "Bermuda Premier Division",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/bermuda-300x300.png",
@@ -623,50 +810,6 @@
 			"img_w": 78,
 			"img_h": 100,
 			"wp_img": 13167,
-			"lang": "angielski",
-			"comm": "",
-			"show": true
-		},
-		{
-			"name_fifa": "MTN Premier League",
-			"name_matchday": "Eswatini MTN Premier League",
-			"img": "https://matchday.pl/wp-content/uploads/2025/07/Premier_League_of_Eswatini-235x300.png",
-			"img_w": 78,
-			"img_h": 100,
-			"wp_img": 12312,
-			"lang": "angielski",
-			"comm": "",
-			"show": true
-		},
-		{
-			"name_fifa": "Vodacom Premier League",
-			"name_matchday": "Lesotho Premier League",
-			"img": "https://matchday.pl/wp-content/uploads/2025/07/lesotho.png",
-			"img_w": 100,
-			"img_h": 100,
-			"wp_img": 12506,
-			"lang": "angielski",
-			"comm": "",
-			"show": true
-		},
-		{
-			"name_fifa": "National Super League",
-			"name_matchday": "Mauritius Super League",
-			"img": "https://matchday.pl/wp-content/uploads/2024/06/NSL@2x.png",
-			"img_w": 69,
-			"img_h": 100,
-			"wp_img": 10430,
-			"lang": "francuski",
-			"comm": "",
-			"show": true
-		},
-		{
-			"name_fifa": "Ligue des Champions Division 2",
-			"name_matchday": "Madagascar Ligue des Champions Division 2",
-			"img": "https://matchday.pl/wp-content/uploads/2025/07/madagaskar-284x300.png",
-			"img_w": 95,
-			"img_h": 100,
-			"wp_img": 12311,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
@@ -716,6 +859,17 @@
 			"show": true
 		},
 		{
+			"name_fifa": "Torneo Delle Nazioni",
+			"name_matchday": "Torneo Delle Nazioni",
+			"img": "https://matchday.pl/wp-content/uploads/2025/04/favicon-Torneo-Delle-Nazioni-512-300x300.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 15773,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "Bhausaheb Bandodkar Memorial Trophy (2nd Edition)",
 			"name_matchday": "Bandodkar Trophy",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/Bandodkar-Trophy-300x300.png",
@@ -744,6 +898,28 @@
 			"img_w": 102,
 			"img_h": 100,
 			"wp_img": 11394,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "FIFA Beach Soccer World Cup Seychelles 2025™",
+			"name_matchday": "Mistrzostwa Świata w Piłce Nożnej Plażowej",
+			"img": "https://matchday.pl/wp-content/uploads/2025/04/2025_FIFA_Beach_Soccer_World_Cup-226x300.png",
+			"img_w": 75,
+			"img_h": 100,
+			"wp_img": 15785,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Ford Futsal SuperLeague",
+			"name_matchday": "New Zealand Ford Futsal SuperLeague",
+			"img": "https://matchday.pl/wp-content/uploads/2025/04/ford_futsal_superleague-300x300.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 15775,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
@@ -837,13 +1013,24 @@
 			"show": true
 		},
 		{
+			"name_fifa": "Siguria Superliga e Femrave",
+			"name_matchday": "Siguria Superliga e Femrave",
+			"img": "https://matchday.pl/wp-content/uploads/2025/04/Football_Federation_of_Kosovo_logo.svg_-184x300.png",
+			"img_w": 61,
+			"img_h": 100,
+			"wp_img": 15779,
+			"lang": "albański",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "Lithuanian Women's A league",
 			"name_matchday": "A Lyga Kobiet",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/Topo-centras-euronics-moteru-a-lyga-300x89.png",
 			"img_w": 300,
 			"img_h": 89,
 			"wp_img": 11730,
-			"lang": "angielski",
+			"lang": "litewski",
 			"comm": "",
 			"show": true
 		},
@@ -942,6 +1129,17 @@
 			"img_w": 135,
 			"img_h": 100,
 			"wp_img": 10426,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Ford Futsal SuperLeague (Women)",
+			"name_matchday": "New Zealand Women Ford Futsal SuperLeague",
+			"img": "https://matchday.pl/wp-content/uploads/2025/04/ford_futsal_superleague-300x300.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 15775,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
