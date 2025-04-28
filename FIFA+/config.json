@@ -474,6 +474,17 @@
 			"show": true
 		},
 		{
+			"name_fifa": "South Sudan Premier League",
+			"name_matchday": "South Sudan Premier League",
+			"img": "https://matchday.pl/wp-content/uploads/2025/04/South_Sudan_Premier_League-206x300.png",
+			"img_w": 69,
+			"img_h": 100,
+			"wp_img": 15888,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "Côte d'Ivoire Ligue 2",
 			"name_matchday": "Côte d'Ivoire Ligue 2",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/wks.png",
@@ -487,6 +498,17 @@
 		{
 			"name_fifa": "Super Ligue",
 			"name_matchday": "Super League Niger",
+			"img": "https://www.lesahel.org/wp-content/uploads/2023/11/Logopit_1667480373484-1.webp",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 10094,
+			"lang": "francuski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "National Cup",
+			"name_matchday": "Puchar Nigru",
 			"img": "https://www.lesahel.org/wp-content/uploads/2023/11/Logopit_1667480373484-1.webp",
 			"img_w": 100,
 			"img_h": 100,
@@ -705,6 +727,17 @@
 			"show": true
 		},
 		{
+			"name_fifa": "Men's Soccer League",
+			"name_matchday": "Bahamas Men's Soccer League",
+			"img": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c9/Bahamas_Football_Association.svg/1280px-Bahamas_Football_Association.svg.png",
+			"img_w": 137,
+			"img_h": 100,
+			"wp_img": 10459,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "Premier League Grenada",
 			"name_matchday": "Grenada Premier League",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/Grenada-Football-Association-2015-215x300.png",
@@ -815,23 +848,34 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Telekom S-League",
-			"name_matchday": "Solomon Islands Telekom S-League",
-			"img": "https://matchday.pl/wp-content/uploads/2025/07/Telekom_S-League_Solomon_Islands-300x300.png",
-			"img_w": 100,
-			"img_h": 100,
-			"wp_img": 12298,
-			"lang": "angielski",
-			"comm": "",
-			"show": true
-		},
-		{
 			"name_fifa": "Chatham Cup",
 			"name_matchday": "Puchar Nowej Zelandii",
 			"img": "https://matchday.pl/wp-content/uploads/2024/06/Chatham_Cup_logo-300x300.png",
 			"img_w": 100,
 			"img_h": 100,
 			"wp_img": 10432,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Extra Premier League",
+			"name_matchday": "Fiji Extra Premier League",
+			"img": "https://matchday.pl/wp-content/uploads/2025/04/fiji_premier_league.webp",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 15835,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Telekom S-League",
+			"name_matchday": "Solomon Islands Telekom S-League",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/Telekom_S-League_Solomon_Islands-300x300.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 12298,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
@@ -881,12 +925,12 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Coupe Nationale",
-			"name_matchday": "Puchar Nigru",
-			"img": "https://www.lesahel.org/wp-content/uploads/2023/11/Logopit_1667480373484-1.webp",
-			"img_w": 100,
+			"name_fifa": "CAF African Schools Football Championship",
+			"name_matchday": "CAF African Schools Football Championship",
+			"img": "https://matchday.pl/wp-content/uploads/2025/04/Logo_of_CAF_African_Schools_Football_Championship-300x138.png",
+			"img_w": 217,
 			"img_h": 100,
-			"wp_img": 10094,
+			"wp_img": 15834,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
@@ -1014,7 +1058,7 @@
 		},
 		{
 			"name_fifa": "Siguria Superliga e Femrave",
-			"name_matchday": "Siguria Superliga e Femrave",
+			"name_matchday": "Kosovo Siguria Superliga e Femrave",
 			"img": "https://matchday.pl/wp-content/uploads/2025/04/Football_Federation_of_Kosovo_logo.svg_-184x300.png",
 			"img_w": 61,
 			"img_h": 100,
@@ -1086,6 +1130,17 @@
 			"img_h": 100,
 			"wp_img": 7100,
 			"lang": "arabski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Tunisian Women's Championship",
+			"name_matchday": "Tunisian Women's Championship",
+			"img": "https://matchday.pl/wp-content/uploads/2025/04/Logo_federation_tunisienne_de_football-copy.svg_-300x300.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 15863,
+			"lang": "francuski",
 			"comm": "",
 			"show": true
 		},
