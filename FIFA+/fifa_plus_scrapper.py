@@ -26,7 +26,7 @@ def getMatches(custom_date):
 	cookies = wait.until(EC.element_to_be_clickable((By.ID, "onetrust-reject-all-handler")))
 	cookies.click()
 
-	elements = driver.find_elements(By.CSS_SELECTOR, ".content-items-showcase")
+	elements = driver.find_elements(By.CSS_SELECTOR, ".sc-dkmUuB.ebVuZo")
 	driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
 
 	ad = wait.until(EC.element_to_be_clickable((By.ID, "modal-button-close")))
@@ -54,6 +54,8 @@ def getMatches(custom_date):
 
 		home, away = match.find_elements(By.CSS_SELECTOR, ".sc-aXZVg.kKZgdp.typography")[0].text.split(' v ')
 		league = match.find_elements(By.CSS_SELECTOR, ".sc-aXZVg.kKZgdp.typography")[1].text.split(' | ')[0]
+		country = match.find_element(By.CSS_SELECTOR, ".sc-aXZVg.htYgvD.typography ").text.split(' ● ')[-1]
+		league = country + " " + league
 		time = match.find_element(By.CSS_SELECTOR, ".sc-aXZVg.gYmcVH.typography").text
 		link = match.find_element(By.XPATH, "./..").get_attribute("href")
 
@@ -67,7 +69,7 @@ def getMatches(custom_date):
 			temp_time = datetime.datetime.strptime(time, '%H:%M') + datetime.timedelta(minutes=5)
 			time = temp_time.strftime('%H:%M')
 
-		if int(time.split(':')[0]) < 6:
+		if int(time.split(':')[0]) < 6 and int(time.split(':')[0]) > 0:
 			continue
 
 		league = re.sub(r'\s((20[0-9][0-9]/20[0-9][0-9])|(20[0-9][0-9][/-][0-9][0-9])|(20[0-9][0-9])|(2[5-9])|([3-9][0-9]))', "", league)
@@ -90,12 +92,16 @@ def getMatches(custom_date):
 	driver.get(url)
 
 	[driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END) for i in range(20)]
-	elements = driver.find_elements(By.CSS_SELECTOR, ".sc-dkmUuB.ebVuZo")
+
+	container = driver.find_element(By.ID, 'content-scroll-anchor')
+	elements = container.find_elements(By.CSS_SELECTOR, ".sc-dkmUuB.ebVuZo")
 
 	for match in elements:
 
 		home, away = match.find_elements(By.CSS_SELECTOR, ".sc-aXZVg.kKZgdp.typography")[0].text.split(' v ')
 		league = match.find_elements(By.CSS_SELECTOR, ".sc-aXZVg.kKZgdp.typography")[1].text.split(' | ')[0]
+		country = match.find_element(By.CSS_SELECTOR, ".sc-aXZVg.htYgvD.typography ").text.split(' ● ')[-1]
+		league = country + " " + league
 		time = match.find_element(By.CSS_SELECTOR, ".sc-aXZVg.gYmcVH.typography").text
 		link = match.find_element(By.XPATH, "./..").get_attribute("href")
 

@@ -14,7 +14,7 @@ tzWarsaw = pytz.timezone('Europe/Warsaw')
 
 def getMatches(custom_date):
 	options = webdriver.ChromeOptions()
-	# options.add_argument('--headless')
+	options.add_argument('--headless')
 	options.add_argument('--window-size=1920,1080')
 	options.add_experimental_option('excludeSwitches', ['enable-logging'])
 	options.add_argument('log-level=3')
