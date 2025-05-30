@@ -34,12 +34,12 @@ def getMatches(custom_date):
 
 	driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
 
-	container = driver.find_element(By.CSS_SELECTOR, '.sc-kMribo.bODxja')
+	container = driver.find_element(By.ID, 'content-scroll-anchor')
 
 	#show all matches
 	while True:
 		driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
-		new_elements = container.find_elements(By.CSS_SELECTOR, ".sc-iEXKAA.gzITyf")
+		new_elements = container.find_elements(By.XPATH, "//a[starts-with(@data-id, 'match_card')]")
 
 		if len(new_elements) == len(elements):
 			break
@@ -51,23 +51,22 @@ def getMatches(custom_date):
 	leagues = []
 
 	for match in elements:
-
 		try:
-			home, away = match.find_element(By.CSS_SELECTOR, ".sc-fqkvVR.ixtnDM.typography").text.split(' v ')
+			home, away = match.find_element(By.XPATH, ".//span[@data-id='next-matches-rail-match-title']").text.split(' v ')
 		except:
-			home = match.find_element(By.CSS_SELECTOR, ".sc-fqkvVR.ixtnDM.typography").text
+			home = match.find_element(By.XPATH, ".//span[@data-id='next-matches-rail-match-title']").text
 			away = ""
-		league = match.find_element(By.CSS_SELECTOR, ".sc-fqkvVR.dfkmQn.typography").text.split(' | ')[0]
+		league = match.find_element(By.XPATH, ".//span[@data-id='next-matches-rail-match-title']/following-sibling::p[1]").text.split(' | ')[0]
 		try:
-			country = match.find_element(By.CSS_SELECTOR, ".sc-fqkvVR.hFYCep.typography").text.split(' ● ')[-1]
+			country = match.find_element(By.XPATH, ".//div[@data-id='next-matches-rail-match-subtitle']").text.split('\n')[-1]
 		except:
 			country = ""
 		league = country + " " + league
 		try:
-			time = match.find_element(By.CSS_SELECTOR, ".sc-fqkvVR.gKESLw.typography").text
+			time = match.find_element(By.XPATH, ".//div[@data-id='next-matches-rail-match-time-patch']").text
 		except:
 			continue
-		link = match.find_element(By.XPATH, "./..").get_attribute("href")
+		link = match.get_attribute("href")
 
 		if time[-2:] == '15' or time[-2:] == '45':
 			temp_time = datetime.datetime.strptime(time, '%H:%M') + datetime.timedelta(minutes=15)
@@ -104,16 +103,16 @@ def getMatches(custom_date):
 	[driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END) for i in range(20)]
 
 	container = driver.find_element(By.ID, 'content-scroll-anchor')
-	elements = container.find_elements(By.CSS_SELECTOR, ".sc-iEXKAA.gzITyf")
+	elements = container.find_elements(By.XPATH, "//a[starts-with(@data-id, 'match_card')]")
 
 	for match in elements:
 
-		home, away = match.find_element(By.CSS_SELECTOR, ".sc-fqkvVR.ixtnDM.typography").text.split(' v ')
-		league = match.find_element(By.CSS_SELECTOR, ".sc-fqkvVR.dfkmQn.typography").text.split(' | ')[0]
-		country = match.find_element(By.CSS_SELECTOR, ".sc-fqkvVR.hFYCep.typography").text.split(' ● ')[-1]
+		home, away = match.find_element(By.XPATH, ".//span[@data-id='next-matches-rail-match-title']").text.split(' v ')
+		league = match.find_element(By.XPATH, ".//span[@data-id='next-matches-rail-match-title']/following-sibling::p[1]").text.split(' | ')[0]
+		country = match.find_element(By.XPATH, ".//div[@data-id='next-matches-rail-match-subtitle']").text.split('\n')[-1]
 		league = country + " " + league
-		time = match.find_element(By.CSS_SELECTOR, ".sc-fqkvVR.gKESLw.typography").text
-		link = match.find_element(By.XPATH, "./..").get_attribute("href")
+		time = match.find_element(By.XPATH, ".//div[@data-id='next-matches-rail-match-time-patch']").text
+		link = match.get_attribute("href")
 
 		if time[-2:] == '15' or time[-2:] == '45':
 			temp_time = datetime.datetime.strptime(time, '%H:%M') + datetime.timedelta(minutes=15)
