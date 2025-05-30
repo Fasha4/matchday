@@ -26,7 +26,7 @@ def getMatches(custom_date):
 	cookies = wait.until(EC.element_to_be_clickable((By.ID, "onetrust-reject-all-handler")))
 	cookies.click()
 
-	elements = driver.find_elements(By.CSS_SELECTOR, ".sc-dkmUuB.ebVuZo")
+	elements = driver.find_elements(By.CSS_SELECTOR, ".sc-iEXKAA.gzITyf")
 	driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
 
 	ad = wait.until(EC.element_to_be_clickable((By.ID, "modal-button-close")))
@@ -34,12 +34,12 @@ def getMatches(custom_date):
 
 	driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
 
-	container = driver.find_element(By.ID, 'content-scroll-anchor')
+	container = driver.find_element(By.CSS_SELECTOR, '.sc-kMribo.bODxja')
 
 	#show all matches
 	while True:
 		driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
-		new_elements = container.find_elements(By.CSS_SELECTOR, ".sc-dkmUuB.ebVuZo")
+		new_elements = container.find_elements(By.CSS_SELECTOR, ".sc-iEXKAA.gzITyf")
 
 		if len(new_elements) == len(elements):
 			break
@@ -52,24 +52,34 @@ def getMatches(custom_date):
 
 	for match in elements:
 
-		home, away = match.find_elements(By.CSS_SELECTOR, ".sc-aXZVg.kKZgdp.typography")[0].text.split(' v ')
-		league = match.find_elements(By.CSS_SELECTOR, ".sc-aXZVg.kKZgdp.typography")[1].text.split(' | ')[0]
-		country = match.find_element(By.CSS_SELECTOR, ".sc-aXZVg.htYgvD.typography ").text.split(' ● ')[-1]
+		try:
+			home, away = match.find_element(By.CSS_SELECTOR, ".sc-fqkvVR.ixtnDM.typography").text.split(' v ')
+		except:
+			home = match.find_element(By.CSS_SELECTOR, ".sc-fqkvVR.ixtnDM.typography").text
+			away = ""
+		league = match.find_element(By.CSS_SELECTOR, ".sc-fqkvVR.dfkmQn.typography").text.split(' | ')[0]
+		try:
+			country = match.find_element(By.CSS_SELECTOR, ".sc-fqkvVR.hFYCep.typography").text.split(' ● ')[-1]
+		except:
+			country = ""
 		league = country + " " + league
-		time = match.find_element(By.CSS_SELECTOR, ".sc-aXZVg.gYmcVH.typography").text
+		try:
+			time = match.find_element(By.CSS_SELECTOR, ".sc-fqkvVR.gKESLw.typography").text
+		except:
+			continue
 		link = match.find_element(By.XPATH, "./..").get_attribute("href")
 
 		if time[-2:] == '15' or time[-2:] == '45':
 			temp_time = datetime.datetime.strptime(time, '%H:%M') + datetime.timedelta(minutes=15)
 			time = temp_time.strftime('%H:%M')
-		elif time[-2:] == '20' or time[-2:] == '50':
+		elif time[-2:] == '05' or time[-2:] == '20' or time[-2:] == '35' or time[-2:] == '50':
 			temp_time = datetime.datetime.strptime(time, '%H:%M') + datetime.timedelta(minutes=10)
 			time = temp_time.strftime('%H:%M')
 		elif time[-2:] == '55':
 			temp_time = datetime.datetime.strptime(time, '%H:%M') + datetime.timedelta(minutes=5)
 			time = temp_time.strftime('%H:%M')
 
-		if int(time.split(':')[0]) < 6 and int(time.split(':')[0]) > 0:
+		if int(time.split(':')[0]) < 6 and int(time.split(':')[0]) >= 0:
 			continue
 
 		league = re.sub(r'\s((20[0-9][0-9]/20[0-9][0-9])|(20[0-9][0-9][/-][0-9][0-9])|(20[0-9][0-9])|(2[5-9])|([3-9][0-9]))', "", league)
@@ -94,15 +104,15 @@ def getMatches(custom_date):
 	[driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END) for i in range(20)]
 
 	container = driver.find_element(By.ID, 'content-scroll-anchor')
-	elements = container.find_elements(By.CSS_SELECTOR, ".sc-dkmUuB.ebVuZo")
+	elements = container.find_elements(By.CSS_SELECTOR, ".sc-iEXKAA.gzITyf")
 
 	for match in elements:
 
-		home, away = match.find_elements(By.CSS_SELECTOR, ".sc-aXZVg.kKZgdp.typography")[0].text.split(' v ')
-		league = match.find_elements(By.CSS_SELECTOR, ".sc-aXZVg.kKZgdp.typography")[1].text.split(' | ')[0]
-		country = match.find_element(By.CSS_SELECTOR, ".sc-aXZVg.htYgvD.typography ").text.split(' ● ')[-1]
+		home, away = match.find_element(By.CSS_SELECTOR, ".sc-fqkvVR.ixtnDM.typography").text.split(' v ')
+		league = match.find_element(By.CSS_SELECTOR, ".sc-fqkvVR.dfkmQn.typography").text.split(' | ')[0]
+		country = match.find_element(By.CSS_SELECTOR, ".sc-fqkvVR.hFYCep.typography").text.split(' ● ')[-1]
 		league = country + " " + league
-		time = match.find_element(By.CSS_SELECTOR, ".sc-aXZVg.gYmcVH.typography").text
+		time = match.find_element(By.CSS_SELECTOR, ".sc-fqkvVR.gKESLw.typography").text
 		link = match.find_element(By.XPATH, "./..").get_attribute("href")
 
 		if time[-2:] == '15' or time[-2:] == '45':
@@ -184,15 +194,18 @@ def show(matches, date):
 					away = config["translate"][match["away"]]
 				else:
 					away = match["away"]
-				output += match["time"] + r' - <strong>' + home.upper() + r' - ' +  away.upper() + r'</strong>' + '\n'
+				output += match["time"]
+				if not addComm:
+					addComm, dayInfo = isNextDay(match["time"], date)
+				if addComm:
+					output += r'*'
+				output += r' - <strong>' + home.upper() + r' - ' +  away.upper() + r'</strong>' + '\n'
 				output += r'<span style="font-size: 10pt;"><img class="emoji" role="img" draggable="false" src="https://s.w.org/images/core/emoji/14.0.0/svg/1f4fa.svg" alt="📺" /> '
 				output += r'<a href="' + match['link'] + r'" target="_blank" rel="noopener">FIFA+</a> '
 				output += r'<img class="emoji" role="img" draggable="false" src="https://s.w.org/images/core/emoji/14.0.0/svg/1f399.svg" alt="🎙" width="16" height="16" /> ' + new_league["lang"] + r'</span>' + '\n'
 				output += '\n'
-				if not addComm:
-					addComm, dayInfo = isNextDay(match["time"], date)
 			if addComm:
-				output += r'<span style="font-size: 10pt;"><em>W nocy z ' + dayInfo + r'</em></span>' + '\n'
+				output += r'<span style="font-size: 10pt;"><em>*W nocy z ' + dayInfo + r'</em></span>' + '\n'
 			if new_league["comm"]:
 				output += r'<span style="font-size: 10pt;"><em>' + new_league["comm"] + r'</em></span>' + '\n'
 				output += '\n'

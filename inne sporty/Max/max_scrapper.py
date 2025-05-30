@@ -11,13 +11,13 @@ import time
 
 def getMatches(custom_date):
 	options = webdriver.ChromeOptions()
-	options.add_argument('--headless')
+	# options.add_argument('--headless')
 	options.add_argument('--window-size=1920,1080')
 	options.add_experimental_option('excludeSwitches', ['enable-logging'])
 	options.add_argument('log-level=3')
 	driver = webdriver.Chrome(service=ChromeService(), options=options)
 
-	url = "https://www.max.com/pl/pl/olympics/sports"
+	url = "https://www.max.com/pl/pl/sports"
 	driver.get(url)
 
 	wait = WebDriverWait(driver, 10)
@@ -27,25 +27,25 @@ def getMatches(custom_date):
 	cookies = wait.until(EC.element_to_be_clickable((By.ID, "onetrust-accept-btn-handler")))
 	cookies.click()
 
-	sports = driver.find_elements(By.CSS_SELECTOR, ".pictograms")
+	# sports = driver.find_elements(By.CSS_SELECTOR, ".pictograms")
 
-	sports_names = []
-	sports_links = [x.find_element(By.TAG_NAME, "a").get_attribute("href") for x in sports]
+	# sports_names = []
+	# sports_links = [x.find_element(By.TAG_NAME, "a").get_attribute("href") for x in sports]
 
 	matches = []
 
-	for link in sports_links:
-		driver.get(link)
+	# for link in sports_links:
+	# 	driver.get(link)
 
-		events_container = driver.find_elements(By.CSS_SELECTOR, ".react-multi-carousel-track.content-tray-slider")
-		if link in ["https://www.max.com/pl/pl/olympics/sports/" + x for x in ["football", "volleyball", "archery", "handball", "rugby-sevens", "artistic-gymnastics", "basketball"]]:
-			events_k = events_container[2].find_elements(By.TAG_NAME, "li")
-			matches, sports_names = makeMatches(events_k, matches, sports_names, custom_date)
-			events_m = events_container[3].find_elements(By.TAG_NAME, "li")
-			matches, sports_names = makeMatches(events_m, matches, sports_names, custom_date)
-		else:
-			events = events_container[1].find_elements(By.TAG_NAME, "li")
-			matches, sports_names = makeMatches(events, matches, sports_names, custom_date)
+	events_container = driver.find_element(By.CSS_SELECTOR, ".react-multi-carousel-track.content-tray-slider")
+	# if link in ["https://www.max.com/pl/pl/olympics/sports/" + x for x in ["football", "volleyball", "archery", "handball", "rugby-sevens", "artistic-gymnastics", "basketball"]]:
+	# 	events_k = events_container[2].find_elements(By.TAG_NAME, "li")
+	# 	matches, sports_names = makeMatches(events_k, matches, sports_names, custom_date)
+	# 	events_m = events_container[3].find_elements(By.TAG_NAME, "li")
+	# 	matches, sports_names = makeMatches(events_m, matches, sports_names, custom_date)
+	# else:
+	events = events_container.find_elements(By.TAG_NAME, "li")
+	matches, sports_names = makeMatches(events, matches, sports_names, custom_date)
 
 	games = []
 

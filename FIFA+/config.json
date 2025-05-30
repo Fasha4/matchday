@@ -12,12 +12,34 @@
 			"show": true
 		},
 		{
+			"name_fifa": "FIFA FIFA U-17 World Cup Qatar™",
+			"name_matchday": "Mistrzostwa Świata U-17",
+			"img": "https://matchday.pl/wp-content/uploads/2025/05/FIFA_U17_2025_logo-300x252.png",
+			"img_w": 100,
+			"img_h": 84,
+			"wp_img": 16189,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "Friendly Men International Friendly",
 			"name_matchday": "Mecze Towarzyskie",
 			"img": "https://matchday.pl/wp-content/uploads/2024/01/FIFA-Logo-1024x576.png",
 			"img_w": 151,
 			"img_h": 85,
 			"wp_img": 6341,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "FIFA FIFA Arab Cup Qatar™",
+			"name_matchday": "Arab Cup 2025",
+			"img": "https://matchday.pl/wp-content/uploads/2025/05/Arab_Cup_icon-300x300.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 16188,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
@@ -107,6 +129,17 @@
 			"img_h": 86,
 			"wp_img": 15764,
 			"lang": "albański",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Liechtenstein Liechtensteiner Cup",
+			"name_matchday": "Puchar Liechtensteinu",
+			"img": "https://matchday.pl/wp-content/uploads/2025/05/Logo_Liechtensteiner_Cup_2022-217x300.png",
+			"img_w": 72,
+			"img_h": 100,
+			"wp_img": 16128,
+			"lang": "niemiecki",
 			"comm": "",
 			"show": true
 		},
@@ -430,7 +463,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Championnat de Première Division D1",
+			"name_fifa": "Togo Championnat de Première Division D1",
 			"name_matchday": "Togo D1 Lonato",
 			"img": "https://matchday.pl/wp-content/uploads/2024/06/togo-300x300.jpg",
 			"img_w": 100,
@@ -536,6 +569,17 @@
 			"img_h": 100,
 			"wp_img": 16026,
 			"lang": "suahili",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Côte d'Ivoire Coupe Nationale",
+			"name_matchday": "Puchar WKS",
+			"img": "https://matchday.pl/wp-content/uploads/2025/05/federation-ivoirienne-de-football-logo-png_seeklogo-53428-300x300.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 16176,
+			"lang": "angielski",
 			"comm": "",
 			"show": true
 		},
@@ -672,6 +716,39 @@
 			"show": true
 		},
 		{
+			"name_fifa": "Mauritius MFA Cup",
+			"name_matchday": "Puchar Mauritiusu",
+			"img": "https://matchday.pl/wp-content/uploads/2025/05/muritius_fa_cup-204x300.png",
+			"img_w": 68,
+			"img_h": 100,
+			"wp_img": 16146,
+			"lang": "francuski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Mauritius Republic Cup",
+			"name_matchday": "Puchar Ligi Mauritiusu",
+			"img": "https://matchday.pl/wp-content/uploads/2025/05/mauritius_league_cup.png",
+			"img_w": 72,
+			"img_h": 100,
+			"wp_img": 16147,
+			"lang": "francuski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Madagascar Coupe de Madagascar",
+			"name_matchday": "Puchar Madagaskaru",
+			"img": "https://matchday.pl/wp-content/uploads/2025/05/madagascar_cup-300x278.png",
+			"img_w": 100,
+			"img_h": 93,
+			"wp_img": 16187,
+			"lang": "francuski",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "Ligue des Champions Division 2",
 			"name_matchday": "Madagascar Ligue des Champions Division 2",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/madagaskar-284x300.png",
@@ -694,7 +771,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Championnat National de Football Division 1",
+			"name_fifa": "Djibouti Championnat National de Football Division 1",
 			"name_matchday": "Djibouti Football Division 1",
 			"img": "https://matchday.pl/wp-content/uploads/2025/04/djibouti_d1-262x300.png",
 			"img_w": 87,
@@ -815,7 +892,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Premier League Grenada",
+			"name_fifa": "Grenada Premier League",
 			"name_matchday": "Grenada Premier League",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/Grenada-Football-Association-2015-215x300.png",
 			"img_w": 100,
@@ -980,6 +1057,17 @@
 			"show": true
 		},
 		{
+			"name_fifa": "FIFA FIFA Youth Series",
+			"name_matchday": "FIFA Youth Series",
+			"img": "https://matchday.pl/wp-content/uploads/2024/01/FIFA-Logo-1024x576.png",
+			"img_w": 151,
+			"img_h": 85,
+			"wp_img": 6341,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "Torneo Delle Nazioni",
 			"name_matchday": "Torneo Delle Nazioni",
 			"img": "https://matchday.pl/wp-content/uploads/2025/04/favicon-Torneo-Delle-Nazioni-512-300x300.png",
@@ -1090,6 +1178,17 @@
 			"show": true
 		},
 		{
+			"name_fifa": "International Friendly - Women's U20",
+			"name_matchday": "Mecze Towarzyskie Kobiet U20",
+			"img": "https://matchday.pl/wp-content/uploads/2024/01/FIFA-Logo-1024x576.png",
+			"img_w": 151,
+			"img_h": 85,
+			"wp_img": 6341,
+			"lang": "hiszpański",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "FIFA U-20 Women's World Cup Colombia 2024™",
 			"name_matchday": "Mistrzostwa Świata Kobiet U20",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/2024_FIFA_U-20_Womens_World_Cup-214x300.png",
@@ -1107,6 +1206,17 @@
 			"img_w": 89,
 			"img_h": 100,
 			"wp_img": 11395,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "UEFA UEFA U16 Women's Tournament",
+			"name_matchday": "Turniej kobiet UEFA U-16",
+			"img": "https://matchday.pl/wp-content/uploads/2025/05/UEFA_Logo-300x300.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 16157,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
@@ -1222,7 +1332,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Championnat National D1",
+			"name_fifa": "Algeria Championnat National D1",
 			"name_matchday": "Algeria Women's Championnat National D1",
 			"img": "https://matchday.pl/wp-content/uploads/2025/04/Algeria_LNFF_logo_2-300x300.png",
 			"img_w": 100,

@@ -26,15 +26,22 @@ def getMatches(custom_date):
 
 	wait = WebDriverWait(driver, 10)
 
+	sleep(1)
 	driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
+	sleep(1)
+	driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.PAGE_UP)
+	sleep(1)
+	driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
+	sleep(1)
+	driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.PAGE_UP)
 
 	#MLS
 	try:
 		wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Live']")))
 		MLS = 'Live'
 	except:
-		wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Schedule']")))
-		MLS = 'Schedule'
+		wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Rivalry Week: Live']"))) #Schedule #Live Matches <- change event line #Rivalry Week: Live
+		MLS = 'Rivalry Week: Live'
 	finally:
 		driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
 		driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.PAGE_UP)
@@ -246,20 +253,23 @@ def show(matches, date):
 					away = config["translate"][match["away"]]
 				else:
 					away = match["away"]
-				output += match["time"] + r' - <strong>' + home.upper() + r' - ' +  away.upper() + r'</strong>' + '\n'
+				output += match["time"]
+				if not addComm:
+					addComm, dayInfo = isNextDay(match["time"], date)
+				if addComm:
+					output += r'*'
+				output += r' - <strong>' + home.upper() + r' - ' +  away.upper() + r'</strong>' + '\n'
 				output += r'<span style="font-size: 10pt;"><img class="emoji" role="img" draggable="false" src="https://s.w.org/images/core/emoji/14.0.0/svg/1f4fa.svg" alt="📺" /> '
 				output += r'<a href="' + match['link'] + r'" target="_blank" rel="noopener">AppleTV</a>'
 				if match['isFree']:
-					output += r'*'
+					output += r'\*\*'
 					freeNote = True
 				output += r' <img class="emoji" role="img" draggable="false" src="https://s.w.org/images/core/emoji/14.0.0/svg/1f399.svg" alt="🎙" width="16" height="16" /> ' + new_league["lang"] + r'</span>' + '\n'
 				output += '\n'
-				if not addComm:
-					addComm, dayInfo = isNextDay(match["time"], date)
 			if addComm:
-				output += r'<span style="font-size: 10pt;"><em>W nocy z ' + dayInfo + r'</em></span>' + '\n'
+				output += r'<span style="font-size: 10pt;"><em>*W nocy z ' + dayInfo + r'</em></span>' + '\n'
 			if freeNote:
-				output += r'<span style="font-size: 10pt;"><em>*Transmisja darmowa</em></span>' + '\n'
+				output += r'<span style="font-size: 10pt;"><em>\*\*Transmisja darmowa</em></span>' + '\n'
 			if new_league["comm"]:
 				output += r'<span style="font-size: 10pt;"><em>' + new_league["comm"] + r'</em></span>' + '\n'
 				output += '\n'
