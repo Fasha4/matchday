@@ -34,12 +34,13 @@ def getMatches(custom_date):
 
 	driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
 
+	wait.until(EC.visibility_of_element_located((By.ID, "content-scroll-anchor")))
 	container = driver.find_element(By.ID, 'content-scroll-anchor')
 
 	#show all matches
 	while True:
 		driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
-		new_elements = container.find_elements(By.XPATH, "//a[starts-with(@data-id, 'match_card')]")
+		new_elements = container.find_elements(By.XPATH, ".//a[starts-with(@data-id, 'match_card')]")
 
 		if len(new_elements) == len(elements):
 			break
@@ -103,13 +104,19 @@ def getMatches(custom_date):
 	[driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END) for i in range(20)]
 
 	container = driver.find_element(By.ID, 'content-scroll-anchor')
-	elements = container.find_elements(By.XPATH, "//a[starts-with(@data-id, 'match_card')]")
+	elements = container.find_elements(By.XPATH, ".//a[starts-with(@data-id, 'match_card')]")
 
 	for match in elements:
-
-		home, away = match.find_element(By.XPATH, ".//span[@data-id='next-matches-rail-match-title']").text.split(' v ')
+		try:
+			home, away = match.find_element(By.XPATH, ".//span[@data-id='next-matches-rail-match-title']").text.split(' v ')
+		except:
+			home = match.find_element(By.XPATH, ".//span[@data-id='next-matches-rail-match-title']").text
+			away = ""
 		league = match.find_element(By.XPATH, ".//span[@data-id='next-matches-rail-match-title']/following-sibling::p[1]").text.split(' | ')[0]
-		country = match.find_element(By.XPATH, ".//div[@data-id='next-matches-rail-match-subtitle']").text.split('\n')[-1]
+		try:
+			country = match.find_element(By.XPATH, ".//div[@data-id='next-matches-rail-match-subtitle']").text.split('\n')[-1]
+		except:
+			country = ""
 		league = country + " " + league
 		time = match.find_element(By.XPATH, ".//div[@data-id='next-matches-rail-match-time-patch']").text
 		link = match.get_attribute("href")
