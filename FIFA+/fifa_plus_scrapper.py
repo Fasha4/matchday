@@ -29,8 +29,8 @@ def getMatches(custom_date):
 	elements = driver.find_elements(By.CSS_SELECTOR, ".sc-iEXKAA.gzITyf")
 	driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
 
-	ad = wait.until(EC.element_to_be_clickable((By.ID, "modal-button-close")))
-	ad.click()
+	# ad = wait.until(EC.element_to_be_clickable((By.ID, "modal-button-close")))
+	# ad.click()
 
 	driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
 
