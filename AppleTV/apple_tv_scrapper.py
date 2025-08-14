@@ -27,9 +27,14 @@ def getMatches(custom_date):
 
 	wait = WebDriverWait(driver, 10)
 
+	driver.find_element(By.TAG_NAME, 'body').click()
+	driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
+	sleep(1)
+	driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
+
 	# sleep(1)
 	# driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.PAGE_UP)
-	# sleep(1)
+	# sleep(3)
 	# driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
 	# sleep(1)
 	# driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.PAGE_UP)
@@ -102,7 +107,7 @@ def getMatches(custom_date):
 	# events = shelfs[matchesLine].find_elements(By.CSS_SELECTOR, ".shelf-grid__list-item")
 	# events = driver.find_element(By.CSS_SELECTOR, ".infinite-grid__body").find_elements(By.TAG_NAME, "div")
 	sleep(3)
-	elements = driver.find_elements(By.CSS_SELECTOR, ".grid-item.svelte-9qfvm5")
+	elements = driver.find_elements(By.XPATH, "//li[@data-testid='grid-item']")
 	matches = []
 	leagues = []
 
@@ -111,8 +116,8 @@ def getMatches(custom_date):
 		if ' · ' in match.text:
 			continue
 
-		home, away = match.find_element(By.CSS_SELECTOR, '.title.svelte-hxwt2x').text.split(' vs. ')
-		league = match.find_element(By.CSS_SELECTOR, '.metadata-list').text
+		home, away = match.find_element(By.XPATH, ".//p[@data-testid='title']").text.split(' vs. ')
+		league = match.find_element(By.XPATH, ".//span[@data-testid='metadata-list']").text
 
 		# home, away = match.find_element(By.CSS_SELECTOR, '.typ-subhead.text-truncate').text.split(' vs. ')
 		# league = match.find_element(By.CSS_SELECTOR, '.typ-footnote.clr-secondary-text.text-truncate').text
@@ -146,15 +151,19 @@ def getMatches(custom_date):
 	driver.get(url)
 
 	sleep(3)
-	elements = driver.find_elements(By.CSS_SELECTOR, ".grid-item.svelte-9qfvm5")
+	driver.find_element(By.TAG_NAME, 'body').click()
+	driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
+	sleep(1)
+	driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
+	elements = driver.find_elements(By.XPATH, "//li[@data-testid='grid-item']")
 
 	for match in elements:
 
 		if ' · ' in match.text:
 			continue
 
-		home, away = match.find_element(By.CSS_SELECTOR, '.title.svelte-hxwt2x').text.split(' vs. ')
-		league = match.find_element(By.CSS_SELECTOR, '.metadata-list').text
+		home, away = match.find_element(By.XPATH, ".//p[@data-testid='title']").text.split(' vs. ')
+		league = match.find_element(By.XPATH, ".//span[@data-testid='metadata-list']").text
 		link = match.find_element(By.TAG_NAME, "a").get_attribute("href")
 		timedate = match.find_element(By.TAG_NAME, 'time').get_attribute("datetime")
 		timedate_str = pytz.utc.localize(datetime.datetime.strptime(timedate, '%Y-%m-%dT%H:%M:00.000Z')).astimezone(tzWarsaw)
