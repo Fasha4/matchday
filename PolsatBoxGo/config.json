@@ -32,6 +32,17 @@
 			"lang": "",
 			"comm": "",
 			"show": true
+		},
+		{
+			"name_polsat": "Piłka nożna, Sport",
+			"name_matchday": "Piłka nożna, Sport",
+			"img": "https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/1200px-2026_FIFA_World_Cup_emblem.svg.png",
+			"img_w": 65,
+			"img_h": 101,
+			"wp_img": 6768,
+			"lang": "",
+			"comm": "",
+			"show": true
 		}
 	]
 }

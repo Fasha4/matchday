@@ -28,7 +28,13 @@ def getMatches(custom_date):
 
 	days = driver.find_elements(By.CSS_SELECTOR, ".sc-t2thp5-0.bnoQYD")
 	for day in days:
-		events = day.find_elements(By.CSS_SELECTOR, ".sc-1vdpbg2-0.hUqdCF")
+		for i in range(5):
+			try:
+				day.find_element(By.CSS_SELECTOR, ".sc-yznkft-1.sc-yznkft-3.fizEVz.fcAvCw").click()
+			except:
+				pass
+		events = day.find_elements(By.CSS_SELECTOR, ".sc-1vdpbg2-1.kNiqSZ")
+		events.extend(day.find_elements(By.CSS_SELECTOR, ".sc-1vdpbg2-1.deynNv"))
 		try:
 			date = day.find_element(By.CSS_SELECTOR, ".sc-1nb07ih-1.fKFnFV")
 			date = datetime.datetime.strptime(date.text + str(datetime.date.today().year), '%d.%m%Y').date()
