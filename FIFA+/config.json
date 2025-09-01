@@ -12,6 +12,17 @@
 			"show": true
 		},
 		{
+			"name_fifa": "FIFA World Cup™ CAF Qualifiers",
+			"name_matchday": "Mistrzostwa Świata 2026 - Kwalifikacje (CAF)",
+			"img": "https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/1200px-2026_FIFA_World_Cup_emblem.svg.png",
+			"img_w": 65,
+			"img_h": 101,
+			"wp_img": 6768,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "FIFA FIFA U-17 World Cup Qatar™",
 			"name_matchday": "Mistrzostwa Świata U-17",
 			"img": "https://matchday.pl/wp-content/uploads/2025/05/FIFA_U17_2025_logo-300x252.png",
@@ -1057,13 +1068,24 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Memorial Paolo Rossi 2024",
+			"name_fifa": "Slovenia Slovenia U-19 Nations Cup",
+			"name_matchday": "Mecze Towarzyskie U19",
+			"img": "https://matchday.pl/wp-content/uploads/2024/01/FIFA-Logo-1024x576.png",
+			"img_w": 151,
+			"img_h": 85,
+			"wp_img": 6341,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Italy Paolo Rossi Memorial Boys U-14",
 			"name_matchday": "Memoriał Paolo Rossiego",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/Paolo-Rossi-Memorial-blu-233x300.png",
 			"img_w": 78,
 			"img_h": 100,
 			"wp_img": 11785,
-			"lang": "angielski",
+			"lang": "włoski",
 			"comm": "",
 			"show": true
 		},
@@ -1546,6 +1568,15 @@
 		"Guatemala": "Gwatemala",
 		"Ecuador": "Ekwador",
 		"Poland": "Polska",
-		"England": "Anglia"
+		"England": "Anglia",
+		"São Tomé and Príncipe": "Wyspy Św. Tomasza i Książęca",
+		"Equatorial Guinea": "Gwinea Równikowa",
+		"Tunisia": "Tunezja",
+		"The Gambia": "Gambia",
+		"Congo DR": "DR Konga",
+		"Djibouti": "Dżibuti",
+		"Egypt": "Egipt",
+		"Ethiopia": "Etiopia",
+		"Mauritania": "Mauretania"
 	}
 }

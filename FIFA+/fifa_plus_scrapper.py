@@ -57,9 +57,12 @@ def getMatches(custom_date):
 		except:
 			home = match.find_element(By.XPATH, ".//span[@data-id='next-matches-rail-match-title']").text
 			away = ""
-		league = match.find_element(By.XPATH, ".//span[@data-id='next-matches-rail-match-title']/following-sibling::p[1]").text.split(' | ')[0]
 		try:
-			country = match.find_element(By.XPATH, ".//div[@data-id='next-matches-rail-match-subtitle']").text.split('\n')[-1]
+			league = match.find_element(By.XPATH, ".//span[@data-id='next-matches-rail-match-title']/following-sibling::p[1]").text.split(' | ')[0]
+		except:
+			league = match.find_element(By.XPATH, ".//span[@data-id='next-matches-rail-match-title']").text.split(' | ')[-1]
+		try:
+			country = match.find_element(By.XPATH, ".//div[@data-id='next-matches-rail-match-subtitle']").text.split('\n')[1]
 		except:
 			country = ""
 		league = country + " " + league
@@ -112,7 +115,10 @@ def getMatches(custom_date):
 		except:
 			home = match.find_element(By.XPATH, ".//span[@data-id='next-matches-rail-match-title']").text
 			away = ""
-		league = match.find_element(By.XPATH, ".//span[@data-id='next-matches-rail-match-title']/following-sibling::p[1]").text.split(' | ')[0]
+		try:
+			league = match.find_element(By.XPATH, ".//span[@data-id='next-matches-rail-match-title']/following-sibling::p[1]").text.split(' | ')[0]
+		except:
+			league = match.find_element(By.XPATH, ".//span[@data-id='next-matches-rail-match-title']").text.split(' | ')[-1]
 		try:
 			country = match.find_element(By.XPATH, ".//div[@data-id='next-matches-rail-match-subtitle']").text.split('\n')[-1]
 		except:
