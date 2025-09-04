@@ -166,6 +166,17 @@
 			"show": true
 		},
 		{
+			"name_onefoot": "Serie C",
+			"name_matchday": "Serie C",
+			"img": "https://matchday.pl/wp-content/uploads/2024/02/Serie-C.png",
+			"img_w": 70,
+			"img_h": 100,
+			"wp_img": 7101,
+			"lang": "włoski",
+			"comm": "Transmisje płatne",
+			"show": true
+		},
+		{
 			"name_onefoot": "Regionalliga Südwest",
 			"name_matchday": "Regionalliga Südwest",
 			"img": "https://matchday.pl/wp-content/uploads/2024/07/Regionalliga_Suedwest_Logo-212x300.png",
