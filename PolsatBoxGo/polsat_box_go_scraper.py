@@ -28,13 +28,13 @@ def getMatches(custom_date):
 
 	days = driver.find_elements(By.CSS_SELECTOR, ".sc-t2thp5-0.bnoQYD")
 	for day in days:
-		for i in range(5):
-			try:
-				day.find_element(By.CSS_SELECTOR, ".sc-yznkft-1.sc-yznkft-3.fizEVz.fcAvCw").click()
-			except:
-				pass
-		events = day.find_elements(By.CSS_SELECTOR, ".sc-1vdpbg2-1.kNiqSZ")
-		events.extend(day.find_elements(By.CSS_SELECTOR, ".sc-1vdpbg2-1.deynNv"))
+		# for i in range(5):
+		# 	try:
+		# 		day.find_element(By.CSS_SELECTOR, ".sc-yznkft-1.sc-yznkft-3.fizEVz.fcAvCw").click()
+		# 	except:
+		# 		pass
+		events = day.find_elements(By.CSS_SELECTOR, ".sc-1vdpbg2-1.deynNv")
+		events.extend(day.find_elements(By.CSS_SELECTOR, ".sc-1vdpbg2-1.kNiqSZ"))
 		try:
 			date = day.find_element(By.CSS_SELECTOR, ".sc-1nb07ih-1.fKFnFV")
 			date = datetime.datetime.strptime(date.text + str(datetime.date.today().year), '%d.%m%Y').date()
@@ -58,7 +58,10 @@ def getMatches(custom_date):
 			time, league = match.find_element(By.CSS_SELECTOR, '.sc-orrg5d-0.ezqpDO').text.split(' • ')
 			time = (datetime.datetime.strptime(time, '%H:%M') + datetime.timedelta(minutes=10)).strftime('%H:%M')
 			try:
-				home, away = match.find_element(By.CSS_SELECTOR, ".sc-orrg5d-0.kcWJAW").text.split(' - ')
+				try:
+					home, away = match.find_element(By.CSS_SELECTOR, ".sc-orrg5d-0.kcWJAW").text.split(' - ')
+				except:
+					home, away = match.find_element(By.CSS_SELECTOR, ".sc-orrg5d-0.kcWJAW").text.split(' – ')
 			except:
 				continue
 
