@@ -85,7 +85,7 @@ def getMatches(custom_date):
 		if int(time.split(':')[0]) < 6 and int(time.split(':')[0]) >= 0:
 			continue
 
-		league = re.sub(r'\s((20[0-9][0-9]/20[0-9][0-9])|(20[0-9][0-9][/-][0-9][0-9])|(20[0-9][0-9])|(2[5-9])|([3-9][0-9]))', "", league)
+		league = re.sub(r'\s((20[0-9][0-9]/20[0-9][0-9])|(20[0-9][0-9][/-]20[0-9][0-9])|(20[0-9][0-9][/-][0-9][0-9])|(20[0-9][0-9])|(2[5-9])|([3-9][0-9]))', "", league)
 		league = league.strip(' - ')
 
 		if league not in leagues:
@@ -120,11 +120,14 @@ def getMatches(custom_date):
 		except:
 			league = match.find_element(By.XPATH, ".//span[@data-id='next-matches-rail-match-title']").text.split(' | ')[-1]
 		try:
-			country = match.find_element(By.XPATH, ".//div[@data-id='next-matches-rail-match-subtitle']").text.split('\n')[-1]
+			country = match.find_element(By.XPATH, ".//div[@data-id='next-matches-rail-match-subtitle']").text.split('\n')[1]
 		except:
 			country = ""
 		league = country + " " + league
-		time = match.find_element(By.XPATH, ".//div[@data-id='next-matches-rail-match-time-patch']").text
+		try:
+			time = match.find_element(By.XPATH, ".//div[@data-id='next-matches-rail-match-time-patch']").text
+		except:
+			continue
 		link = match.get_attribute("href")
 
 		if time[-2:] == '15' or time[-2:] == '45':

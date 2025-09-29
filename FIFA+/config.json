@@ -23,13 +23,35 @@
 			"show": true
 		},
 		{
+			"name_fifa": "FIFA U-20 World Cup Chile™",
+			"name_matchday": "Mistrzostwa Świata U20",
+			"img": "https://matchday.pl/wp-content/uploads/2025/09/2025_FIFA_U-20_World_Cup_logo-646x1024.png",
+			"img_w": 63,
+			"img_h": 100,
+			"wp_img": 19074,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "FIFA FIFA U-17 World Cup Qatar™",
-			"name_matchday": "Mistrzostwa Świata U-17",
+			"name_matchday": "Mistrzostwa Świata U17",
 			"img": "https://matchday.pl/wp-content/uploads/2025/05/FIFA_U17_2025_logo-300x252.png",
 			"img_w": 100,
 			"img_h": 84,
 			"wp_img": 16189,
 			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "UEFA Euro U-19 Championships",
+			"name_matchday": "EURO U19",
+			"img": "https://matchday.pl/wp-content/uploads/2023/07/UEFA_European_Under-19_Football_Championship_logo-220x300.png",
+			"img_w": 73,
+			"img_h": 100,
+			"wp_img": 2553,
+			"lang": "brak",
 			"comm": "",
 			"show": true
 		},
@@ -144,7 +166,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Kategoria e Parë",
+			"name_fifa": "Albania Kategoria e Parë",
 			"name_matchday": "Kategoria e Parë",
 			"img": "https://matchday.pl/wp-content/uploads/2025/04/Kategoria_e_Pare.svg_-300x260.png",
 			"img_w": 100,
@@ -254,7 +276,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "New Zealand National League",
+			"name_fifa": "New Zealand National League Championship",
 			"name_matchday": "New Zealand National League",
 			"img": "https://matchday.pl/wp-content/uploads/2024/06/New_Zealand_National_League-244x300.png",
 			"img_w": 81,
@@ -309,7 +331,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Tamkeen League",
+			"name_fifa": "Oman Tamkeen League",
 			"name_matchday": "Oman Tamkeen League",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/oman.svg_-300x300.png",
 			"img_w": 100,
@@ -338,6 +360,17 @@
 			"img_h": 100,
 			"wp_img": 12025,
 			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Korea Republic K3 League",
+			"name_matchday": "K3 League",
+			"img": "https://matchday.pl/wp-content/uploads/2025/09/K3_League_Logo_2020-300x300.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 19160,
+			"lang": "koreański",
 			"comm": "",
 			"show": true
 		},
@@ -573,7 +606,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "South Sudan Premier League",
+			"name_fifa": "South Sudan South Sudan Premier League",
 			"name_matchday": "South Sudan Premier League",
 			"img": "https://matchday.pl/wp-content/uploads/2025/04/South_Sudan_Premier_League-206x300.png",
 			"img_w": 69,
@@ -639,7 +672,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Primus League Burundi",
+			"name_fifa": "Burundi Primus Ligue Burundi",
 			"name_matchday": "Burundi Primus League",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/burundi_primus_league-300x300.png",
 			"img_w": 100,
@@ -826,7 +859,18 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Lao League 1",
+			"name_fifa": "São Tomé and Príncipe São Tomé and Príncipe National Cup",
+			"name_matchday": "Puchar Wysp Świętego Tomasza i Książęcej",
+			"img": "https://matchday.pl/wp-content/uploads/2025/09/Federacao_Santomense_de_Futebol_Logo.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 19161,
+			"lang": "brak",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Laos Lao League 1",
 			"name_matchday": "Lao League 1",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/Lao_League-300x300.png",
 			"img_w": 100,
@@ -1255,6 +1299,17 @@
 			"show": true
 		},
 		{
+			"name_fifa": "UEFA Development Tournament Women's U15",
+			"name_matchday": "Turniej kobiet UEFA U15",
+			"img": "https://matchday.pl/wp-content/uploads/2025/05/UEFA_Logo-300x300.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 16157,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "OFC OFC Women's Nations Cup",
 			"name_matchday": "Puchar Narodów Oceanii Kobiet",
 			"img": "https://matchday.pl/wp-content/uploads/2024/06/1200px-Oceania_Football_Confederation_logo.svg_-300x222.png",
@@ -1343,8 +1398,8 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Women's National League Championship",
-			"name_matchday": "New Zealand Women's National League Championship",
+			"name_fifa": "New Zealand Women's National League",
+			"name_matchday": "New Zealand Women's National League",
 			"img": "https://matchday.pl/wp-content/uploads/2024/06/New_Zealand_National_League-244x300.png",
 			"img_w": 81,
 			"img_h": 100,
