@@ -40,6 +40,9 @@ def getMatches(url):
 	prev_month = ''
 
 	for match in matches:
+		if "Przeł." in match.text:
+			continue
+
 		home = match.find_element(By.CSS_SELECTOR, '.event__participant--home').text
 		away = match.find_element(By.CSS_SELECTOR, '.event__participant--away').text
 
