@@ -1,0 +1,15 @@
+{
+	"leagues": [
+		{
+			"name_flashscore": "NHL",
+			"name_matchday": "NHL",
+			"img": "https://matchday.pl/wp-content/uploads/2023/08/premier-league-logo-300x127.png",
+			"img_w": 201,
+			"img_h": 85,
+			"wp_img": 3155,
+			"lang": "",
+			"comm": "",
+			"show": true
+		}
+	]
+}
