@@ -49,9 +49,10 @@ def getMatches(url):
 		matchtime = match.find_element(By.CSS_SELECTOR, '.event__time').text
 		date, time = matchtime.split()
 		date = datetime.datetime.strptime(f"{date}{year}", "%d.%m.%Y")
-		if date.month == '01' and prev_month == '12':
-			year = year + datetime.timedelta(years=1)
-			date.year = year
+		if date.month == 1 and prev_month == 12:
+			year = year + 1
+			date = date.replace(year=year)
+		print(date)
 		prev_month = date.month
 		games.append({
 			'home': home,
