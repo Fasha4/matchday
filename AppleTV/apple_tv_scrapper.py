@@ -117,7 +117,7 @@ def getMatches(custom_date):
 			continue
 
 		home, away = match.find_element(By.CSS_SELECTOR, ".title").text.split(' vs. ')
-		league = match.find_element(By.CSS_SELECTOR, ".subtitle").text
+		league = "MLS" #match.find_element(By.CSS_SELECTOR, ".subtitle").text
 
 		# home, away = match.find_element(By.CSS_SELECTOR, '.typ-subhead.text-truncate').text.split(' vs. ')
 		# league = match.find_element(By.CSS_SELECTOR, '.typ-footnote.clr-secondary-text.text-truncate').text
@@ -163,7 +163,7 @@ def getMatches(custom_date):
 			continue
 
 		home, away = match.find_element(By.CSS_SELECTOR, ".title").text.split(' vs. ')
-		league = match.find_element(By.CSS_SELECTOR, ".subtitle").text
+		league = "MLS NEXT PRO" #match.find_element(By.CSS_SELECTOR, ".subtitle").text
 		link = match.find_element(By.TAG_NAME, "a").get_attribute("href")
 		timedate = match.find_element(By.TAG_NAME, 'time').get_attribute("datetime")
 		timedate_str = pytz.utc.localize(datetime.datetime.strptime(timedate, '%Y-%m-%dT%H:%M:00.000Z')).astimezone(tzWarsaw)
