@@ -62,7 +62,7 @@ def getMatches(custom_date):
 		except:
 			league = match.find_element(By.XPATH, ".//span[@data-id='next-matches-rail-match-title']").text.split(' | ')[-1]
 		try:
-			country = match.find_element(By.XPATH, ".//div[@data-id='next-matches-rail-match-subtitle']").text.split('\n')[1]
+			country = match.find_element(By.XPATH, ".//div[@data-id='next-matches-rail-match-caption']").text.split('\n')[1]
 		except:
 			country = ""
 		league = country + " " + league
@@ -85,7 +85,7 @@ def getMatches(custom_date):
 		if int(time.split(':')[0]) < 6 and int(time.split(':')[0]) >= 0:
 			continue
 
-		league = re.sub(r'\s((20[0-9][0-9]/20[0-9][0-9])|(20[0-9][0-9][/-]20[0-9][0-9])|(20[0-9][0-9][/-][0-9][0-9])|(20[0-9][0-9])|(2[5-9])|([3-9][0-9]))', "", league)
+		league = re.sub(r'\s((20[0-9][0-9][/-]20[0-9][0-9])|(20[0-9][0-9][/-][0-9][0-9])|([0-9][0-9][/-][0-9][0-9])|(20[0-9][0-9])|(2[5-9])|([3-9][0-9]))', "", league)
 		league = league.strip(' - ')
 
 		if league not in leagues:
@@ -120,7 +120,7 @@ def getMatches(custom_date):
 		except:
 			league = match.find_element(By.XPATH, ".//span[@data-id='next-matches-rail-match-title']").text.split(' | ')[-1]
 		try:
-			country = match.find_element(By.XPATH, ".//div[@data-id='next-matches-rail-match-subtitle']").text.split('\n')[1]
+			country = match.find_element(By.XPATH, ".//div[@data-id='next-matches-rail-match-caption']").text.split('\n')[1]
 		except:
 			country = ""
 		league = country + " " + league
@@ -143,7 +143,7 @@ def getMatches(custom_date):
 		if int(time.split(':')[0]) >= 6 or int(time.split(':')[0]) == 0:
 			continue
 
-		league = re.sub(r'\s((20[0-9][0-9]/20[0-9][0-9])|(20[0-9][0-9][/-][0-9][0-9])|(20[0-9][0-9])|(2[5-9])|([3-9][0-9]))', "", league)
+		league = re.sub(r'\s((20[0-9][0-9][/-]20[0-9][0-9])|(20[0-9][0-9][/-][0-9][0-9])|([0-9][0-9][/-][0-9][0-9])|(20[0-9][0-9])|(2[5-9])|([3-9][0-9]))', "", league)
 		league = league.strip(' - ')
 
 		if league not in leagues:

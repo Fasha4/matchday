@@ -254,7 +254,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Championnat National",
+			"name_fifa": "France Championnat National",
 			"name_matchday": "Championnat National",
 			"img": "https://matchday.pl/wp-content/uploads/2025/03/Championnat_National-300x284.png",
 			"img_w": 77,
@@ -584,7 +584,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "The Gambia GFF League",
+			"name_fifa": "The Gambia Gambia GFF League",
 			"name_matchday": "Gambia GFF League",
 			"img": "https://matchday.pl/wp-content/uploads/2024/06/GFF-LOGO-Latest-copy.png",
 			"img_w": 104,
@@ -848,7 +848,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Absa Premier League",
+			"name_fifa": "Seychelles Seychelles Absa Premier League",
 			"name_matchday": "Seychelles Absa Premier League",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/absa_premiership_1.png",
 			"img_w": 100,
@@ -1442,8 +1442,8 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Algeria Championnat National D1",
-			"name_matchday": "Algeria Women's Championnat National D1",
+			"name_fifa": "Algeria Ligue Nationale du Football Féminin",
+			"name_matchday": "Algeria Ligue Nationale du Football Féminin",
 			"img": "https://matchday.pl/wp-content/uploads/2025/04/Algeria_LNFF_logo_2-300x300.png",
 			"img_w": 100,
 			"img_h": 100,
@@ -1530,7 +1530,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Ford Futsal SuperLeague (Women)",
+			"name_fifa": "New Zealand Ford Futsal SuperLeague (Women)",
 			"name_matchday": "New Zealand Women Ford Futsal SuperLeague",
 			"img": "https://matchday.pl/wp-content/uploads/2025/04/ford_futsal_superleague-300x300.png",
 			"img_w": 100,
