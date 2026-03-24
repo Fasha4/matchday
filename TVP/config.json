@@ -1,0 +1,125 @@
+{
+	"leagues": [
+		{
+			"name_tvp": "Puchar Anglii",
+			"name_matchday": "Puchar Anglii",
+			"img": "https://matchday.pl/wp-content/uploads/2023/01/emirates-fa-cup-2020-logo-3.png",
+			"img_w": 80,
+			"img_h": 100,
+			"wp_img": 731,
+			"lang": "",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_tvp": "Mecz towarzyski",
+			"name_matchday": "Mecze towarzyskie",
+			"img": "https://matchday.pl/wp-content/uploads/2024/01/FIFA-Logo-300x169.png",
+			"img_w": 115,
+			"img_h": 87,
+			"wp_img": 6341,
+			"lang": "",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_tvp": "El. ME U21",
+			"name_matchday": "Euro U21 - Kwalifikacje",
+			"img": "https://matchday.pl/wp-content/uploads/2023/06/UEFA_European_Under-21_Championship_logo.svg_-300x243.png",
+			"img_w": 124,
+			"img_h": 100,
+			"wp_img": 2448,
+			"lang": "",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_tvp": "Elite League U20",
+			"name_matchday": "Elite League U20",
+			"img": "https://matchday.pl/wp-content/uploads/2024/03/Elite_League_U20.png",
+			"img_w": 77,
+			"img_h": 100,
+			"wp_img": 7826,
+			"lang": "",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_tvp": "Liga Mistrzów",
+			"name_matchday": "Liga Mistrzów UEFA",
+			"img": "https://matchday.pl/wp-content/uploads/2023/02/UCL-300x285.png",
+			"img_w": 105,
+			"img_h": 100,
+			"wp_img": 821,
+			"lang": "",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_tvp": "STS Puchar Polski",
+			"name_matchday": "Puchar Polski",
+			"img": "https://matchday.pl/wp-content/uploads/2025/09/STS_Puchar_Polski-Logo.png",
+			"img_w": 206,
+			"img_h": 85,
+			"wp_img": 18966,
+			"lang": "",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_tvp": "PKO BP Ekstraklasa",
+			"name_matchday": "Ekstraklasa",
+			"img": "https://matchday.pl/wp-content/uploads/2023/08/ekstraklasa_logo_0.png",
+			"img_w": 280,
+			"img_h": 80,
+			"wp_img": 0,
+			"lang": "",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_tvp": "Betclic 1 Liga",
+			"name_matchday": "1. Liga",
+			"img": "https://matchday.pl/wp-content/uploads/2024/07/betcic_1_liga.png",
+			"img_w": 237,
+			"img_h": 80,
+			"wp_img": 10723,
+			"lang": "",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_tvp": "Betclic 2 Liga",
+			"name_matchday": "2. Liga",
+			"img": "https://matchday.pl/wp-content/uploads/2024/07/betclick2liga.png",
+			"img_w": 239,
+			"img_h": 80,
+			"wp_img": 10726,
+			"lang": "",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_tvp": "Orlen Ekstraliga kobiet",
+			"name_matchday": "Ekstraliga kobiet",
+			"img": "https://matchday.pl/wp-content/uploads/2025/11/orlen-ekstraliga-logo-.png",
+			"img_w": 192,
+			"img_h": 80,
+			"wp_img": 20841,
+			"lang": "",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_tvp": "Liga hiszpańska kobiet",
+			"name_matchday": "Liga F Women",
+			"img": "https://matchday.pl/wp-content/uploads/2024/01/Liga-F.png",
+			"img_w": 96,
+			"img_h": 96,
+			"wp_img": 6312,
+			"lang": "",
+			"comm": "",
+			"show": true
+		}
+	]
+}
