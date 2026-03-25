@@ -33,8 +33,7 @@ def getMatches(custom_date):
 		# 		day.find_element(By.CSS_SELECTOR, ".sc-yznkft-1.sc-yznkft-3.fizEVz.fcAvCw").click()
 		# 	except:
 		# 		pass
-		events = day.find_elements(By.CSS_SELECTOR, ".sc-1vdpbg2-1.deynNv")
-		events.extend(day.find_elements(By.CSS_SELECTOR, ".sc-1vdpbg2-1.kNiqSZ"))
+		events = day.find_elements(By.CSS_SELECTOR, ".sc-1vdpbg2-1.slpiT")
 		try:
 			date = day.find_element(By.CSS_SELECTOR, ".sc-1nb07ih-1.fKFnFV")
 			date = datetime.datetime.strptime(date.text + str(datetime.date.today().year), '%d.%m%Y').date()
