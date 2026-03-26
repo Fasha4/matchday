@@ -26,7 +26,7 @@ def getMatches(url):
 
 	while True:
 		try:
-			showMore = wait.until(EC.visibility_of_element_located((By.XPATH, ".//a[@data-testid='wcl-buttonLink']")))
+			showMore = wait.until(EC.visibility_of_element_located((By.XPATH, ".//button[@data-testid='wcl-buttonLink']")))
 			ActionChains(driver).move_to_element(showMore).perform()
 			sleep(1)
 			showMore.click()
@@ -43,8 +43,8 @@ def getMatches(url):
 		if "Przeł." in match.text:
 			continue
 
-		home = match.find_element(By.CSS_SELECTOR, '.event__participant--home').text
-		away = match.find_element(By.CSS_SELECTOR, '.event__participant--away').text
+		home = match.find_element(By.CSS_SELECTOR, '.event__homeParticipant').text
+		away = match.find_element(By.CSS_SELECTOR, '.event__awayParticipant').text
 
 		matchtime = match.find_element(By.CSS_SELECTOR, '.event__time').text
 		date, time = matchtime.split()
@@ -52,7 +52,6 @@ def getMatches(url):
 		if date.month == 1 and prev_month == 12:
 			year = year + 1
 			date = date.replace(year=year)
-		print(date)
 		prev_month = date.month
 		games.append({
 			'home': home,
