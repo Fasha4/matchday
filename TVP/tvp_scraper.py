@@ -44,7 +44,11 @@ def getMatches(custom_date):
 			broadcasts = day.find_elements(By.CSS_SELECTOR, '.epg-item')
 
 			for broadcast in broadcasts:
-				time = broadcast.find_element(By.CSS_SELECTOR, '.epg-item__hour').text
+				try:
+					time = broadcast.find_element(By.CSS_SELECTOR, '.epg-item__hour').text
+				except:
+					# take previous time
+					pass
 				title = broadcast.find_element(By.CSS_SELECTOR, '.epg-item__title').text
 				if ':' not in title: continue
 				league, teams = title.split(':')
