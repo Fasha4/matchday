@@ -1,0 +1,48 @@
+{
+	"leagues": [
+		{
+			"name_dazn": "Jupiler Pro League",
+			"name_matchday": "Jupiler Pro League",
+			"img": "https://matchday.pl/wp-content/uploads/2023/05/Belgianproleague-300x120.png",
+			"img_w": 212,
+			"img_h": 85,
+			"wp_img": 2040,
+			"lang": "angielski",
+			"comm": "Transmisje płatne",
+			"show": true
+		},
+		{
+			"name_dazn": "Enterprise National League",
+			"name_matchday": "Enterprise National League (5. poziom)",
+			"img": "https://matchday.pl/wp-content/uploads/2026/01/Enterprise-National-League-Colour-Badged-300x208.png",
+			"img_w": 144,
+			"img_h": 100,
+			"wp_img": 25398,
+			"lang": "angielski",
+			"comm": "Transmisje płatne",
+			"show": true
+		},
+		{
+			"name_dazn": "Enterprise National League North & South",
+			"name_matchday": "Enterprise National League (6. poziom)",
+			"img": "https://matchday.pl/wp-content/uploads/2026/01/Enterprise-National-League-Colour-Badged-300x208.png",
+			"img_w": 144,
+			"img_h": 100,
+			"wp_img": 25398,
+			"lang": "angielski",
+			"comm": "Transmisje płatne",
+			"show": true
+		},
+		{
+			"name_dazn": "FIFA Women's Series",
+			"name_matchday": "FIFA Women's Series 2026",
+			"img": "https://matchday.pl/wp-content/uploads/2024/01/FIFA-Logo-300x169.png",
+			"img_w": 155,
+			"img_h": 87,
+			"wp_img": 6341,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		}
+	]
+}
