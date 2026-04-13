@@ -1,14 +1,14 @@
 {
 	"leagues": [
 		{
-			"name_onefoot": "Bundesliga",
+			"name_onefoot": "Austrian Bundesliga",
 			"name_matchday": "Admiral Bundesliga",
 			"img": "https://matchday.pl/wp-content/uploads/2024/02/Admiral_Bundesliga-178x300.png",
 			"img_w": 59,
 			"img_h": 100,
 			"wp_img": 6768,
 			"lang": "brak",
-			"comm": "",
+			"comm": "Transmisje płatne",
 			"show": true
 		},
 		{
@@ -41,7 +41,7 @@
 			"img_h": 85,
 			"wp_img": 5071,
 			"lang": "brak",
-			"comm": "",
+			"comm": "Transmisje płatne",
 			"show": true
 		},
 		{
@@ -52,11 +52,11 @@
 			"img_h": 100,
 			"wp_img": 7419,
 			"lang": "łotweski",
-			"comm": "",
+			"comm": "Transmisje płatne",
 			"show": true
 		},
 		{
-			"name_onefoot": "VBet Premier League",
+			"name_onefoot": "VBET Ukrainian Premier League",
 			"name_matchday": "Premier Liha",
 			"img": "https://matchday.pl/wp-content/uploads/2024/02/Ukrainian_Premier_League-213x300.png",
 			"img_w": 71,
@@ -96,7 +96,7 @@
 			"img_h": 85,
 			"wp_img": 8487,
 			"lang": "brak",
-			"comm": "",
+			"comm": "Transmisje płatne",
 			"show": true
 		},
 		{
@@ -107,7 +107,7 @@
 			"img_h": 85,
 			"wp_img": 8489,
 			"lang": "islandzki",
-			"comm": "",
+			"comm": "Transmisje płatne",
 			"show": true
 		},
 		{
@@ -118,7 +118,7 @@
 			"img_h": 100,
 			"wp_img": 7728,
 			"lang": "angielski",
-			"comm": "",
+			"comm": "Transmisje płatne",
 			"show": true
 		},
 		{
@@ -185,6 +185,17 @@
 			"wp_img": 10733,
 			"lang": "niemiecki",
 			"comm": "Transmisje płatne",
+			"show": true
+		},
+		{
+			"name_onefoot": "MLS NEXT Pro",
+			"name_matchday": "MLS NEXT Pro",
+			"img": "https://matchday.pl/wp-content/uploads/2025/07/MLS_Next_Pro_logo.png",
+			"img_w": 153,
+			"img_h": 100,
+			"wp_img": 11720,
+			"lang": "angielski",
+			"comm": "",
 			"show": true
 		},
 		{
