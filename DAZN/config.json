@@ -43,6 +43,17 @@
 			"lang": "angielski",
 			"comm": "",
 			"show": true
+		},
+		{
+			"name_dazn": "Serie A Women",
+			"name_matchday": "Serie A Women",
+			"img": "https://matchday.pl/wp-content/uploads/2026/04/serie_a_women-300x300.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 25420,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
 		}
 	]
 }

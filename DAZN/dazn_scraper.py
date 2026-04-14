@@ -4,6 +4,7 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from datetime import datetime, timedelta, time
 import json
 import pyperclip
@@ -29,20 +30,23 @@ def getMatches(custom_date):
 	football_filter = wait.until(EC.element_to_be_clickable((By.XPATH, './/li[@data-test-id="SPORTFILTER_LIST_ITEM"]/span[text()="Football"]')))
 	football_filter.click()
 
-	day = driver.find_element(By.XPATH, './/section[@date="' + custom_date + '"]')
+	[driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END) for x in range(10)]
 
 	matches = []
 	leagues = []
 
-	matches, leagues = getDayInfo(day, matches, leagues, 'gt')
+	try:
+		day = wait.until(EC.visibility_of_element_located((By.XPATH, './/section[@date="' + custom_date + '"]')))
+		matches, leagues = getDayInfo(day, matches, leagues, 'gt')
+	except TimeoutException:
+		print("[INFO] Brak meczów dnia", custom_date)
 
 	try:
 		tomorrow = datetime.fromisoformat(custom_date) + timedelta(days=1)
 		next_day = driver.find_element(By.XPATH, './/section[@date="' + str(tomorrow.date()) + '"]')
 		matches, leagues = getDayInfo(next_day, matches, leagues, 'lt')
-	except:
-		# when there are no next day, then do nothing
-		pass
+	except NoSuchElementException:
+		print("[INFO] Brak meczów dnia", str(tomorrow.date()))
 
 
 	games = []
