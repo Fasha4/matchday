@@ -5,6 +5,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
+from selenium.webdriver.common.action_chains import ActionChains
 from datetime import datetime, timedelta, time
 import json
 import pyperclip
@@ -17,6 +18,7 @@ def getMatches(custom_date):
 	options.add_experimental_option('excludeSwitches', ['enable-logging'])
 	options.add_argument('log-level=3')
 	options.add_argument('--disable-search-engine-choice-screen')
+	global driver
 	driver = webdriver.Chrome(service=ChromeService(), options=options)
 
 	url = "https://www.dazn.com/en-PL/schedule"
@@ -84,9 +86,6 @@ def getDayInfo(day, matches, leagues, limit):
 			league = broadcast.find_element(By.CSS_SELECTOR, '.tile__subtitle-container___2DukV').text
 			link = broadcast.find_element(By.CSS_SELECTOR, '.tile__link___vuQG1').get_attribute("href")
 
-			if league not in leagues:
-				leagues.append(league)
-
 			match = {
 				'home': home,
 				'away': away,
@@ -98,9 +97,13 @@ def getDayInfo(day, matches, leagues, limit):
 				continue
 			else:
 				if (limit == 'lt' and int(time.split(':')[0]) < 6) or (limit == 'gt' and int(time.split(':')[0]) >= 6):
+					if league not in leagues:
+						leagues.append(league)
+
 					matches.append(match)
 
 		if nextBtn.is_enabled():
+			ActionChains(driver).move_to_element(nextBtn).perform()
 			nextBtn.click()
 			# content needs to load a bit
 			sleep(1)

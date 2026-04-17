@@ -45,12 +45,34 @@
 			"show": true
 		},
 		{
+			"name_dazn": "Liga F Moeve",
+			"name_matchday": "Liga F",
+			"img": "https://matchday.pl/wp-content/uploads/2024/01/Liga-F.png",
+			"img_w": 96,
+			"img_h": 96,
+			"wp_img": 6312,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_dazn": "Serie A Women",
 			"name_matchday": "Serie A Women",
 			"img": "https://matchday.pl/wp-content/uploads/2026/04/serie_a_women-300x300.png",
 			"img_w": 100,
 			"img_h": 100,
 			"wp_img": 25420,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_dazn": "Coppa Italia Women",
+			"name_matchday": "Puchar Włoch Kobiet",
+			"img": "https://matchday.pl/wp-content/uploads/2024/02/FIGC_Coppa_Italia_Femminile_2020-300x300.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 6708,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
