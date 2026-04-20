@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.actions.wheel_input import ScrollOrigin
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
@@ -29,6 +30,8 @@ def getMatches(custom_date):
 	cookies = wait.until(EC.element_to_be_clickable((By.ID, "onetrust-reject-all-handler")))
 	cookies.click()
 
+	# sleep(5)
+	wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '.schedule__schedule-container___24S6E')))
 	football_filter = wait.until(EC.element_to_be_clickable((By.XPATH, './/li[@data-test-id="SPORTFILTER_LIST_ITEM"]/span[text()="Football"]')))
 	football_filter.click()
 
@@ -103,7 +106,8 @@ def getDayInfo(day, matches, leagues, limit):
 					matches.append(match)
 
 		if nextBtn.is_enabled():
-			ActionChains(driver).move_to_element(nextBtn).perform()
+			scroll_origin = ScrollOrigin.from_element(nextBtn)
+			ActionChains(driver).scroll_from_origin(scroll_origin, 0, 150).perform()
 			nextBtn.click()
 			# content needs to load a bit
 			sleep(1)
