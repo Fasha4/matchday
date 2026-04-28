@@ -51,7 +51,7 @@ def getMatches(custom_date):
 					pass
 				title = broadcast.find_element(By.CSS_SELECTOR, '.epg-item__title').text
 				if ':' not in title: continue
-				league, teams = title.split(':')
+				league, teams = title.split(':', 1)
 				if '–' not in teams: continue
 				home, away = teams.strip().split(' – ')
 				link = broadcast.get_attribute("href")

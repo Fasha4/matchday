@@ -67,6 +67,17 @@
 			"show": true
 		},
 		{
+			"name_tvp": "STS Puchar Polski, finał",
+			"name_matchday": "Puchar Polski - finał",
+			"img": "https://matchday.pl/wp-content/uploads/2025/09/STS_Puchar_Polski-Logo.png",
+			"img_w": 206,
+			"img_h": 85,
+			"wp_img": 18966,
+			"lang": "",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_tvp": "PKO BP Ekstraklasa",
 			"name_matchday": "Ekstraklasa",
 			"img": "https://matchday.pl/wp-content/uploads/2023/08/ekstraklasa_logo_0.png",
