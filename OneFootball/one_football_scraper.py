@@ -27,7 +27,7 @@ def getMatches(date):
 	games = []
 
 	for country in elements:
-		matches = country.find_elements(By.CSS_SELECTOR, ".MatchCard_matchCard__iOv4G")
+		matches = country.find_elements(By.CSS_SELECTOR, ".MatchCard_matchCard__LynP5")
 		leagues = country.find_element(By.CSS_SELECTOR, ".screen-reader-only").text
 
 		league = {
@@ -36,10 +36,10 @@ def getMatches(date):
 		}
 
 		for match in matches:
-			home = match.find_elements(By.CSS_SELECTOR, '.SimpleMatchCardTeam_simpleMatchCardTeam__name__7Ud8D')[0].text
-			away = match.find_elements(By.CSS_SELECTOR, '.SimpleMatchCardTeam_simpleMatchCardTeam__name__7Ud8D')[1].text
+			home = match.find_elements(By.CSS_SELECTOR, '.SimpleMatchCardTeam_simpleMatchCardTeam__name__cmh6q')[0].text
+			away = match.find_elements(By.CSS_SELECTOR, '.SimpleMatchCardTeam_simpleMatchCardTeam__name__cmh6q')[1].text
 			try:
-				time = match.find_element(By.CSS_SELECTOR, '.SimpleMatchCard_simpleMatchCard__infoMessage___NJqW').text
+				time = match.find_element(By.CSS_SELECTOR, '.SimpleMatchCard_simpleMatchCard__infoMessage__ypUgN').text
 			except:
 				time = 'brak'
 			link = match.get_attribute("href")
