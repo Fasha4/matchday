@@ -85,7 +85,11 @@ def getDayInfo(day, matches, leagues, limit):
 		for broadcast in broadcasts:
 			time = broadcast.find_element(By.CSS_SELECTOR, '.tile-labels__label___3lzBB.tile-labels__date-and-time___3AK7b').text
 			title = broadcast.find_element(By.CSS_SELECTOR, '.tile__title___3VcYJ').text
-			home, away = title.split(' vs. ')
+			try:
+				home, away = title.split(' vs. ')
+			except ValueError:
+				home = title
+				away = ''
 			league = broadcast.find_element(By.CSS_SELECTOR, '.tile__subtitle-container___2DukV').text
 			link = broadcast.find_element(By.CSS_SELECTOR, '.tile__link___vuQG1').get_attribute("href")
 
