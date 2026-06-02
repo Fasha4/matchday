@@ -10,7 +10,6 @@ from selenium.webdriver.common.action_chains import ActionChains
 from datetime import datetime, timedelta, time
 import json
 import pyperclip
-from time import sleep
 
 def getMatches(custom_date):
 	options = webdriver.ChromeOptions()
@@ -37,7 +36,6 @@ def getMatches(custom_date):
 	try:
 		day = wait.until(EC.visibility_of_element_located((By.XPATH, './/div[@title="' + custom_date + '"]')))
 		day.click()
-		sleep(3)
 		matches, leagues = getDayInfo(matches, leagues, 'gt')
 	except TimeoutException:
 		print("[INFO] Brak meczów dnia", custom_date)
@@ -130,7 +128,8 @@ def show(matches, date):
 				if addComm:
 					output += r'*'
 				output += r' - <strong>' + home.upper() + r' - ' +  away.upper() + r'</strong>' + '\n'
-				output += r'<span style="font-size: 10pt;"><img class="emoji" role="img" draggable="false" src="https://s.w.org/images/core/emoji/14.0.0/svg/1f4fa.svg" alt="📺" /> FIFA+@DAZN '
+				output += r'<span style="font-size: 10pt;"><img class="emoji" role="img" draggable="false" src="https://s.w.org/images/core/emoji/14.0.0/svg/1f4fa.svg" alt="📺" /> '
+				output += r'<a href="https://www.dazn.com/en-PL/competition/Competition:50kvbmxi5r9amj2e39hznggqj" target="_blank" rel="noopener">FIFA+ na DAZN</a> '
 				output += r'<img class="emoji" role="img" draggable="false" src="https://s.w.org/images/core/emoji/14.0.0/svg/1f399.svg" alt="🎙" width="16" height="16" /> ' + new_league["lang"] + r'</span>' + '\n'
 				output += '\n'
 			if addComm:
