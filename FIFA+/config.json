@@ -232,7 +232,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Lithuania Pirma Lyga",
+			"name_fifa": "1 Lyga - Lithuania",
 			"name_matchday": "Pirma lyga",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/pirma-lyga-logo-1-300x174.png",
 			"img_w": 172,
@@ -276,7 +276,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "New Zealand National League Championship",
+			"name_fifa": "National League - New Zealand",
 			"name_matchday": "New Zealand National League",
 			"img": "https://matchday.pl/wp-content/uploads/2024/06/New_Zealand_National_League-244x300.png",
 			"img_w": 81,
@@ -309,7 +309,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Venezuela Liga FUTVE 2",
+			"name_fifa": "Segunda División - Venezuela",
 			"name_matchday": "Venezuela Liga FUTVE 2",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/venezuela.png",
 			"img_w": 77,
@@ -364,7 +364,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Korea Republic K3 League",
+			"name_fifa": "K3 League - South Korea",
 			"name_matchday": "K3 League",
 			"img": "https://matchday.pl/wp-content/uploads/2025/09/K3_League_Logo_2020-300x300.png",
 			"img_w": 100,
@@ -540,7 +540,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Sierra Leone Leone Rock Premier League",
+			"name_fifa": "Premier League - Sierra Leone",
 			"name_matchday": "Leone Rock Premier League",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/logo-leaone-rock-1.png",
 			"img_w": 99,
@@ -573,7 +573,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Benin Super Ligue Pro",
+			"name_fifa": "Championnat National - Benin",
 			"name_matchday": "Benin Super Ligue Pro",
 			"img": "https://global-football-benin.com/wp-content/uploads/2024/04/Benin-Football-Federation-Beninoise-de-Football-Voici-la-date-de-la-prochaine-assemblee-generale-elective-1280x720-1.webp",
 			"img_w": 178,
@@ -584,7 +584,18 @@
 			"show": true
 		},
 		{
-			"name_fifa": "The Gambia Gambia GFF League",
+			"name_fifa": "Liga Orange - Guinea-Bissau",
+			"name_matchday": "Guinea-Bissau Liga Orange",
+			"img": "https://matchday.pl/wp-content/uploads/2026/06/Guinea_Bissau-300x300.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 26729,
+			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "GFF League - Gambia",
 			"name_matchday": "Gambia GFF League",
 			"img": "https://matchday.pl/wp-content/uploads/2024/06/GFF-LOGO-Latest-copy.png",
 			"img_w": 104,
@@ -650,7 +661,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Niger Super Ligue",
+			"name_fifa": "Niger Super Ligue 1 - Niger",
 			"name_matchday": "Super League Niger",
 			"img": "https://www.lesahel.org/wp-content/uploads/2023/11/Logopit_1667480373484-1.webp",
 			"img_w": 100,
@@ -727,7 +738,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Malawi Airtel Top 8",
+			"name_fifa": "Airtel Top 8 - Malawi",
 			"name_matchday": "Malawi Top 8 Cup",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/Top8-1-300x156.png",
 			"img_w": 193,
@@ -749,7 +760,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Eswatini MTN Premier League",
+			"name_fifa": "Premier League - Eswatini",
 			"name_matchday": "Eswatini MTN Premier League",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/Premier_League_of_Eswatini-235x300.png",
 			"img_w": 78,
@@ -980,7 +991,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Anguilla Senior Men's League",
+			"name_fifa": "Senior Men'S League - Anguilla",
 			"name_matchday": "Anguilla Senior League",
 			"img": "https://matchday.pl/wp-content/uploads/2024/06/Anguilla_Football_Association_2020.png",
 			"img_w": 100,
@@ -991,7 +1002,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Dominica DFA Premier League",
+			"name_fifa": "DFA Premier League - Dominica",
 			"name_matchday": "Dominica Premier League",
 			"img": "https://matchday.pl/wp-content/uploads/2024/06/Dominica_Football_Association.png",
 			"img_w": 87,
@@ -1024,7 +1035,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Aruba Division Honor",
+			"name_fifa": "Division Di Honor - Aruba",
 			"name_matchday": "Aruba Division Honor",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/Arubaanse_Voetbal_Bond-300x109.jpg",
 			"img_w": 276,
@@ -1255,8 +1266,30 @@
 			"show": true
 		},
 		{
+			"name_fifa": "U23 Women'S National ",
+			"name_matchday": "Mecze Towarzyskie Kobiet U23",
+			"img": "https://matchday.pl/wp-content/uploads/2024/01/FIFA-Logo-1024x576.png",
+			"img_w": 151,
+			"img_h": 85,
+			"wp_img": 6341,
+			"lang": "hiszpański",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_fifa": "International Friendly - Women's U20",
 			"name_matchday": "Mecze Towarzyskie Kobiet U20",
+			"img": "https://matchday.pl/wp-content/uploads/2024/01/FIFA-Logo-1024x576.png",
+			"img_w": 151,
+			"img_h": 85,
+			"wp_img": 6341,
+			"lang": "hiszpański",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Friendlies Women'S U19",
+			"name_matchday": "Mecze Towarzyskie Kobiet U19",
 			"img": "https://matchday.pl/wp-content/uploads/2024/01/FIFA-Logo-1024x576.png",
 			"img_w": 151,
 			"img_h": 85,
@@ -1365,7 +1398,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Lithuania Women's A league",
+			"name_fifa": "A Lyga Women - Lithuania",
 			"name_matchday": "A Lyga Kobiet",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/Topo-centras-euronics-moteru-a-lyga-300x89.png",
 			"img_w": 300,
@@ -1464,7 +1497,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Costa Rica Women's Second Division",
+			"name_fifa": "Segunda División Femenina De Costa Rica - Costa Rica",
 			"name_matchday": "Segunda Division Femenina Costa Rica",
 			"img": "https://matchday.pl/wp-content/uploads/2024/06/ASDFF-278x300.webp",
 			"img_w": 93,
