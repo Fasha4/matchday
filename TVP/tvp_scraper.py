@@ -50,12 +50,19 @@ def getMatches(custom_date):
 					# take previous time
 					pass
 				title = broadcast.find_element(By.CSS_SELECTOR, '.epg-item__title').text
-				if ':' not in title: continue
-				league, teams = title.split(':', 1)
-				if '–' not in teams: continue
-				home, away = teams.strip().split(' – ')
+				if ':' not in title or any(w in title for w in ['atmosfera', 'kibice', 'analityczna', 'ławka']): continue
+				if "Mundial 2026" in title.split(': ', 1)[-1]:
+					teams, league = title.split(': ', 1)
+				else:
+					league, teams = title.split(': ', 1)
+				if '–' not in teams and '-' not in teams: continue
+				try:
+					home, away = teams.split(' – ')
+				except ValueError:
+					home, away = teams.split(' - ')
 				link = broadcast.get_attribute("href")
 
+				league = league
 				if league not in leagues:
 					leagues.append(league)
 

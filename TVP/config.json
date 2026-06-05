@@ -1,6 +1,17 @@
 {
 	"leagues": [
 		{
+			"name_tvp": "Mundial 2026",
+			"name_matchday": "Mistrzostwa Świata 2026",
+			"img": "https://upload.wikimedia.org/wikipedia/en/thumb/1/17/2026_FIFA_World_Cup_emblem.svg/1200px-2026_FIFA_World_Cup_emblem.svg.png",
+			"img_w": 65,
+			"img_h": 101,
+			"wp_img": 6768,
+			"lang": "",
+			"comm": "",
+			"show": true
+		},
+		{
 			"name_tvp": "Puchar Anglii",
 			"name_matchday": "Puchar Anglii",
 			"img": "https://matchday.pl/wp-content/uploads/2023/01/emirates-fa-cup-2020-logo-3.png",
