@@ -26,19 +26,19 @@ def getMatches(custom_date):
 	cookies = wait.until(EC.element_to_be_clickable((By.ID, "onetrust-reject-all-handler")))
 	cookies.click()
 
-	days = driver.find_elements(By.CSS_SELECTOR, ".sc-t2thp5-0.bnoQYD")
+	days = driver.find_elements(By.CSS_SELECTOR, ".sc-9e04c8e3-0.gIRhTQ")
 	for day in days:
 		# for i in range(5):
 		# 	try:
 		# 		day.find_element(By.CSS_SELECTOR, ".sc-yznkft-1.sc-yznkft-3.fizEVz.fcAvCw").click()
 		# 	except:
 		# 		pass
-		events = day.find_elements(By.CSS_SELECTOR, ".sc-1vdpbg2-1.slpiT")
+		events = day.find_elements(By.CSS_SELECTOR, ".sc-52a9b74c-1.gCNUCR")
 		try:
-			date = day.find_element(By.CSS_SELECTOR, ".sc-1nb07ih-1.fKFnFV")
+			date = day.find_element(By.CSS_SELECTOR, ".sc-e7ae18cb-1.hBhBRx")
 			date = datetime.datetime.strptime(date.text + str(datetime.date.today().year), '%d.%m%Y').date()
 		except:
-			date = day.find_element(By.CSS_SELECTOR, ".sc-orrg5d-0.LUuFy")
+			date = day.find_element(By.CSS_SELECTOR, ".sc-4f28a8bf-0.eUDhPu")
 
 			if date.text == "Dzisiaj":
 				date = datetime.date.today()
@@ -54,13 +54,13 @@ def getMatches(custom_date):
 		leagues = []
 
 		for match in events:
-			time, league = match.find_element(By.CSS_SELECTOR, '.sc-orrg5d-0.ezqpDO').text.split(' • ')
+			time, league = match.find_element(By.CSS_SELECTOR, '.sc-4f28a8bf-0.cIRIQy').text.split(' • ')
 			time = (datetime.datetime.strptime(time, '%H:%M') + datetime.timedelta(minutes=10)).strftime('%H:%M')
 			try:
 				try:
-					home, away = match.find_element(By.CSS_SELECTOR, ".sc-orrg5d-0.kcWJAW").text.split(' - ')
+					home, away = match.find_element(By.CSS_SELECTOR, ".sc-4f28a8bf-0.eExsYm").text.split(' - ')
 				except:
-					home, away = match.find_element(By.CSS_SELECTOR, ".sc-orrg5d-0.kcWJAW").text.split(' – ')
+					home, away = match.find_element(By.CSS_SELECTOR, ".sc-4f28a8bf-0.eExsYm").text.split(' – ')
 			except:
 				continue
 
@@ -75,7 +75,6 @@ def getMatches(custom_date):
 				})
 
 	games = []
-
 	for event in leagues:
 		league = {
 			'name': event,
