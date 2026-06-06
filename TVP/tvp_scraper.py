@@ -4,7 +4,8 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-from datetime import datetime
+from selenium.common.exceptions import ElementClickInterceptedException, ElementNotInteractableException, NoSuchElementException, TimeoutException, WebDriverException
+from datetime import datetime, timedelta, time
 import json
 import pyperclip
 
@@ -40,39 +41,18 @@ def getMatches(custom_date):
 		for x,y in months_translate.items():
 			date = date.replace(x,y)
 
-		if datetime.fromisoformat(custom_date) == datetime.strptime(date, "%d %m %Y"):
+		today = datetime.fromisoformat(custom_date)
+		tomorrow = today + timedelta(days=1)
+		if datetime.strptime(date, "%d %m %Y") == today or datetime.strptime(date, "%d %m %Y") == tomorrow:
 			broadcasts = day.find_elements(By.CSS_SELECTOR, '.epg-item')
 
-			for broadcast in broadcasts:
-				try:
-					time = broadcast.find_element(By.CSS_SELECTOR, '.epg-item__hour').text
-				except:
-					# take previous time
-					pass
-				title = broadcast.find_element(By.CSS_SELECTOR, '.epg-item__title').text
-				if ':' not in title or any(w in title for w in ['atmosfera', 'kibice', 'analityczna', 'ławka']): continue
-				if "Mundial 2026" in title.split(': ', 1)[-1]:
-					teams, league = title.split(': ', 1)
-				else:
-					league, teams = title.split(': ', 1)
-				if '–' not in teams and '-' not in teams: continue
-				try:
-					home, away = teams.split(' – ')
-				except ValueError:
-					home, away = teams.split(' - ')
-				link = broadcast.get_attribute("href")
-
-				league = league
-				if league not in leagues:
-					leagues.append(league)
-
-				matches.append({
-					'home': home,
-					'away': away,
-					'time': time,
-					'league': league,
-					'link': link
-					})
+			try:
+				if datetime.strptime(date, "%d %m %Y") == today:
+					matches, leagues = getDayInfo(broadcasts, matches, leagues, 'gt')
+				elif datetime.strptime(date, "%d %m %Y") == tomorrow:
+					matches, leagues = getDayInfo(broadcasts, matches, leagues, 'lt')
+			except TimeoutException:
+				print("[INFO] Brak meczów dnia", custom_date)
 
 	games = []
 
@@ -93,6 +73,48 @@ def getMatches(custom_date):
 		games.append(league)
 
 	return games
+
+
+# limit: gt -> >= 6:00, lt -> < 6:00
+def getDayInfo(broadcasts, matches, leagues, limit):
+	for broadcast in broadcasts:
+		try:
+			time = broadcast.find_element(By.CSS_SELECTOR, '.epg-item__hour').text
+		except:
+			# take previous time
+			pass
+		title = broadcast.find_element(By.CSS_SELECTOR, '.epg-item__title').text
+		if ':' not in title or any(w in title for w in ['atmosfera', 'kibice', 'analityczna', 'ławka']): continue
+		if "Mundial 2026" in title.split(': ', 1)[-1]:
+			teams, league = title.split(': ', 1)
+		else:
+			league, teams = title.split(': ', 1)
+		if '–' not in teams and '-' not in teams: continue
+		try:
+			home, away = teams.split(' – ')
+		except ValueError:
+			home, away = teams.split(' - ')
+		link = broadcast.get_attribute("href")
+
+		league = league
+		if league not in leagues:
+			leagues.append(league)
+
+		match = {
+			'home': home,
+			'away': away,
+			'time': time,
+			'league': league,
+			'link': link
+			}
+		if (limit == 'lt' and int(time.split(':')[0]) < 6) or (limit == 'gt' and int(time.split(':')[0]) >= 6):
+			if league not in leagues:
+				leagues.append(league)
+
+			matches.append(match)
+
+	return matches, leagues
+
 
 def show(matches, date):
 
@@ -115,20 +137,43 @@ def show(matches, date):
 		if new_league["show"]:
 			output += r'<img class="aligncenter wp-image-' + str(new_league["wp_img"]) + r'" src="' + new_league["img"] + r'" alt="" width="' + str(new_league["img_w"]) + r'" height="' + str(new_league["img_h"]) + r'" />' + '\n'
 			output += r'<h2 style="text-align: center;"><span style="font-size: 18pt;"><strong>' + new_league["name_matchday"].upper() + r'</strong></span></h2>' + '\n'
+			addComm = False
 			for match in league["matches"]:
 				home = match["home"]
 				away = match["away"]
 				output += match["time"]
+				if not addComm:
+					addComm, dayInfo = isNextDay(match["time"], date)
+				if addComm:
+					output += r'*'
 				output += r' - <strong>' + home.upper() + r' - ' +  away.upper() + r'</strong>' + '\n'
 				output += r'<span style="font-size: 10pt;"><img class="emoji" role="img" draggable="false" src="https://s.w.org/images/core/emoji/14.0.0/svg/1f4fa.svg" alt="📺" /> '
 				output += r'<a href="' + match['link'] + r'" target="_blank" rel="noopener">sport.tvp.pl</a> '
 				output += r'<img class="emoji" role="img" draggable="false" src="https://s.w.org/images/core/emoji/14.0.0/svg/1f399.svg" alt="🎙" width="16" height="16" /> ' + new_league["lang"] + r'</span>' + '\n'
 				output += '\n'
+			if addComm:
+				output += r'<span style="font-size: 10pt;"><em>*W nocy z ' + dayInfo + r'</em></span>' + '\n'
 			if new_league["comm"]:
 				output += r'<span style="font-size: 10pt;"><em>' + new_league["comm"] + r'</em></span>' + '\n'
 				output += '\n'
 			output += r'<hr />' + '\n'
 	pyperclip.copy(output)
+
+
+def isNextDay(match_time, date):
+	current = datetime.strptime(match_time, '%H:%M')
+	todayDays = ["poniedziałku", "wtorku", "środy", "czwartku", "piątku", "soboty", "niedzieli"]
+	tomorrowDays = ["poniedziałek", "wtorek", "środę", "czwartek", "piątek", "sobotę", "niedzielę"]
+	dayInfo = ''
+	if current.time() >= time(hour=0) and current.time() < time(hour=6):
+		date = datetime.fromisoformat(date)
+		today = date.weekday()
+		tomorrow = (date + timedelta(days=1)).weekday()
+		dayInfo = todayDays[today] + " na " + tomorrowDays[tomorrow]
+		return True, dayInfo
+	else:
+		return False, dayInfo
+
 
 if __name__ == '__main__':
 	date = input("Podaj datę (YYYY-MM-DD):")
