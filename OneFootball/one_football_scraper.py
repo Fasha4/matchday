@@ -76,6 +76,7 @@ def getDayInfo(elements, matches, leagues, limit):
 				time = broadcast.find_element(By.CSS_SELECTOR, '.SimpleMatchCard_simpleMatchCard__infoMessage__ypUgN').text
 			except:
 				time = 'brak'
+				continue
 			link = broadcast.get_attribute("href")
 
 			match = {

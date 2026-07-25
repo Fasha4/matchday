@@ -116,6 +116,7 @@ def getMatches(custom_date):
 		if 'Final' in match.text:
 			continue
 
+		if ' vs. ' not in match.text: continue
 		home, away = match.find_element(By.CSS_SELECTOR, ".title").text.split(' vs. ')
 		league = "MLS" #match.find_element(By.CSS_SELECTOR, ".subtitle").text
 

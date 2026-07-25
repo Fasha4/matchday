@@ -47,9 +47,9 @@
 		{
 			"name_onefoot": "Tonybet Virsliga",
 			"name_matchday": "Virsliga",
-			"img": "https://matchday.pl/wp-content/uploads/2024/03/Logo_virsliga.svg_-167x300.png",
-			"img_w": 56,
-			"img_h": 100,
+			"img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Tonybet_Virsl%C4%ABga_logo.svg/1920px-Tonybet_Virsl%C4%ABga_logo.svg.png",
+			"img_w": 162,
+			"img_h": 80,
 			"wp_img": 7419,
 			"lang": "łotweski",
 			"comm": "Transmisje płatne",
@@ -91,9 +91,9 @@
 		{
 			"name_onefoot": "Veikkausliiga",
 			"name_matchday": "Veikkausliiga",
-			"img": "https://matchday.pl/wp-content/uploads/2024/04/Veikkausliigan_logo.svg_-300x148.png",
-			"img_w": 173,
-			"img_h": 85,
+			"img": "https://upload.wikimedia.org/wikipedia/de/b/b5/Veikkausliiga_Logo.svg",
+			"img_w": 162,
+			"img_h": 80,
 			"wp_img": 8487,
 			"lang": "brak",
 			"comm": "Transmisje płatne",
@@ -102,7 +102,7 @@
 		{
 			"name_onefoot": "Besta-deild karla",
 			"name_matchday": "Besta-deild karla",
-			"img": "https://matchday.pl/wp-content/uploads/2024/04/BestaLeague-300x127.png",
+			"img": "https://upload.wikimedia.org/wikipedia/commons/9/9b/BestaLeague.png",
 			"img_w": 201,
 			"img_h": 85,
 			"wp_img": 8489,
@@ -133,6 +133,16 @@
 			"show": true
 		},
 		{
+			"name_onefoot": "Liga BBVA MX",
+			"name_matchday": "Liga MX",
+			"img": "https://matchday.pl/wp-content/uploads/2025/04/MX_logo-1024x807.png",
+			"img_w": 127,
+			"img_h": 100,
+			"wp_img": 15602,
+			"lang": "brak",
+			"comm": "Transmisje płatne",
+			"show": true
+		},		{
 			"name_onefoot": "K League 1",
 			"name_matchday": "K League 1",
 			"img": "https://matchday.pl/wp-content/uploads/2024/02/K_League_1-1-245x300.png",
@@ -201,9 +211,9 @@
 		{
 			"name_onefoot": "Club Friendly Games",
 			"name_matchday": "Mecze Towarzyskie",
-			"img": "https://matchday.pl/wp-content/uploads/2024/01/FIFA-Logo-300x169.png",
-			"img_w": 155,
-			"img_h": 87,
+			"img": "https://futbol.pl/images/fifa.png",
+			"img_w": 115,
+			"img_h": 100,
 			"wp_img": 6341,
 			"lang": "angielski",
 			"comm": "",

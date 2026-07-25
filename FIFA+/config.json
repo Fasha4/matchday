@@ -298,10 +298,10 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Nicaragua Liga Primera Nicaragua",
+			"name_fifa": "Primera Division - Nicaragua",
 			"name_matchday": "Liga Primera Nicaragua",
-			"img": "https://matchday.pl/wp-content/uploads/2024/03/obraz_2024-03-01_234411866-300x116.png",
-			"img_w": 206,
+			"img": "https://upload.wikimedia.org/wikipedia/en/9/92/Liga_Primera_de_Nicaragua.png",
+			"img_w": 189,
 			"img_h": 80,
 			"wp_img": 7343,
 			"lang": "hiszpański",
@@ -338,6 +338,17 @@
 			"img_h": 100,
 			"wp_img": 12026,
 			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Premier League - Lebanon",
+			"name_matchday": "Lebanon Premier League",
+			"img": "https://static.flashscore.com/res/image/data/fLsqADiD-QZrllFx4.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 12025,
+			"lang": "arabski",
 			"comm": "",
 			"show": true
 		},
@@ -386,12 +397,12 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Macau First Division",
-			"name_matchday": "Macau First Division",
-			"img": "https://matchday.pl/wp-content/uploads/2025/04/Macau_FA-300x300.png",
+			"name_fifa": "Primeira Divisão - Macau",
+			"name_matchday": "Macau Primeira Divisão",
+			"img": "https://matchday.pl/wp-content/uploads/2026/06/Makau.png",
 			"img_w": 100,
 			"img_h": 100,
-			"wp_img": 12025,
+			"wp_img": 15775,
 			"lang": "angielski",
 			"comm": "",
 			"show": true
@@ -529,7 +540,7 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Equatorial Guinea Liga de Fútbol de Guinea Equatorial",
+			"name_fifa": "Liga De Fútbol - Guinea Equatorial",
 			"name_matchday": "Liga de Fútbol de Guinea Equatorial",
 			"img": "https://matchday.pl/wp-content/uploads/2025/07/eq_guinea-300x300.png",
 			"img_w": 100,
@@ -716,11 +727,11 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Malawi TNM Super League",
-			"name_matchday": "Malawi Super League",
-			"img": "https://fam.mw/wp-content/uploads/2023/06/TNM-Super-League-Logo-Final.png",
-			"img_w": 238,
-			"img_h": 80,
+			"name_fifa": "FDH Bank Premiership - Malawi",
+			"name_matchday": "Malawi FDH Bank Premiership",
+			"img": "https://matchday.pl/wp-content/uploads/2026/06/Malawi.png",
+			"img_w": 176,
+			"img_h": 81,
 			"wp_img": 10459,
 			"lang": "czewa",
 			"comm": "",
@@ -866,6 +877,17 @@
 			"img_h": 100,
 			"wp_img": 14956,
 			"lang": "angielski",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_fifa": "Campeonato Nacional - São Tomé E Príncipe",
+			"name_matchday": "São Tomé E Príncipe Campeonato Nacional",
+			"img": "https://matchday.pl/wp-content/uploads/2025/09/Federacao_Santomense_de_Futebol_Logo.png",
+			"img_w": 100,
+			"img_h": 100,
+			"wp_img": 19161,
+			"lang": "brak",
 			"comm": "",
 			"show": true
 		},
@@ -1079,9 +1101,9 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Chatham Cup",
+			"name_fifa": "Chatham Cup - New Zealand",
 			"name_matchday": "Puchar Nowej Zelandii",
-			"img": "https://matchday.pl/wp-content/uploads/2024/06/Chatham_Cup_logo-300x300.png",
+			"img": "https://upload.wikimedia.org/wikipedia/en/4/4d/Chatham_Cup_logo.png",
 			"img_w": 100,
 			"img_h": 100,
 			"wp_img": 10432,
@@ -1365,12 +1387,12 @@
 			"show": true
 		},
 		{
-			"name_fifa": "Copa Interclubes Femenina UNCAF 2024",
+			"name_fifa": "Copa Interclubes Femenina",
 			"name_matchday": "Puchar UNCAF Kobiet",
-			"img": "https://matchday.pl/wp-content/uploads/2024/07/Copa_Interclubes_UNCAF.png",
-			"img_w": 94,
+			"img": "https://matchday.pl/wp-content/uploads/2026/07/uncaf-239x300.png",
+			"img_w": 80,
 			"img_h": 100,
-			"wp_img": 10729,
+			"wp_img": 28017,
 			"lang": "angielski",
 			"comm": "",
 			"show": true

@@ -34,7 +34,7 @@ def getMatches(custom_date):
 	leagues = []
 
 	try:
-		day = wait.until(EC.visibility_of_element_located((By.XPATH, './/div[@title="' + custom_date + '"]')))
+		day = wait.until(EC.element_to_be_clickable((By.XPATH, './/div[@title="' + custom_date + '"]')))
 		day.click()
 		matches, leagues = getDayInfo(matches, leagues, 'gt')
 	except TimeoutException:
@@ -75,7 +75,10 @@ def getDayInfo(matches, leagues, limit):
 	broadcasts = driver.find_elements(By.TAG_NAME, 'article')
 
 	for broadcast in broadcasts:
-		time = broadcast.find_element(By.CSS_SELECTOR, '.MatchCard__status-text___2PuYM').text
+		try:
+			time = broadcast.find_element(By.CSS_SELECTOR, '.MatchCard__status-text___2PuYM').text
+		except:
+			continue
 		home = broadcast.find_element(By.CSS_SELECTOR, '.MatchCard__team-name___3_9jo.MatchCard__team-one-name___2vN4J').text
 		away = broadcast.find_element(By.CSS_SELECTOR, '.MatchCard__team-name___3_9jo.MatchCard__team-two-name___19p8a').text
 		league = broadcast.find_element(By.CSS_SELECTOR, '.MatchCard__competition-label___3wq5P').text
