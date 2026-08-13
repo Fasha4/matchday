@@ -1,0 +1,81 @@
+{
+	"leagues": [
+		{
+			"name_teleman": "PKO BP Ekstraklasa",
+			"name_matchday": "Ekstraklasa",
+			"img": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Logo_ekstraklasa.png",
+			"img_w": 280,
+			"img_h": 80,
+			"wp_img": 0,
+			"lang": "",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_teleman": "Betclic 1. Liga",
+			"name_matchday": "1. Liga",
+			"img": "https://matchday.pl/wp-content/uploads/2026/05/Betclic_1._Liga_logo-1024x344.png",
+			"img_w": 253,
+			"img_h": 85,
+			"wp_img": 26227,
+			"lang": "",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_teleman": "Liga portugalska",
+			"name_matchday": "Liga Portugal",
+			"img": "https://www.freelogovectors.net/wp-content/uploads/2025/09/primeira_liga_logo-liga-portugal-freelogovectors.net_.png",
+			"img_w": 227,
+			"img_h": 80,
+			"wp_img": 26227,
+			"lang": "",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_teleman": "Puchar Włoch",
+			"name_matchday": "Puchar Włoch",
+			"img": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Coppa_Italia_Frecciarossa_%282021-2022%29.png",
+			"img_w": 62,
+			"img_h": 99,
+			"wp_img": 26227,
+			"lang": "",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_teleman": "2. liga niemiecka",
+			"name_matchday": "2. Bundesliga",
+			"img": "https://static.flashscore.com/res/image/data/ryRxh88j-ziwIGcqp.png",
+			"img_w": "",
+			"img_h": "",
+			"wp_img": 26227,
+			"lang": "",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_teleman": "Betclic 2. Liga",
+			"name_matchday": "2. Liga",
+			"img": "https://matchday.pl/wp-content/uploads/2026/05/Betclic_2._Liga_logo-300x102.png",
+			"img_w": 235,
+			"img_h": 80,
+			"wp_img": 26228,
+			"lang": "",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_teleman": "Piłka nożna",
+			"name_matchday": "Mecze towarzyskie",
+			"img": "https://matchday.pl/wp-content/uploads/2024/01/FIFA-Logo-300x169.png",
+			"img_w": 115,
+			"img_h": 87,
+			"wp_img": 6341,
+			"lang": "",
+			"comm": "",
+			"show": true
+		}
+	]
+}
