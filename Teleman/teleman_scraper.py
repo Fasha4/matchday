@@ -117,7 +117,6 @@ def reduce_channels(games):
 		prev_home, prev_away, prev_time, prev_channel = '', '', '', ''
 		to_delete = []
 		league["matches"] = sorted(league["matches"], key=lambda d: (d["time"], d["channel"]))
-		print(league["matches"])
 		for match in league["matches"]:
 			if match["home"] == prev_home and match["away"] == prev_away and match["time"] == prev_time:
 				match["channel"] = prev_channel + ', ' + match["channel"]
