@@ -46,8 +46,8 @@ def getMatches(custom_date):
 			if not details:
 				continue
 
-			date = details[0].text.split(', ')[-1]
-			time = details[1].text
+			date = details[0].text.split(', ')[-1].split('na ')[-1]
+			time = (datetime.strptime(details[1].text, "%H:%M") + timedelta(minutes=5)).strftime("%H:%M")
 			for x,y in months_translate.items():
 				date = date.replace(x,y)
 
