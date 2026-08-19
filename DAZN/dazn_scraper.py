@@ -32,6 +32,10 @@ def getMatches(custom_date):
 
 	# sleep(5)
 	wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '.schedule__schedule-container___24S6E')))
+	nextSportBtn = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '.sports-filter__btn-style-right___2ll75')))
+	for x in range(2):
+		nextSportBtn.click()
+		sleep(1)
 	football_filter = wait.until(EC.element_to_be_clickable((By.XPATH, './/li[@data-test-id="SPORTFILTER_LIST_ITEM"]/span[text()="Football"]')))
 	football_filter.click()
 
