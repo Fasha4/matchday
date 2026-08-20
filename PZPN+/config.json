@@ -1,0 +1,26 @@
+{
+	"leagues": [
+		{
+			"name_pzpn": "Betclic 2. Liga",
+			"name_matchday": "2. Liga",
+			"img": "https://matchday.pl/wp-content/uploads/2026/05/Betclic_2._Liga_logo-300x102.png",
+			"img_w": 235,
+			"img_h": 80,
+			"wp_img": 26228,
+			"lang": "",
+			"comm": "",
+			"show": true
+		},
+		{
+			"name_pzpn": "ORLEN Ekstraliga Kobiet",
+			"name_matchday": "Ekstraliga Kobiet",
+			"img": "https://matchday.pl/wp-content/uploads/2025/11/orlen-ekstraliga-logo-.png",
+			"img_w": 192,
+			"img_h": 80,
+			"wp_img": 20841,
+			"lang": "",
+			"comm": "",
+			"show": true
+		}
+	]
+}
