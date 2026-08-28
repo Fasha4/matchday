@@ -23,7 +23,7 @@ def getMatches(custom_date):
 
 	wait = WebDriverWait(driver, 10)
 
-	cookies = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".tvp-covl__ab")))
+	cookies = wait.until(EC.element_to_be_clickable((By.ID, "onetrust-accept-btn-handler")))
 	cookies.click()
 
 	all_dates = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".epg-calendar__switch-toggle-button")))
