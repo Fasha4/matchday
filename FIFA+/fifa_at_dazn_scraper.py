@@ -10,6 +10,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from datetime import datetime, timedelta, time
 import json
 import pyperclip
+from time import sleep
 
 def getMatches(custom_date):
 	options = webdriver.ChromeOptions()
@@ -35,6 +36,7 @@ def getMatches(custom_date):
 
 	try:
 		day = wait.until(EC.element_to_be_clickable((By.XPATH, './/div[@title="' + custom_date + '"]')))
+		sleep(3)
 		day.click()
 		matches, leagues = getDayInfo(matches, leagues, 'gt')
 	except TimeoutException:
