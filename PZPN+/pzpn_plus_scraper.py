@@ -101,7 +101,8 @@ def getMatches(custom_date):
 
 			driver.back()
 		except:
-			break
+			driver.back()
+			continue
 
 	games = []
 

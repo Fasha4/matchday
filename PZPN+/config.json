@@ -21,6 +21,17 @@
 			"lang": "",
 			"comm": "",
 			"show": true
+		},
+		{
+			"name_pzpn": "STS Puchar Polski",
+			"name_matchday": "Puchar Polski",
+			"img": "https://matchday.pl/wp-content/uploads/2025/09/STS_Puchar_Polski-Logo.png",
+			"img_w": 206,
+			"img_h": 85,
+			"wp_img": 18966,
+			"lang": "",
+			"comm": "",
+			"show": true
 		}
 	]
 }
