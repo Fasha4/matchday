@@ -39,9 +39,6 @@ def getMatches(custom_date):
 		broadcasts = driver.find_elements(By.TAG_NAME, "tr")
 
 		for broadcast in broadcasts:
-			if not ' - ' in broadcast.text:
-				continue
-
 			details = broadcast.find_elements(By.TAG_NAME, "td")
 			if not details:
 				continue
@@ -62,9 +59,12 @@ def getMatches(custom_date):
 			elif date >= today + timedelta(days=1, hours=6):
 				break
 
-
 			channel = details[2].text
 			league, game = details[3].text.split(' \n')
+
+			if not ' - ' in game:
+				continue
+
 			league = league.split('Piłka nożna: ')[-1]
 			home, away = game.split(': ')[-1].split(' - ')
 
