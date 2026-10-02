@@ -14,7 +14,7 @@ from time import sleep
 
 def getMatches(custom_date):
 	options = webdriver.ChromeOptions()
-	options.add_argument('--headless')
+	# options.add_argument('--headless')
 	options.add_argument('--window-size=1920,1080')
 	options.add_experimental_option('excludeSwitches', ['enable-logging'])
 	options.add_argument('log-level=3')
@@ -26,6 +26,7 @@ def getMatches(custom_date):
 	driver.get(url)
 
 	wait = WebDriverWait(driver, 10)
+
 
 	cookies = wait.until(EC.element_to_be_clickable((By.ID, "onetrust-reject-all-handler")))
 	cookies.click()
