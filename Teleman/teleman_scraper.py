@@ -43,6 +43,7 @@ def getMatches(custom_date):
 			if not details:
 				continue
 
+			# print(details[3].text)
 			date = details[0].text.split(', ')[-1].split('na ')[-1]
 			time = (datetime.strptime(details[1].text, "%H:%M") + timedelta(minutes=5)).strftime("%H:%M")
 			for x,y in months_translate.items():
@@ -60,6 +61,7 @@ def getMatches(custom_date):
 				break
 
 			channel = details[2].text
+			if ' \n' not in details[3].text: continue
 			league, game = details[3].text.split(' \n')
 
 			if not ' - ' in game:
