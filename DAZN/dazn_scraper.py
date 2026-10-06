@@ -34,11 +34,15 @@ def getMatches(custom_date):
 	# sleep(5)
 	wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '.schedule__schedule-container___24S6E')))
 	nextSportBtn = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, '.sports-filter__btn-style-right___2ll75')))
-	for x in range(2):
-		nextSportBtn.click()
-		sleep(1)
-	football_filter = wait.until(EC.element_to_be_clickable((By.XPATH, './/li[@data-test-id="SPORTFILTER_LIST_ITEM"]/span[text()="Football"]')))
-	football_filter.click()
+	for x in range(5):
+		try:
+			nextSportBtn.click()
+			sleep(1)
+			football_filter = wait.until(EC.element_to_be_clickable((By.XPATH, './/li[@data-test-id="SPORTFILTER_LIST_ITEM"]/span[text()="Football"]')))
+			football_filter.click()
+			break
+		except:
+			continue
 
 	[driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END) for x in range(10)]
 
@@ -57,6 +61,8 @@ def getMatches(custom_date):
 		matches, leagues = getDayInfo(next_day, matches, leagues, 'lt')
 	except NoSuchElementException:
 		print("[INFO] Brak meczów dnia", str(tomorrow.date()))
+
+	driver.quit()
 
 
 	games = []
