@@ -66,14 +66,13 @@ def getMatches(custom_date):
 # limit: gt -> >= 6:00, lt -> < 6:00
 def getDayInfo(elements, matches, leagues, limit):
 	for country in elements:
-		broadcasts = country.find_elements(By.CSS_SELECTOR, ".MatchCard_matchCard__LynP5")
-		league = country.find_element(By.CSS_SELECTOR, ".screen-reader-only").text
-
+		broadcasts = country.find_elements(By.CSS_SELECTOR, ".MatchCard-module-scss-module__G0vUha__matchCard")
+		league = country.find_element(By.CSS_SELECTOR, ".title-6-bold.Title-module-scss-module__99fEwq__leftAlign").text
 		for broadcast in broadcasts:
-			home = broadcast.find_elements(By.CSS_SELECTOR, '.SimpleMatchCardTeam_simpleMatchCardTeam__name__cmh6q')[0].text
-			away = broadcast.find_elements(By.CSS_SELECTOR, '.SimpleMatchCardTeam_simpleMatchCardTeam__name__cmh6q')[1].text
+			home = broadcast.find_elements(By.CSS_SELECTOR, '.SimpleMatchCardTeam-module-scss-module__mEozLq__simpleMatchCardTeam__name')[0].text
+			away = broadcast.find_elements(By.CSS_SELECTOR, '.SimpleMatchCardTeam-module-scss-module__mEozLq__simpleMatchCardTeam__name')[1].text
 			try:
-				time = broadcast.find_element(By.CSS_SELECTOR, '.SimpleMatchCard_simpleMatchCard__infoMessage__ypUgN').text
+				time = broadcast.find_element(By.CSS_SELECTOR, '.SimpleMatchCard-module-scss-module__hgqd8a__simpleMatchCard__infoMessage.title-8-medium').text
 			except:
 				time = 'brak'
 				continue
