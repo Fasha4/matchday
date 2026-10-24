@@ -31,6 +31,8 @@ def getMatches(custom_date):
 		matches, leagues = getDayInfo(elements, matches, leagues, 'gt')
 	except TimeoutException:
 		print("[INFO] Brak meczów dnia", custom_date)
+	except Exception as e:
+		print(e)
 
 	try:
 		tomorrow = datetime.fromisoformat(custom_date) + timedelta(days=1)
@@ -41,6 +43,10 @@ def getMatches(custom_date):
 		matches, leagues = getDayInfo(elements, matches, leagues, 'lt')
 	except NoSuchElementException:
 		print("[INFO] Brak meczów dnia", str(tomorrow.date()))
+	except Exception as e:
+		print(e)
+
+	driver.quit()
 
 	games = []
 
@@ -66,14 +72,15 @@ def getMatches(custom_date):
 # limit: gt -> >= 6:00, lt -> < 6:00
 def getDayInfo(elements, matches, leagues, limit):
 	for country in elements:
-		broadcasts = country.find_elements(By.CSS_SELECTOR, ".MatchCard-module-scss-module__G0vUha__matchCard")
-		league = country.find_element(By.CSS_SELECTOR, ".title-6-bold.Title-module-scss-module__99fEwq__leftAlign").text
+		broadcasts = country.find_elements(By.CSS_SELECTOR, ".G0vUha_matchCard")
+		league = country.find_element(By.CSS_SELECTOR, ".title-6-bold._99fEwq_leftAlign").text
 		for broadcast in broadcasts:
-			home = broadcast.find_elements(By.CSS_SELECTOR, '.SimpleMatchCardTeam-module-scss-module__mEozLq__simpleMatchCardTeam__name')[0].text
-			away = broadcast.find_elements(By.CSS_SELECTOR, '.SimpleMatchCardTeam-module-scss-module__mEozLq__simpleMatchCardTeam__name')[1].text
+			home = broadcast.find_elements(By.CSS_SELECTOR, '.mEozLq_simpleMatchCardTeam__name')[0].text
+			away = broadcast.find_elements(By.CSS_SELECTOR, '.mEozLq_simpleMatchCardTeam__name')[1].text
 			try:
-				time = broadcast.find_element(By.CSS_SELECTOR, '.SimpleMatchCard-module-scss-module__hgqd8a__simpleMatchCard__infoMessage.title-8-medium').text
-			except:
+				time = broadcast.find_element(By.CSS_SELECTOR, '.hgqd8a_simpleMatchCard__infoMessage.title-8-medium').text
+			except Exception as e:
+				print(e)
 				time = 'brak'
 				continue
 			link = broadcast.get_attribute("href")
@@ -85,6 +92,7 @@ def getDayInfo(elements, matches, leagues, limit):
 				'league': league,
 				'link': link
 				}
+
 			if (limit == 'lt' and int(time.split(':')[0]) < 6) or (limit == 'gt' and int(time.split(':')[0]) >= 6):
 				if league not in leagues:
 					leagues.append(league)
