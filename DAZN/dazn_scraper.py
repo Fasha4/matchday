@@ -90,6 +90,9 @@ def getMatches(custom_date):
 def getDayInfo(day, matches, leagues, limit):
 	nextBtn = day.find_element(By.CSS_SELECTOR, ".custom-swiper-button-next")
 
+	scroll_origin = ScrollOrigin.from_element(nextBtn)
+	ActionChains(driver).scroll_from_origin(scroll_origin, 0, 150).perform()
+
 	while True:
 		broadcasts = day.find_elements(By.XPATH, './/div[@aria-hidden="false"]')
 
@@ -121,8 +124,6 @@ def getDayInfo(day, matches, leagues, limit):
 					matches.append(match)
 
 		if nextBtn.is_enabled():
-			scroll_origin = ScrollOrigin.from_element(nextBtn)
-			ActionChains(driver).scroll_from_origin(scroll_origin, 0, 150).perform()
 			nextBtn.click()
 			# content needs to load a bit
 			sleep(1)
