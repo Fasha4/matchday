@@ -89,11 +89,15 @@ def getDayInfo(broadcasts, matches, leagues, limit):
 			teams, league = title.split(': ', 1)
 		else:
 			league, teams = title.split(': ', 1)
-		if '–' not in teams and '-' not in teams: continue
-		try:
+
+		if ' – ' in teams:
 			home, away = teams.split(' – ')
-		except ValueError:
+		elif ' - ' in teams:
 			home, away = teams.split(' - ')
+		elif ' –- ' in teams:
+			home, away = teams.split(' –- ')
+		else:
+			continue
 		link = broadcast.get_attribute("href")
 
 		league = league
