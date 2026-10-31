@@ -125,7 +125,7 @@ def getMatches(custom_date):
 
 		link = match.find_element(By.TAG_NAME, "a").get_attribute("href")
 		timedate = match.find_element(By.TAG_NAME, 'time').get_attribute("datetime")
-		timedate_str = pytz.utc.localize(datetime.datetime.strptime(timedate, '%Y-%m-%dT%H:%M:00.000Z')).astimezone(tzWarsaw)
+		timedate_str = pytz.utc.localize(datetime.datetime.strptime(timedate, '%Y-%m-%dT%H:%M:%S.000Z')).astimezone(tzWarsaw)
 		time = timedate_str.strftime('%H:%M')
 
 		day_offset = datetime.timedelta(hours=6)
@@ -148,46 +148,46 @@ def getMatches(custom_date):
 			})
 
 	# MLS NEXT PRO
-	url = "https://tv.apple.com/pl/collection/live-mls-next-pro/edt.col.66e101d5-444e-4090-8828-fc08c9c1ac9d?ctx_cvs=edt.cvs.63b51506-dbce-42de-bff0-4a0b7a757f47&ctx_shelf=edt.shelf.64344473-a184-44f4-9d4d-c2fd7076e83f&ctx_brand=tvs.sbd.7000"
-	driver.get(url)
+	# url = "https://tv.apple.com/pl/collection/live-mls-next-pro/edt.col.66e101d5-444e-4090-8828-fc08c9c1ac9d?ctx_cvs=edt.cvs.63b51506-dbce-42de-bff0-4a0b7a757f47&ctx_shelf=edt.shelf.64344473-a184-44f4-9d4d-c2fd7076e83f&ctx_brand=tvs.sbd.7000"
+	# driver.get(url)
 
-	sleep(3)
-	driver.find_element(By.TAG_NAME, 'footer').click()
-	driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
-	sleep(1)
-	driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
-	elements = driver.find_elements(By.XPATH, "//li[@data-testid='grid-item']")
+	# sleep(3)
+	# driver.find_element(By.TAG_NAME, 'footer').click()
+	# driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
+	# sleep(1)
+	# driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
+	# elements = driver.find_elements(By.XPATH, "//li[@data-testid='grid-item']")
 
-	for match in elements:
+	# for match in elements:
 
-		if ' · ' in match.text:
-			continue
+	# 	if ' · ' in match.text:
+	# 		continue
 
-		home, away = match.find_element(By.CSS_SELECTOR, ".title").text.split(' vs. ')
-		league = "MLS NEXT PRO" #match.find_element(By.CSS_SELECTOR, ".subtitle").text
-		link = match.find_element(By.TAG_NAME, "a").get_attribute("href")
-		timedate = match.find_element(By.TAG_NAME, 'time').get_attribute("datetime")
-		timedate_str = pytz.utc.localize(datetime.datetime.strptime(timedate, '%Y-%m-%dT%H:%M:00.000Z')).astimezone(tzWarsaw)
-		time = timedate_str.strftime('%H:%M')
+	# 	home, away = match.find_element(By.CSS_SELECTOR, ".title").text.split(' vs. ')
+	# 	league = "MLS NEXT PRO" #match.find_element(By.CSS_SELECTOR, ".subtitle").text
+	# 	link = match.find_element(By.TAG_NAME, "a").get_attribute("href")
+	# 	timedate = match.find_element(By.TAG_NAME, 'time').get_attribute("datetime")
+	# 	timedate_str = pytz.utc.localize(datetime.datetime.strptime(timedate, '%Y-%m-%dT%H:%M:00.000Z')).astimezone(tzWarsaw)
+	# 	time = timedate_str.strftime('%H:%M')
 
-		day_offset = datetime.timedelta(hours=6)
+	# 	day_offset = datetime.timedelta(hours=6)
 
-		if timedate_str < tzWarsaw.localize(datetime.datetime.fromisoformat(custom_date)) + day_offset:
-			continue
-		elif timedate_str >= tzWarsaw.localize(datetime.datetime.fromisoformat(custom_date)) + day_offset + datetime.timedelta(days=1):
-			break
+	# 	if timedate_str < tzWarsaw.localize(datetime.datetime.fromisoformat(custom_date)) + day_offset:
+	# 		continue
+	# 	elif timedate_str >= tzWarsaw.localize(datetime.datetime.fromisoformat(custom_date)) + day_offset + datetime.timedelta(days=1):
+	# 		break
 
-		if league not in leagues:
-			leagues.append(league)
+	# 	if league not in leagues:
+	# 		leagues.append(league)
 
-		matches.append({
-			'home': home,
-			'away': away,
-			'time': time,
-			'league': league,
-			'link': link,
-			'isFree': False
-			})
+	# 	matches.append({
+	# 		'home': home,
+	# 		'away': away,
+	# 		'time': time,
+	# 		'league': league,
+	# 		'link': link,
+	# 		'isFree': False
+	# 		})
 
 	# if freeLine:
 	# 	freeEvents = shelfs[freeLine].find_elements(By.CSS_SELECTOR, ".shelf-grid__list-item")
