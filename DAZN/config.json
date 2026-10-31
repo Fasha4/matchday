@@ -12,8 +12,8 @@
 			"show": true
 		},
 		{
-			"name_dazn": "Enterprise National League",
-			"name_matchday": "Enterprise National League (5. poziom)",
+			"name_dazn": "National League",
+			"name_matchday": "National League (5. poziom)",
 			"img": "https://matchday.pl/wp-content/uploads/2026/01/Enterprise-National-League-Colour-Badged-300x208.png",
 			"img_w": 144,
 			"img_h": 100,
@@ -23,8 +23,8 @@
 			"show": true
 		},
 		{
-			"name_dazn": "Enterprise National League North & South",
-			"name_matchday": "Enterprise National League (6. poziom)",
+			"name_dazn": "National League South",
+			"name_matchday": "National League South (6. poziom)",
 			"img": "https://matchday.pl/wp-content/uploads/2026/01/Enterprise-National-League-Colour-Badged-300x208.png",
 			"img_w": 144,
 			"img_h": 100,
