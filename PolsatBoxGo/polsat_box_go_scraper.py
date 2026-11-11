@@ -26,21 +26,21 @@ def getMatches(custom_date):
 	cookies = wait.until(EC.element_to_be_clickable((By.ID, "onetrust-reject-all-handler")))
 	cookies.click()
 
-	days = driver.find_elements(By.CSS_SELECTOR, ".sc-748caac1-0.iZvgwj")
+	days = driver.find_elements(By.CSS_SELECTOR, ".sc-deb9d733-0.ipSQOI")
 	for day in days:
 		# for i in range(5):
 		# 	try:
 		# 		day.find_element(By.CSS_SELECTOR, ".sc-yznkft-1.sc-yznkft-3.fizEVz.fcAvCw").click()
 		# 	except:
 		# 		pass
-		events = day.find_elements(By.CSS_SELECTOR, ".sc-98fc1131-1.oJRYi")
+		events = day.find_elements(By.CSS_SELECTOR, ".sc-f5c631f0-2")
 		try:
 			# Date after dot
-			date = day.find_element(By.CSS_SELECTOR, ".sc-75bf8eca-1.bwnPAm")
+			date = day.find_element(By.CSS_SELECTOR, ".sc-ec8ec95b-2.fkBxWy")
 			date = datetime.datetime.strptime(date.text + str(datetime.date.today().year), '%d.%m%Y').date()
 		except:
 			# "Dzisiaj" or "Jutro"
-			date = day.find_element(By.CSS_SELECTOR, ".sc-69d34359-0.euZdPk")
+			date = day.find_element(By.CSS_SELECTOR, ".sc-ec8ec95b-1.VbqXH")
 
 			if date.text == "Dzisiaj":
 				date = datetime.date.today()
@@ -56,16 +56,14 @@ def getMatches(custom_date):
 		leagues = []
 
 		for match in events:
-			time, league = match.find_element(By.XPATH, './/div[@class="sc-69d34359-0 kuLgmg"]/span[@class="sc-69d34359-1 zwdzU"]').text.split(' • ')
+			time, league = match.find_element(By.XPATH, './/div[@class="sc-df9fa2a3-0 dDsCJD"]/span[@class="sc-bea9d972-0 kkvLmF"]').text.split(' • ')
 			time = (datetime.datetime.strptime(time, '%H:%M') + datetime.timedelta(minutes=10)).strftime('%H:%M')
 			try:
 				try:
-					home, away = match.find_element(By.XPATH, './/div[@class="sc-69d34359-0 tclLo"]/span[@class="sc-69d34359-1 zwdzU"]').text.split(' - ')
+					home, away = match.find_element(By.XPATH, './/div[@class="sc-df9fa2a3-0 bTtVHP"]/span[@class="sc-df9fa2a3-1 eBDyun"]').text.split(' - ')
 				except Exception as e:
-					print(e)
-					home, away = match.find_element(By.XPATH, './/div[@class="sc-69d34359-0 tclLo"]/span[@class="sc-69d34359-1 zwdzU"]').text.split(' – ')
+					home, away = match.find_element(By.XPATH, './/div[@class="sc-df9fa2a3-0 bTtVHP"]/span[@class="sc-df9fa2a3-1 eBDyun"]').text.split(' – ')
 			except Exception as e:
-				print(e)
 				continue
 
 			if league not in leagues:
