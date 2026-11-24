@@ -22,7 +22,7 @@ def getMatches(custom_date):
 	url = "https://pzpnplus.pl/playlist/254/DEFAULT/Ju%C5%BC%20wkr%C3%B3tce?componentId=760"
 	driver.get(url)
 
-	wait = WebDriverWait(driver, 10)
+	wait = WebDriverWait(driver, 2)
 
 	today = datetime.fromisoformat(custom_date)
 
@@ -58,6 +58,7 @@ def getMatches(custom_date):
 				wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, ".ListComponentItemFrame")))
 				eventCards = driver.find_elements(By.CSS_SELECTOR, ".ListComponentItemFrame")
 
+			driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.ESCAPE)
 			driver.execute_script("arguments[0].scrollIntoView(true);", eventCards[i])
 			sleep(0.3)
 
